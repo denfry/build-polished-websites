@@ -1,0 +1,29 @@
+name: Platform or feature request
+description: Propose a new CMS playbook, workflow, or validation
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use case
+      description: What user request should the skill handle better?
+    validations:
+      required: true
+  - type: textarea
+    id: platform
+    attributes:
+      label: Platform and versions
+      description: Include official documentation links when relevant.
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Proposed behavior
+      description: Explain editor ownership, security, cache, deployment, and verification implications.
+    validations:
+      required: true
+  - type: textarea
+    id: examples
+    attributes:
+      label: Example prompts or fixtures
+      description: Use synthetic, non-sensitive examples.

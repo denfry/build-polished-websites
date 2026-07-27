@@ -1,0 +1,53 @@
+name: Bug report
+description: Report incorrect behavior, guidance, or validation
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include secrets, private customer code, or sensitive logs.
+        Security issues belong in the private vulnerability reporting flow.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Skill triggering or workflow
+        - WordPress / WooCommerce
+        - 1C-Bitrix
+        - Tilda
+        - Shopify
+        - Other CMS or platform
+        - Installer
+        - Lighthouse gate
+        - Documentation
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Include the prompt, relevant platform version, and observed result.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Reproduction or evidence
+      description: Provide minimal, sanitized files, logs, or official documentation links.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I removed secrets and private data.
+          required: true
+        - label: I searched existing issues.
+          required: true

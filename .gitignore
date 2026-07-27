@@ -1,0 +1,29 @@
+# Local agent caches
+.claude/cache/
+.agents/cache/
+
+# Test and generated artifacts
+.install-test*/
+.preflight-*/
+.collision-*/
+artifacts/
+lighthouse-*.json
+*.installing-*
+*.backup-*
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~

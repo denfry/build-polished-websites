@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build Polished Websites"
+  short_description: "Build polished sites across CMS platforms"
+  default_prompt: "Use $build-polished-websites to build or improve this site in its native platform, then verify accessibility, security, SEO, and Lighthouse quality."
