@@ -86,5 +86,18 @@ node build-polished-websites/scripts/lighthouse-gate.mjs \
   lighthouse-1.json lighthouse-2.json lighthouse-3.json
 ```
 
+## Сравнение со скиллом и без него
+
+В репозитории есть контролируемый
+[A/B-пример одностраничного SaaS](benchmark/saas-single-html/): один нейтральный
+промпт реализован как типичный AI-лендинг и как версия по методике скилла.
+[Отчёт сравнения](benchmark/saas-single-html/comparison.md) содержит различия
+в дизайне и медианные результаты трёх Lighthouse-прогонов.
+
+| Без скилла | С `build-polished-websites` |
+|---|---|
+| [![Типичный фиолетовый SaaS-лендинг без скилла](benchmark/saas-single-html/screenshots/without-skill.png)](benchmark/saas-single-html/without-skill.html) | [![Продуктовый интерфейс журнала инцидентов со скиллом](benchmark/saas-single-html/screenshots/with-skill.png)](benchmark/saas-single-html/with-skill.html) |
+| Шаблонная визуальная подача · Lighthouse gate **не пройден** | Собственная арт-дирекция · Lighthouse **100 / 100 / 100 / 100** |
+
 Полная документация, архитектура и правила участия находятся в
 [основном README](README.md).

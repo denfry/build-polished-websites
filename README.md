@@ -213,6 +213,20 @@ The script fails closed on malformed reports or reports from mixed final URLs.
 Lighthouse remains a lab guardrail; field Core Web Vitals are authoritative for
 real users.
 
+## See the skill difference
+
+The repository includes a controlled
+[single-file SaaS comparison](benchmark/saas-single-html/): the same neutral
+prompt rendered as a typical unconstrained AI landing page and as a
+skill-guided implementation. The included
+[comparison report](benchmark/saas-single-html/comparison.md) records the design
+differences and three-run Lighthouse medians.
+
+| Without the skill | With `build-polished-websites` |
+|---|---|
+| [![Generic purple SaaS landing page generated without the skill](benchmark/saas-single-html/screenshots/without-skill.png)](benchmark/saas-single-html/without-skill.html) | [![Product-specific incident timeline landing page generated with the skill](benchmark/saas-single-html/screenshots/with-skill.png)](benchmark/saas-single-html/with-skill.html) |
+| Generic visual defaults · Lighthouse gate **failed** | Product-specific art direction · Lighthouse **100 / 100 / 100 / 100** |
+
 ## Repository structure
 
 ```text
@@ -222,6 +236,12 @@ real users.
 │   ├── agents/openai.yaml
 │   ├── references/
 │   └── scripts/
+├── benchmark/saas-single-html/
+│   ├── screenshots/
+│   ├── prompt.txt
+│   ├── without-skill.html
+│   ├── with-skill.html
+│   └── comparison.md
 ├── examples/
 ├── install.ps1
 ├── install.sh

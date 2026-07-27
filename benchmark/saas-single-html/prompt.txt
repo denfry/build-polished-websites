@@ -1,0 +1,21 @@
+Create a responsive single-page website for Relay, a SaaS product for small
+operations teams.
+
+Relay turns scattered incident messages into a clear timeline, assigns owners,
+and produces a reusable runbook after the incident is resolved.
+
+Audience: operations leads at growing software companies.
+Primary action: start a 14-day free trial.
+
+The page must include:
+- navigation;
+- a hero with one primary CTA;
+- a product UI preview;
+- a short "how it works" section;
+- a pricing section with one plan at $49/month;
+- an FAQ;
+- a final CTA and footer.
+
+Use honest copy. Do not invent customer logos, testimonials, awards, or usage
+statistics. Deliver one self-contained HTML file with inline CSS and JavaScript.
+It must work without external assets or dependencies.
