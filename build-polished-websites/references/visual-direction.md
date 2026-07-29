@@ -20,6 +20,11 @@ one-sentence visual thesis such as:
 The thesis must explain why the site looks this way. "Modern and clean" is not
 a direction.
 
+Choose the information architecture first using
+[site-archetypes.md](site-archetypes.md). Visual direction controls expression;
+the archetype controls what the page contains and how users move through it.
+Do not use surface styling to disguise the same SaaS landing-page skeleton.
+
 Select three adjectives that can be tested visually. Pair them with one
 anti-goal:
 
@@ -40,6 +45,18 @@ Define a deliberately small system before styling individual sections:
 
 Use optical alignment and controlled exceptions. Perfectly uniform cards and
 spacing can feel generated; inconsistency without a rule feels broken.
+
+Also define one recognizable composition rule, such as:
+
+- an editorial hierarchy where scale signals story importance;
+- a catalog rhythm alternating overview and material detail;
+- a chronological spine for an event or process;
+- a persistent index paired with a changing reading pane;
+- a poster-like field organized around date, place, and program.
+
+Do not default to a centered hero. The opening may instead be an index, product
+grid, schedule, map, article lead, project reel, search surface, or operational
+overview.
 
 ## Patterns to reject
 
@@ -108,3 +125,6 @@ Before shipping, ask:
 5. Does mobile feel composed rather than merely stacked?
 6. Are interactive states as intentional as the static screenshot?
 7. Would removing an effect improve clarity? If yes, remove it.
+8. Does the page structure belong to its archetype, or only its styling?
+9. Have at least three composition dimensions changed from the nearest existing
+   template or recent project?

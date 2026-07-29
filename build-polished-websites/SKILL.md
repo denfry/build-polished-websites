@@ -1,6 +1,6 @@
 ---
 name: build-polished-websites
-description: Design, build, integrate, refactor, migrate, or review distinctive production-ready websites without generic AI-generated visual patterns. Use for landing pages, marketing sites, portfolios, dashboards, web apps, themes, templates, CMS work, WordPress, WooCommerce, Gutenberg, Elementor, 1C-Bitrix, Bitrix24 sites, Tilda, Shopify, Drupal, Webflow, headless CMS, static sites, responsive UI, accessibility, technical SEO, security review, browser verification, and Lighthouse quality gates.
+description: Design, build, integrate, refactor, migrate, or review distinctive production-ready websites without generic AI-generated visual patterns or SaaS-default layouts. Use for editorial and media sites, portfolios, cultural and event sites, hospitality, local services, nonprofits, education, documentation, directories, marketplaces, ecommerce, landing pages, marketing sites, dashboards, web apps, themes, templates, CMS work, WordPress, WooCommerce, Gutenberg, Elementor, 1C-Bitrix, Bitrix24 sites, Tilda, Shopify, Drupal, Webflow, headless CMS, static sites, responsive UI, accessibility, technical SEO, security review, browser verification, and Lighthouse quality gates.
 ---
 
 # Build Polished Websites
@@ -27,6 +27,9 @@ model, editor experience, and deployment path unless changing them is necessary.
     Webflow, headless CMS, static generators, or another platform.
 - Read [references/visual-direction.md](references/visual-direction.md) before
   choosing or materially changing the visual language.
+- Read [references/site-archetypes.md](references/site-archetypes.md) for every
+  new site or substantial redesign. Use it to choose the site's content
+  architecture before choosing its visual style.
 - Read [references/quality-gates.md](references/quality-gates.md) before
   verification or when changing performance-sensitive code.
 - Read [references/security-seo.md](references/security-seo.md) when the site
@@ -44,6 +47,7 @@ before writing code. Determine:
 
 - the audience and primary action;
 - the site's one-sentence promise;
+- the primary site archetype and, when useful, one secondary influence;
 - the required routes, states, and content;
 - the existing framework, component system, and deployment constraints;
 - the source of truth for content and the editor who must maintain it;
@@ -73,9 +77,15 @@ Back up or version the editable source before a risky platform change.
 
 ### 3. Define a visual thesis
 
-Choose one coherent visual direction grounded in the product. State it in one
-sentence before implementation. Define a small token system for color, type,
-space, radii, borders, and motion.
+Read [references/site-archetypes.md](references/site-archetypes.md). Choose an
+archetype from the audience, content, and primary action; never default to SaaS
+because the workspace is blank. Select a composition model, density, navigation
+model, and proof format that fit that archetype. A secondary influence may
+shape the presentation, but it must not obscure the primary job.
+
+Then choose one coherent visual direction grounded in the product. State it in
+one sentence before implementation. Define a small token system for color,
+type, space, radii, borders, and motion.
 
 Use real copy and meaningful hierarchy. Generate or source imagery only when it
 supports the concept. Do not decorate empty space with arbitrary effects.
@@ -83,6 +93,9 @@ supports the concept. Do not decorate empty space with arbitrary effects.
 Reject the anti-patterns in
 [references/visual-direction.md](references/visual-direction.md). A clean site
 is not automatically generic, and a dramatic site is not automatically good.
+Do not reuse the same section sequence, hero geometry, card grammar, or CTA
+placement across unrelated archetypes. Let the content model determine the
+page silhouette.
 
 ### 4. Build the semantic foundation
 
@@ -166,6 +179,7 @@ intentional product trade-off prevent a gate.
 Lead with what was built or fixed. Include:
 
 - the visual thesis and major implementation decisions;
+- the selected archetype, composition model, and any secondary influence;
 - routes and viewports verified;
 - platform version, edit surface, cache actions, and deployment target;
 - commands run and their results;

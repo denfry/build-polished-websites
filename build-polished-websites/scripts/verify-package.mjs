@@ -12,6 +12,7 @@ const required = [
   "SKILL.md",
   "agents/openai.yaml",
   "references/cms-platform-selection.md",
+  "references/site-archetypes.md",
   "references/visual-direction.md",
   "references/quality-gates.md",
   "references/security-seo.md",
