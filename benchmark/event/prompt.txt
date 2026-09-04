@@ -1,0 +1,13 @@
+Create a responsive website for "Nordlys Film Days", a fictional four-day documentary film festival in Tromsø.
+
+Deliver a single self-contained HTML file (index.html) with inline CSS and JavaScript. It must work without external assets, fonts, or dependencies. Use inline SVG or CSS shapes for visual placeholders instead of external images.
+
+The site must include:
+- the festival identity with dates and city;
+- a program of at least twelve screenings across four days and two venues, browsable by day, with title, director, country, runtime, venue, time, and a short synopsis; each screening must have a detail view or expandable panel;
+- ticket information with prices for single tickets and a festival pass, and a clearly labeled placeholder purchase action;
+- venue information with addresses and accessibility notes;
+- practical information (getting there, accommodation hints, FAQ);
+- a footer with contact and organizer information.
+
+Use fictional film titles and directors. Do not invent press quotes, sponsors, or attendance figures.

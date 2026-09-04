@@ -1,0 +1,13 @@
+Create a responsive portfolio website for Mara Lindqvist, a freelance exhibition and wayfinding designer based in Gothenburg.
+
+Deliver a single self-contained HTML file (index.html) with inline CSS and JavaScript. It must work without external assets, fonts, or dependencies. Use inline SVG or CSS shapes for visual placeholders instead of external images.
+
+The site must include:
+- an opening that presents the work;
+- six projects, each with title, client type (fictional, generic — e.g. "regional museum"), year, discipline, and a two-sentence description; at least two projects must open a detail view with a longer case study (problem, approach, outcome);
+- a short about section with a real point of view about the practice;
+- services and availability;
+- a contact section with email and a simple inquiry form (name, email, message) with validation;
+- a footer.
+
+Do not invent client names, awards, press mentions, or testimonials.

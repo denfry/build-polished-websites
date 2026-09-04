@@ -1,0 +1,14 @@
+Create a responsive website for "The Harbour Ledger", an independent local news publication covering a mid-sized port city.
+
+Deliver the front page and one full article page as two self-contained HTML files (index.html and article.html) with inline CSS and JavaScript. They must work without external assets, fonts, or dependencies.
+
+The front page must include:
+- masthead with the publication name and today's date;
+- section navigation (City, Port & Industry, Culture, Opinion);
+- at least eight stories of differing importance with headline, standfirst, section, author, and publication time;
+- a newsletter signup;
+- a footer with about, contact, corrections policy, and privacy links.
+
+The article page must include a headline, standfirst, byline, publication and updated dates, at least 700 words of body text in several sections with one pull quote, two captioned image placeholders (use inline SVG or CSS placeholders, not external images), and a "related stories" trail.
+
+Write plausible but clearly fictional editorial copy. Do not invent real people, real companies, awards, or reader statistics.

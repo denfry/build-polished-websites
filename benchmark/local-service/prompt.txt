@@ -1,0 +1,14 @@
+Create a responsive website for "Kowalski Heating & Plumbing", a two-person heating and plumbing business serving Leeds and the surrounding area.
+
+Deliver a single self-contained HTML file (index.html) with inline CSS and JavaScript. It must work without external assets, fonts, or dependencies. Use inline SVG or CSS placeholders instead of external images.
+
+The site must include:
+- clear services (boiler servicing and repair, central heating installation, general plumbing, emergency callouts) with what each includes;
+- the service area, opening hours, emergency availability, and a phone number (use a clearly fictional number);
+- how a job works from first call to completion;
+- pricing signals (call-out fee, hourly rate, or fixed-price examples, fictional but plausible);
+- credentials (use placeholder registration numbers clearly marked as examples);
+- a quote request form (name, phone, postcode, problem description) with validation and a confirmation state;
+- a footer with contact and privacy links.
+
+Do not invent customer reviews, ratings, "happy customers" counts, or awards.

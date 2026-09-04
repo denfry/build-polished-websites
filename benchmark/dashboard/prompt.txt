@@ -1,0 +1,14 @@
+Create a responsive web application dashboard for "Greenline Fleet", a tool that helps a municipal operations team monitor a fleet of 40 electric buses.
+
+Deliver a single self-contained HTML file (index.html) with inline CSS and JavaScript that renders the dashboard from in-file mock data. It must work without external assets, fonts, dependencies, or a backend.
+
+The application must include:
+- an authenticated app shell with navigation (Overview, Vehicles, Charging, Alerts, Settings) and a user menu;
+- an overview showing fleet status, vehicles in service, charging state, active alerts, and today's energy use, with clear hierarchy of what matters most;
+- a vehicles view as a data table (vehicle ID, route, state of charge, status, last seen) with sorting and a filter, usable on mobile;
+- an alerts view with severity, time, vehicle, and an acknowledge action with confirmation;
+- a detail view for one vehicle;
+- designed loading, empty, and error states for at least the vehicles and alerts views (e.g. a toggle or simulated states), and a permission-denied state for Settings;
+- keyboard operability for the main navigation and table actions.
+
+Use realistic but clearly fictional data.

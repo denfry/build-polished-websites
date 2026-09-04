@@ -1,0 +1,12 @@
+Create a responsive ecommerce storefront for "Fjell & Co.", a small brand selling wool hiking socks.
+
+Deliver a single self-contained HTML file (index.html) with inline CSS and JavaScript that implements the storefront as a client-side application. It must work without external assets, fonts, dependencies, or a backend. Use inline SVG or CSS placeholders instead of external images.
+
+The storefront must include:
+- a collection view with at least six products, each with name, price, short description, and color options; a filter by size or weight; and sorting;
+- a product view with a gallery placeholder, description, materials, sizing guidance, variant selection (size and color) that updates price and availability, quantity, and add to cart; at least one variant must be out of stock and handled;
+- a cart with line items, quantity editing, removal, subtotal, an empty state, and a checkout button that leads to an honest "checkout not connected in this demo" state;
+- shipping and returns information reachable from the product view;
+- a footer with policies and contact.
+
+Do not invent customer reviews, ratings, press logos, or sales statistics.
