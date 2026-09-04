@@ -1,205 +1,144 @@
 ---
 name: build-polished-websites
-description: Design, build, integrate, refactor, migrate, or review distinctive production-ready websites without generic AI-generated visual patterns or SaaS-default layouts. Use for editorial and media sites, portfolios, cultural and event sites, hospitality, local services, nonprofits, education, documentation, directories, marketplaces, ecommerce, landing pages, marketing sites, dashboards, web apps, themes, templates, CMS work, WordPress, WooCommerce, Gutenberg, Elementor, 1C-Bitrix, Bitrix24 sites, Tilda, Shopify, Drupal, Webflow, headless CMS, static sites, responsive UI, accessibility, technical SEO, security review, browser verification, and Lighthouse quality gates.
+description: Build, redesign, integrate, or review production websites so they fit their product, audience, content, and platform instead of generic AI defaults. Use for any website or web-UI task: landing pages, editorial and media sites, portfolios, ecommerce, local businesses, nonprofits, events, documentation, dashboards, and web apps on WordPress, WooCommerce, 1C-Bitrix, Tilda, Shopify, Drupal, Webflow, headless CMS, Next.js, Astro, Vite, SvelteKit, Nuxt, or plain HTML. Includes browser verification, accessibility checks, and a Lighthouse gate. Do not use for backend-only, CLI, or non-web work.
 ---
 
 # Build Polished Websites
 
-Build websites that feel art-directed, intentional, credible, and maintainable
-inside their actual publishing platform. Preserve the project's stack, content
-model, editor experience, and deployment path unless changing them is necessary.
+Discover the right website for this product, audience, content, and platform,
+then prove in a browser that it works. Never replace one AI house style with
+another. Preserve the project's stack, content model, and editor workflow
+unless changing them is the task.
 
-## Read the right references
+## Decision loop
 
-- Read [references/cms-platform-selection.md](references/cms-platform-selection.md)
-  whenever a CMS, site builder, theme, exported site, or unknown legacy
-  platform is involved.
-- Then read exactly the matching platform playbook:
-  - [references/wordpress.md](references/wordpress.md) for WordPress,
-    WooCommerce, Gutenberg, Elementor, ACF, themes, or plugins.
-  - [references/bitrix.md](references/bitrix.md) for 1C-Bitrix Site Manager,
-    Bitrix Framework, components, templates, modules, or D7.
-  - [references/tilda.md](references/tilda.md) for hosted Tilda projects, Zero
-    Block, custom code, forms, export, API sync, or Tilda-generated markup.
-  - [references/shopify.md](references/shopify.md) for Shopify themes, Liquid,
-    Online Store 2.0, sections, blocks, and app extensions.
-  - [references/other-platforms.md](references/other-platforms.md) for Drupal,
-    Webflow, headless CMS, static generators, or another platform.
-- Read [references/visual-direction.md](references/visual-direction.md) before
-  choosing or materially changing the visual language.
-- Read [references/site-archetypes.md](references/site-archetypes.md) for every
-  new site or substantial redesign. Use it to choose the site's content
-  architecture before choosing its visual style.
-- Read [references/quality-gates.md](references/quality-gates.md) before
-  verification or when changing performance-sensitive code.
-- Read [references/security-seo.md](references/security-seo.md) when the site
-  accepts input, fetches remote data, renders user content, has authentication,
-  or is public and indexable.
-- Read [references/platform-installation.md](references/platform-installation.md)
-  only when installing or distributing this skill.
+```text
+UNDERSTAND → ARCHETYPE → PLATFORM CONTRACT → VISUAL THESIS
+          → BUILD → VERIFY → REPORT
+```
 
-## Workflow
+Load references only at the step that needs them. Every path is relative to
+this file.
 
-### 1. Establish the brief
+### 1. Understand
 
-Inspect the repository, supplied references, existing brand assets, and content
-before writing code. Determine:
+Inspect the repository, brand assets, supplied copy, and content before coding.
+Write down, in a few lines:
 
-- the audience and primary action;
+- audience and their primary action;
 - the site's one-sentence promise;
-- the primary site archetype and, when useful, one secondary influence;
-- the required routes, states, and content;
-- the existing framework, component system, and deployment constraints;
-- the source of truth for content and the editor who must maintain it;
-- whether work targets source code, a visual editor, an export pipeline, a
-  staging instance, or a live production site;
-- three visual adjectives and one explicit visual anti-goal.
+- required routes, states, and content sources;
+- existing framework, component system, tokens, and deployment path;
+- who edits content afterwards and where;
+- hard constraints: brand, legal, performance budget, locales.
 
-Make reasonable assumptions when the brief is incomplete. Ask only when a
-missing choice would materially change the product.
+Make reasonable assumptions for gaps and state them. Ask only when a missing
+answer would change the product.
 
-### 2. Identify the platform contract
+### 2. Choose the archetype
 
-Detect the platform from files and runtime evidence. Read the matching playbook
-before editing. Do not force framework conventions onto a CMS or flatten an
-editable theme into hardcoded markup.
+Read `references/archetypes.md`. Choose one primary archetype from user
+intent and dominant content unit, plus at most one secondary influence. Then
+read the matching completeness checklist in `references/completeness.md` so the
+site is a whole product, not a homepage. Never default to a SaaS landing page
+because the workspace is empty.
 
-Write down four constraints:
+### 3. Fix the platform contract
+
+For a CMS, site builder, exported site, or unknown legacy platform, read
+`references/cms-platform-selection.md` and then exactly one playbook it routes
+to. For a code framework, read `references/frameworks.md`.
+
+Write four lines before editing:
 
 1. where custom code belongs;
-2. what editors must remain able to change;
+2. what editors must remain able to change without code;
 3. how cache and generated output are invalidated;
 4. how the change reaches staging and production.
 
-Never edit vendor, platform core, generated exports, or a live visual-builder
-page unless that is the verified source of truth and the user authorized it.
-Back up or version the editable source before a risky platform change.
+Modify the true source of truth. Never edit vendor code, platform core,
+generated exports, or a live visual-builder page unless that is verified as the
+source and the user authorized it. Version or back up the editable source
+before a risky change.
 
-### 3. Define a visual thesis
+### 4. Write the visual thesis
 
-Read [references/site-archetypes.md](references/site-archetypes.md). Choose an
-archetype from the audience, content, and primary action; never default to SaaS
-because the workspace is blank. Select a composition model, density, navigation
-model, and proof format that fit that archetype. A secondary influence may
-shape the presentation, but it must not obscure the primary job.
+Read `references/visual-thesis.md`. Derive direction from product, audience,
+content, brand, primary action, and constraints, not from current trends.
+Write a thesis of three to five sentences before styling: what the site is
+like, which tensions it resolves, the one composition rule, and one explicit
+anti-goal. Derive tokens from the thesis and any existing design system; do not
+reuse values from a previous project.
 
-Then choose one coherent visual direction grounded in the product. State it in
-one sentence before implementation. Define a small token system for color,
-type, space, radii, borders, and motion.
+Then read `references/anti-slop.md` and answer its questions for your plan.
+Techniques are not banned; unjustified defaults are.
 
-Use real copy and meaningful hierarchy. Generate or source imagery only when it
-supports the concept. Do not decorate empty space with arbitrary effects.
+### 5. Build
 
-Reject the anti-patterns in
-[references/visual-direction.md](references/visual-direction.md). A clean site
-is not automatically generic, and a dramatic site is not automatically good.
-Do not reuse the same section sequence, hero geometry, card grammar, or CTA
-placement across unrelated archetypes. Let the content model determine the
-page silhouette.
+Use the current stack. Do not add a large dependency for a small effect.
 
-### 4. Build the semantic foundation
+- Semantic landmarks, one `main`, one `h1`, logical heading order.
+- Native controls first; ARIA only where HTML cannot express the interaction.
+- Compose mobile deliberately (`references/responsive.md`), then verify wide
+  and awkward widths.
+- Design loading, empty, error, disabled, focus, hover, and success states.
+- Reserve intrinsic space for media and async content.
+- Prefer CSS for layout and motion; animate `transform` and `opacity`;
+  honor `prefers-reduced-motion`.
+- Copy and imagery follow `references/copy-and-imagery.md`: concrete claims,
+  no invented customers, metrics, or testimonials; keep supplied copy.
+- Validate untrusted input, keep secrets server-side, fail closed. Apply
+  `references/security-seo.md` when the site accepts input, renders user
+  content, authenticates, or is indexable.
 
-Use the repository's current stack. Do not replace working infrastructure or
-add a large dependency for a small visual effect.
-
-- Use semantic landmarks and exactly one primary `main`.
-- Keep heading levels logical and provide one clear `h1`.
-- Build mobile-first, then verify intermediate and wide widths.
-- Support keyboard use, visible focus, reduced motion, zoom, and reflow.
-- Reserve intrinsic space for images, video, embeds, and async content.
-- Use native controls before custom ARIA widgets.
-- Keep content in HTML when it conveys meaning; do not bake text into images.
-- Treat empty, loading, error, disabled, hover, focus, and success states as
-  designed states.
-
-Prefer CSS for layout and simple motion. Animate `transform` and `opacity`;
-avoid layout-thrashing effects. Remove dead code and placeholder content.
-
-For CMS work, expose intentional editor controls instead of arbitrary styling
-knobs. Keep presentation in themes/templates, business logic in modules or
-plugins, and content in the platform's content model.
-
-### 5. Protect trust boundaries
-
-Validate untrusted input before side effects. Keep secrets server-side. Avoid
-unsafe HTML, shell interpolation, unsanitized redirects, user-controlled fetch
-targets, and path concatenation. Enforce authentication, authorization, and
-ownership on every state-changing server path.
-
-Apply the targeted checklist in
-[references/security-seo.md](references/security-seo.md). Never claim a site is
-secure when a relevant trust boundary was not inspected.
+For CMS work keep presentation in themes or templates, logic in plugins or
+modules, and content in the platform's content model, with bounded editor
+controls.
 
 ### 6. Verify in a real browser
 
-Run the production build and serve the production output. Do not use a
-development server for final performance measurements.
+Read `references/verification.md`. Build for production and serve the built
+output; do not measure a dev server. At minimum:
 
-Inspect every critical route and interaction at approximately:
+- viewport matrix: about 320, 375, 768, one awkward width between your
+  breakpoints, 1440; wider when the layout has a wide variant;
+- screenshots of every critical route and state;
+- console errors and failed network requests;
+- a keyboard path through the primary journey and one failure path;
+- accessibility checks from `references/accessibility.md`; an automated audit
+  is supporting evidence, not proof;
+- Lighthouse per `references/performance.md`, three runs per route, evaluated
+  with `scripts/lighthouse-gate.mjs`.
 
-- 375 × 812;
-- 768 × 1024;
-- 1440 × 900.
+`scripts/browser-verify.mjs` automates the viewport matrix, console and
+network capture, overflow detection, keyboard smoke, and an optional axe-core
+audit when Playwright is already available. Never install heavy tooling into a
+user's project for one check without permission.
 
-Also inspect one awkward width between breakpoints. Check screenshots, keyboard
-navigation, console errors, failed requests, overflow, clipping, focus order,
-content reflow, and motion preferences. Exercise at least the primary user
-journey and one failure path.
+For a redesign of an existing site, capture before screenshots first
+(`references/visual-regression.md`).
 
-Test both the public page and the editing/publishing workflow when CMS behavior
-changed. Fix issues and repeat. Browser-visible evidence outranks assumptions
-from code.
+Fix what verification finds, then re-verify. Browser evidence outranks
+reasoning about code.
 
-### 7. Run deterministic quality gates
+### 7. Report
 
-Follow [references/quality-gates.md](references/quality-gates.md). Run
-Lighthouse against the production site three times per representative route,
-then evaluate the JSON reports with:
-
-```bash
-node <skill-dir>/scripts/lighthouse-gate.mjs <report-1.json> <report-2.json> <report-3.json>
-```
-
-Default median gates:
-
-- Performance: 90
-- Accessibility: 95
-- Best Practices: 95
-- SEO: 95
-- LCP: at most 2500 ms
-- CLS: at most 0.10
-- TBT: at most 200 ms
-
-Treat thresholds as floors, not targets. Do not weaken them to make a failing
-build pass. Document a justified exception when external scripts or an
-intentional product trade-off prevent a gate.
-
-### 8. Report the outcome
-
-Lead with what was built or fixed. Include:
-
-- the visual thesis and major implementation decisions;
-- the selected archetype, composition model, and any secondary influence;
-- routes and viewports verified;
-- platform version, edit surface, cache actions, and deployment target;
-- commands run and their results;
-- Lighthouse median scores and failed audits, if any;
-- remaining risks, exceptions, or unverified areas.
-
-Do not say "Lighthouse passed," "accessible," "secure," or "responsive"
-without fresh evidence from this implementation.
+Emit the scorecard from `references/verification.md`: what was built, the
+archetype and thesis, platform contract, each check with its result or an
+explicit "not run", Lighthouse medians, and remaining risks. Use "verified"
+only for things you observed in this session. Say "not tested" for the rest.
 
 ## Definition of done
 
-Finish only when:
-
-- the primary journey works end to end;
-- no placeholder copy or accidental stock UI remains;
-- the editor can maintain intended content without modifying source code;
-- critical routes work at the verified widths;
-- keyboard and focus behavior are usable;
-- production build, lint, typecheck, and tests pass when available;
-- the browser console has no unexplained errors;
-- Lighthouse reports meet the gates or exceptions are explicit;
-- public pages have correct metadata, canonical behavior, and share previews;
-- relevant trust boundaries have validation and fail closed.
+- The primary journey and one failure path work end to end in the browser.
+- Every route in the completeness checklist exists or is explicitly deferred.
+- No placeholder copy, fabricated proof, or accidental stock UI remains.
+- Editors can change intended content without code.
+- Critical routes are composed, not merely collapsed, across the viewport
+  matrix.
+- Keyboard, focus, zoom, and reduced-motion behavior are usable.
+- Build, lint, typecheck, and tests pass when the project has them.
+- The console has no unexplained errors.
+- Lighthouse medians meet the gates or exceptions are written down.
+- Public pages have correct metadata, canonical, and share previews.
+- Trust boundaries fail closed.

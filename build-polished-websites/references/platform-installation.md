@@ -56,7 +56,7 @@ Keep `agents/openai.yaml`; it provides Codex UI metadata and does not change the
 portable skill instructions.
 
 Official reference:
-https://learn.chatgpt.com/docs/customization/overview
+https://learn.chatgpt.com/docs/build-skills
 
 ## OpenCode
 

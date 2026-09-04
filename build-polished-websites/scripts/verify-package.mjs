@@ -11,10 +11,18 @@ const skillRoot = resolve(process.argv[2] ?? defaultRoot);
 const required = [
   "SKILL.md",
   "agents/openai.yaml",
+  "references/archetypes.md",
+  "references/completeness.md",
+  "references/visual-thesis.md",
+  "references/anti-slop.md",
+  "references/copy-and-imagery.md",
+  "references/responsive.md",
+  "references/accessibility.md",
+  "references/verification.md",
+  "references/performance.md",
+  "references/visual-regression.md",
+  "references/frameworks.md",
   "references/cms-platform-selection.md",
-  "references/site-archetypes.md",
-  "references/visual-direction.md",
-  "references/quality-gates.md",
   "references/security-seo.md",
   "references/wordpress.md",
   "references/bitrix.md",
@@ -23,8 +31,11 @@ const required = [
   "references/other-platforms.md",
   "references/platform-installation.md",
   "scripts/lighthouse-gate.mjs",
+  "scripts/browser-verify.mjs",
+  "scripts/skill-tokens.mjs",
   "scripts/verify-package.mjs",
 ];
+const SKILL_TOKEN_BUDGET = Number(process.env.SKILL_TOKEN_BUDGET ?? 2000);
 const failures = [];
 
 async function exists(path) {
@@ -60,9 +71,20 @@ if (await exists(skillPath)) {
     if (!/^name:\s*build-polished-websites\s*$/m.test(frontmatter[1])) {
       failures.push("SKILL.md name does not match the package directory");
     }
-    if (!/^description:\s*.+$/m.test(frontmatter[1])) {
+    const description = frontmatter[1].match(/^description:\s*(.+)$/m)?.[1] ?? "";
+    if (!description) {
       failures.push("SKILL.md description is missing");
+    } else if (description.length > 1024) {
+      failures.push(`SKILL.md description is ${description.length} characters; agents cap it at 1024`);
     }
+  }
+  const approxTokens = Math.ceil(skill.length / 4);
+  if (approxTokens > SKILL_TOKEN_BUDGET) {
+    failures.push(`SKILL.md is ~${approxTokens} tokens; budget is ${SKILL_TOKEN_BUDGET} (move detail into references)`);
+  }
+  // Backtick-quoted relative paths (references/x.md, scripts/x.mjs) must exist.
+  for (const match of skill.matchAll(/`((?:references|scripts)\/[A-Za-z0-9._-]+)`/g)) {
+    if (!(await exists(join(skillRoot, match[1])))) failures.push(`SKILL.md mentions missing file: ${match[1]}`);
   }
 }
 
