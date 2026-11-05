@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harlow &amp; Reyes · Family law in Portland, Oregon</title>
+<meta name="description" content="Harlow & Reyes is a two-partner family law practice in Portland, Oregon: divorce, custody and parenting time, mediation, and prenuptial agreements. Book a free 30-minute consultation.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#2f5b4c">
+<meta property="og:title" content="Harlow & Reyes · Family law in Portland">
+<meta property="og:description" content="Divorce, custody, mediation and prenuptial agreements. Start with a free 30-minute consultation.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%232f5b4c'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='16' fill='%23fff' text-anchor='middle'%3EH%26amp;R%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LegalService","name":"Harlow & Reyes","areaServed":"Portland, Oregon","address":{"@type":"PostalAddress","addressLocality":"Portland","addressRegion":"OR","addressCountry":"US"},"telephone":"+1-503-555-0142","openingHours":"Mo-Fr 09:00-17:00","knowsAbout":["Divorce","Child custody","Family mediation","Prenuptial agreements"]}
+</script>
+<style>
+:root {
+  --font-display: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  --font-text: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  /* palette: Portland rain grey, Douglas fir, slate */
+  --hue: 228;
+  --ground: oklch(97.6% 0.006 var(--hue));
+  --surface: oklch(94.6% 0.011 var(--hue));
+  --line: oklch(86% 0.016 var(--hue));
+  --ink: oklch(26% 0.03 240);
+  --muted: oklch(45% 0.025 240);
+  --fir: oklch(41% 0.065 168);           /* action, and only action */
+  --fir-hover: oklch(34% 0.06 168);
+  --on-fir: oklch(98.5% 0.006 168);
+  --week-a: oklch(84% 0.05 168);         /* parenting-plan calendar: parent A */
+  --week-b: oklch(86% 0.035 250);        /* parent B */
+  --ok: oklch(41% 0.065 168);
+  --error: oklch(48% 0.16 28);
+  --focus: oklch(55% 0.13 250);
+  --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+  --space-5: 1.5rem; --space-6: 2rem; --space-7: 3rem; --space-8: 4rem; --space-9: 6rem; --space-10: 8rem;
+  /* scale 1.2, larger base for a stressed reader */
+  --step--1: clamp(0.94rem, 0.92rem + 0.1vw, 1rem);
+  --step-0: clamp(1.1rem, 1.06rem + 0.2vw, 1.2rem);
+  --step-1: clamp(1.3rem, 1.24rem + 0.3vw, 1.45rem);
+  --step-2: clamp(1.55rem, 1.44rem + 0.55vw, 1.85rem);
+  --step-3: clamp(1.85rem, 1.65rem + 1vw, 2.4rem);
+  --step-4: clamp(2.2rem, 1.9rem + 1.6vw, 3.1rem);
+  --radius-1: 4px; --radius-2: 8px;
+  --control-h: 3.1rem;
+  --shadow-1: 0 1px 1px oklch(20% 0.02 var(--hue) / 0.05), 0 2px 6px oklch(20% 0.02 var(--hue) / 0.06);
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-1: 150ms;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body { margin: 0; background: var(--ground); color: var(--ink); font-family: var(--font-text); font-size: var(--step-0); line-height: 1.6; font-synthesis: none; }
+::selection { background: var(--week-a); color: var(--ink); }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.15; margin: 0; text-wrap: balance; letter-spacing: -0.005em; }
+p, li { text-wrap: pretty; }
+p { margin: 0 0 var(--space-4); }
+a { color: var(--fir); text-underline-offset: 0.18em; text-decoration-thickness: 1.5px; }
+a:hover { color: var(--fir-hover); text-decoration-thickness: 2.5px; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+.wrap { width: min(100% - 2 * clamp(1rem, 4vw, 2.5rem), 74rem); margin-inline: auto; }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip { position: absolute; left: 1rem; top: -4rem; background: var(--fir); color: var(--on-fir); padding: .5rem 1rem; z-index: 10; }
+.skip:focus { top: 1rem; }
+[id] { scroll-margin-top: var(--space-5); }
+time, .num { font-variant-numeric: tabular-nums; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5em; min-height: var(--control-h); padding: 0 var(--space-5); border-radius: var(--radius-1); background: var(--fir); color: var(--on-fir); font: 700 var(--step-0)/1.2 var(--font-text); text-decoration: none; border: 0; cursor: pointer; transition: background-color var(--dur-1) var(--ease-out); }
+.btn:hover { background: var(--fir-hover); color: var(--on-fir); text-decoration: none; }
+.btn:active { transform: translateY(1px); }
+
+/* header */
+.top { border-bottom: 1px solid var(--line); background: var(--ground); }
+.top-in { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-3) var(--space-5); padding-block: var(--space-4); }
+.brand { text-decoration: none; color: var(--ink); display: flex; flex-direction: column; line-height: 1.1; }
+.brand b { font-family: var(--font-display); font-weight: 600; font-size: var(--step-2); }
+.brand span { font-size: var(--step--1); color: var(--muted); }
+.top nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-2); align-items: center; }
+.top nav a:not(.btn) { color: var(--ink); text-decoration: none; padding: var(--space-3) var(--space-2); display: block; }
+.top nav a:not(.btn):hover { text-decoration: underline; }
+.top .tel { font-weight: 700; }
+@media (max-width: 880px) { .top nav li.opt { display: none; } }
+
+/* opening */
+.opening { padding-block: var(--space-8) var(--space-8); display: grid; gap: var(--space-7); }
+@media (min-width: 940px) { .opening { grid-template-columns: 7fr 5fr; column-gap: var(--space-8); align-items: start; } }
+.opening h1 { font-size: var(--step-4); max-width: 20ch; }
+.opening .lede { font-size: var(--step-1); line-height: 1.5; max-width: 38ch; margin-top: var(--space-5); color: var(--ink); }
+.opening .actions { display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-5); align-items: center; margin-top: var(--space-6); }
+.opening .actions p { margin: 0; color: var(--muted); font-size: var(--step--1); }
+.areas-quick { list-style: none; padding: 0; margin: var(--space-6) 0 0; display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); color: var(--muted); }
+.areas-quick a { color: var(--ink); }
+.reassure { background: var(--surface); border-radius: var(--radius-2); padding: var(--space-6); }
+.reassure h2 { font-size: var(--step-2); margin-bottom: var(--space-4); }
+.reassure ul { margin: 0; padding: 0; list-style: none; display: grid; gap: var(--space-4); }
+.reassure li { display: grid; grid-template-columns: 1.5rem 1fr; gap: var(--space-3); }
+.reassure li svg { width: 1.5rem; height: 1.5rem; color: var(--fir); margin-top: 0.15em; }
+.reassure li b { display: block; }
+.reassure li span { color: var(--muted); font-size: var(--step--1); }
+
+/* section rhythm */
+.sec { padding-block: var(--space-9); border-top: 1px solid var(--line); }
+.sec-head { max-width: 44rem; margin-bottom: var(--space-7); }
+.sec-head h2 { font-size: var(--step-4); }
+.sec-head p { margin-top: var(--space-4); color: var(--muted); font-size: var(--step-1); line-height: 1.5; }
+
+/* practice areas: a ledger, not cards */
+.practice { display: grid; gap: 0; }
+.area { display: grid; gap: var(--space-4) var(--space-8); padding-block: var(--space-6); border-top: 1px solid var(--line); }
+.area:last-child { border-bottom: 1px solid var(--line); }
+@media (min-width: 860px) { .area { grid-template-columns: 4fr 8fr; } }
+.area h3 { font-size: var(--step-3); }
+.area h3 + p { color: var(--muted); margin: var(--space-2) 0 0; font-size: var(--step--1); }
+.area .body p { max-width: 62ch; }
+.area ul { margin: 0; padding-left: 1.2em; display: grid; gap: var(--space-1); max-width: 62ch; }
+.area .body > p:last-child { margin-bottom: 0; }
+.cal { margin: var(--space-5) 0 0; max-width: 30rem; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; font-size: var(--step--1); }
+.cal-grid span { display: grid; place-items: center; min-height: 2.4rem; border-radius: 3px; font-variant-numeric: tabular-nums; }
+.cal-grid .d { color: var(--muted); min-height: 1.6rem; font-weight: 700; }
+.cal-grid .a { background: var(--week-a); }
+.cal-grid .b { background: var(--week-b); }
+.cal figcaption { font-size: var(--step--1); color: var(--muted); margin-top: var(--space-3); display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); }
+.key { display: inline-flex; align-items: center; gap: var(--space-2); }
+.key i { width: 1rem; height: 1rem; border-radius: 3px; display: inline-block; }
+
+/* first consultation: 30 minutes, drawn to scale */
+.consult-bar { display: grid; grid-template-columns: 5fr 15fr 10fr; gap: 4px; margin-bottom: var(--space-3); }
+.consult-bar div { height: 0.9rem; background: var(--fir); border-radius: 2px; }
+.consult-bar div:nth-child(2) { background: color-mix(in oklch, var(--fir), var(--ground) 35%); }
+.consult-bar div:nth-child(3) { background: color-mix(in oklch, var(--fir), var(--ground) 62%); }
+.consult-scale { display: grid; grid-template-columns: 5fr 15fr 10fr; font-size: var(--step--1); color: var(--muted); margin-bottom: var(--space-6); font-variant-numeric: tabular-nums; }
+.consult-scale span:last-child { display: flex; justify-content: space-between; }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-6); }
+@media (min-width: 860px) { .steps { grid-template-columns: 1fr 1fr 1fr; gap: var(--space-6); } }
+.steps time::before { content: ""; display: inline-block; width: .8em; height: .8em; border-radius: 2px; background: var(--fir); margin-right: .45em; vertical-align: -.05em; }
+.steps li:nth-child(2) time::before { background: color-mix(in oklch, var(--fir), var(--ground) 35%); }
+.steps li:nth-child(3) time::before { background: color-mix(in oklch, var(--fir), var(--ground) 62%); }
+.consult { background: oklch(95.5% 0.018 168); border-top: 0; }
+.consult .around > div { background: var(--ground); }
+.consult-bar div { height: 1.4rem; }
+.steps li { border-top: 3px solid var(--fir); padding-top: var(--space-4); }
+.steps li:nth-child(2) { border-color: color-mix(in oklch, var(--fir), var(--ground) 35%); }
+.steps li:nth-child(3) { border-color: color-mix(in oklch, var(--fir), var(--ground) 62%); }
+.steps time { font-weight: 700; display: block; color: var(--muted); font-size: var(--step--1); }
+.steps h3 { font-size: var(--step-2); margin: var(--space-2) 0 var(--space-3); }
+.steps p { margin: 0; }
+.around { display: grid; gap: var(--space-5); margin-top: var(--space-7); }
+@media (min-width: 760px) { .around { grid-template-columns: 1fr 1fr; gap: var(--space-7); } }
+.around > div { background: var(--surface); border-radius: var(--radius-2); padding: var(--space-5) var(--space-6); }
+.around h3 { font-size: var(--step-1); margin-bottom: var(--space-3); }
+.around ul { margin: 0; padding-left: 1.2em; display: grid; gap: var(--space-1); }
+
+/* partners */
+.partners { display: grid; gap: var(--space-8); }
+@media (min-width: 860px) { .partners { grid-template-columns: 1fr 1fr; gap: var(--space-8); } }
+.partner { display: grid; gap: var(--space-5); align-content: start; }
+@media (min-width: 560px) { .partner { grid-template-columns: 9rem 1fr; } }
+.portrait { margin: 0; aspect-ratio: 4 / 5; background: var(--surface); border: 1.5px dashed var(--line); border-radius: var(--radius-2); display: grid; place-items: center; padding: var(--space-3); text-align: center; font-size: 0.82rem; line-height: 1.35; color: var(--muted); }
+@media (max-width: 559px) { .portrait { width: 9rem; } }
+.partner h3 { font-size: var(--step-3); }
+.partner .role { color: var(--muted); margin: var(--space-1) 0 var(--space-4); }
+.partner dl { margin: var(--space-4) 0 0; display: grid; grid-template-columns: auto 1fr; gap: var(--space-2) var(--space-4); font-size: var(--step--1); border-top: 1px solid var(--line); padding-top: var(--space-4); }
+.partner dt { color: var(--muted); }
+.partner dd { margin: 0; }
+.draft-note { margin-top: var(--space-6); font-size: var(--step--1); color: var(--muted); }
+
+/* fees */
+.fees { display: grid; gap: 0; max-width: 60rem; }
+.fee { display: grid; gap: var(--space-2) var(--space-6); padding-block: var(--space-5); border-top: 1px solid var(--line); }
+.fee:last-child { border-bottom: 1px solid var(--line); }
+@media (min-width: 760px) { .fee { grid-template-columns: 16rem 1fr; } }
+.fee h3 { font-size: var(--step-1); }
+.fee p { margin: 0; max-width: 60ch; }
+
+/* request form */
+.request { background: var(--surface); }
+.form-grid { display: grid; gap: var(--space-7); }
+@media (min-width: 940px) { .form-grid { grid-template-columns: 7fr 4fr; gap: var(--space-8); align-items: start; } }
+form { display: grid; gap: var(--space-5); }
+.row2 { display: grid; gap: var(--space-5); }
+@media (min-width: 600px) { .row2 { grid-template-columns: 1fr 1fr; } }
+.field { display: grid; gap: var(--space-2); align-content: start; }
+.field label, legend { font-weight: 700; padding: 0; }
+.hint { font-size: var(--step--1); color: var(--muted); margin: 0; }
+input[type=text], input[type=email], input[type=tel], select, textarea { font: inherit; color: var(--ink); background: var(--ground); border: 1.5px solid oklch(66% 0.02 240); border-radius: var(--radius-1); min-height: var(--control-h); padding: var(--space-2) var(--space-3); width: 100%; caret-color: var(--fir); }
+textarea { min-height: 7rem; resize: vertical; }
+input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+[aria-invalid="true"] { border-color: var(--error) !important; }
+.error { color: var(--error); font-weight: 700; font-size: var(--step--1); margin: 0; }
+.error:empty { display: none; }
+fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+.choices { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-2); }
+.choice { position: relative; }
+.choice input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+.choice span { display: inline-flex; align-items: center; min-height: 2.9rem; padding: 0 var(--space-4); border: 1.5px solid oklch(66% 0.02 240); border-radius: var(--radius-1); background: var(--ground); }
+.choice input:checked + span { background: var(--fir); border-color: var(--fir); color: var(--on-fir); font-weight: 700; }
+.choice input:focus-visible + span { outline: 3px solid var(--focus); outline-offset: 2px; }
+.check { display: grid; grid-template-columns: 1.4rem 1fr; gap: var(--space-3); align-items: start; }
+.check input { width: 1.3rem; height: 1.3rem; margin: 0.2em 0 0; accent-color: var(--fir); }
+.aside { display: grid; gap: var(--space-5); }
+.aside > div { background: var(--ground); border-radius: var(--radius-2); padding: var(--space-5) var(--space-6); box-shadow: var(--shadow-1); }
+.aside h3 { font-size: var(--step-1); margin-bottom: var(--space-3); }
+.aside p:last-child, .aside ul:last-child { margin-bottom: 0; }
+.aside ul { padding-left: 1.2em; margin: 0; display: grid; gap: var(--space-1); }
+.demo { font-size: var(--step--1); color: var(--muted); margin: 0; }
+.done { background: var(--ground); border-left: 4px solid var(--ok); padding: var(--space-5); border-radius: var(--radius-1); }
+.done h3 { font-size: var(--step-2); margin-bottom: var(--space-2); }
+.done p:last-child { margin: 0; }
+
+/* contact */
+.contact-grid { display: grid; gap: var(--space-7); }
+@media (min-width: 860px) { .contact-grid { grid-template-columns: 1fr 1fr 1fr; } }
+.contact-grid h3 { font-size: var(--step-1); margin-bottom: var(--space-3); }
+.hours { border-collapse: collapse; width: 100%; max-width: 22rem; }
+.hours th, .hours td { text-align: left; padding: var(--space-2) 0; border-bottom: 1px solid var(--line); font-weight: 400; }
+.hours td { text-align: right; font-variant-numeric: tabular-nums; }
+.slot { border: 1.5px dashed var(--line); border-radius: var(--radius-1); padding: var(--space-3) var(--space-4); color: var(--muted); font-size: var(--step--1); }
+address { font-style: normal; }
+
+footer { background: var(--ink); color: oklch(90% 0.01 240); padding-block: var(--space-8) var(--space-6); font-size: var(--step--1); }
+footer a { color: oklch(92% 0.03 168); }
+footer a:hover { color: #fff; }
+footer :focus-visible { outline-color: oklch(85% 0.08 168); }
+.foot { display: grid; gap: var(--space-6); }
+@media (min-width: 860px) { .foot { grid-template-columns: 1fr 2fr; gap: var(--space-8); } }
+.foot .name { font-family: var(--font-display); font-size: var(--step-2); color: #fff; margin-bottom: var(--space-2); }
+.disclaimer h2 { font-family: var(--font-text); font-size: var(--step-0); font-weight: 700; color: #fff; margin-bottom: var(--space-2); }
+.disclaimer p { max-width: 70ch; }
+.fine { margin-top: var(--space-6); padding-top: var(--space-4); border-top: 1px solid oklch(40% 0.03 240); display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-2); }
+
+@media print { .top nav, .request, .opening .actions { display: none; } body { background: #fff; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="tick" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#main"><b>Harlow &amp; Reyes</b><span>Family law · Portland, Oregon</span></a>
+    <nav aria-label="Main">
+      <ul>
+        <li class="opt"><a href="#practice">Practice areas</a></li>
+        <li class="opt"><a href="#consultation">First consultation</a></li>
+        <li class="opt"><a href="#fees">Fees</a></li>
+        <li class="opt"><a class="tel" href="tel:+15035550142">(503) 555-0142</a></li>
+        <li><a class="btn" href="#request">Book a free consultation</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="wrap opening" aria-labelledby="h1">
+    <div>
+      <h1 id="h1">Family law in Portland, explained plainly and handled with care</h1>
+      <p class="lede">We are a two-partner practice working on divorce, custody and parenting time, mediation, and prenuptial agreements. Your first 30 minutes with us are free.</p>
+      <div class="actions">
+        <a class="btn" href="#request">Book a free 30-minute consultation</a>
+        <p>Or call <a href="tel:+15035550142">(503) 555-0142</a>, Monday to Friday, 9–5</p>
+      </div>
+      <ul class="areas-quick" aria-label="Practice areas">
+        <li><a href="#divorce">Divorce</a></li>
+        <li><a href="#custody">Custody &amp; parenting time</a></li>
+        <li><a href="#mediation">Mediation</a></li>
+        <li><a href="#prenup">Prenuptial agreements</a></li>
+      </ul>
+    </div>
+    <aside class="reassure" aria-labelledby="reassure-h">
+      <h2 id="reassure-h">Before you book</h2>
+      <ul>
+        <li><svg aria-hidden="true"><use href="#tick"/></svg><div><b>Free and without obligation</b><span>The first consultation costs nothing, and you decide afterwards whether to go further.</span></div></li>
+        <li><svg aria-hidden="true"><use href="#tick"/></svg><div><b>In person, by phone or by video</b><span>Choose what is easiest and safest for you.</span></div></li>
+        <li><svg aria-hidden="true"><use href="#tick"/></svg><div><b>You speak to a partner</b><span>Either Ruth Harlow or Daniel Reyes, not an intake script.</span></div></li>
+      </ul>
+    </aside>
+  </section>
+
+  <section class="sec consult" id="consultation" aria-labelledby="consult-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="consult-h">How the free 30 minutes work</h2>
+        <p>Most people arrive worried about what they are walking into. Here is the half hour, to scale.</p>
+      </div>
+      <div class="consult-bar" aria-hidden="true"><div></div><div></div><div></div></div>
+      <div class="consult-scale" aria-hidden="true"><span>0</span><span>5 min</span><span><span>20 min</span><span>30</span></span></div>
+      <ol class="steps">
+        <li><time>Minutes 0–5</time><h3>You tell us what is happening</h3><p>In your own words, at your own pace. Nothing you say obliges you to anything.</p></li>
+        <li><time>Minutes 5–20</time><h3>We ask questions and explain the law</h3><p>We ask about children, property, timing and safety, then explain how Oregon courts approach situations like yours and what the process would look like from here.</p></li>
+        <li><time>Minutes 20–30</time><h3>Your options and what they cost</h3><p>You leave knowing your realistic options, roughly how long each takes, how we would charge for it, and what to do next, even if that next step does not involve us.</p></li>
+      </ol>
+      <div class="around">
+        <div>
+          <h3>Useful to have with you</h3>
+          <ul>
+            <li>Any court papers you have received or filed</li>
+            <li>A rough list of property, debts and accounts</li>
+            <li>Your children's current schedule, if children are involved</li>
+            <li>Questions written down, so none are forgotten</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Afterwards</h3>
+          <p>There is no follow-up sales call. If you want us to act for you, we send a written engagement letter setting out the scope of work and how fees are charged. Nothing starts until you sign it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="practice" aria-labelledby="practice-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="practice-h">What we help with</h2>
+        <p>Four kinds of family matter, all under Oregon law. If yours is not listed, ask in the consultation and we will tell you honestly whether we are the right fit.</p>
+      </div>
+      <div class="practice">
+        <article class="area" id="divorce">
+          <div><h3>Divorce</h3><p>Dissolution of marriage in Oregon</p></div>
+          <div class="body">
+            <p>Whether you and your spouse agree on most things or on very little, we explain the process from filing to judgment, and what each step asks of you.</p>
+            <ul>
+              <li>Dividing property, debts and retirement accounts</li>
+              <li>Spousal support</li>
+              <li>Uncontested divorces handled through agreed paperwork</li>
+              <li>Contested cases taken to court when agreement is not possible</li>
+            </ul>
+          </div>
+        </article>
+        <article class="area" id="custody">
+          <div><h3>Custody &amp; parenting time</h3><p>Parenting plans, custody, child support</p></div>
+          <div class="body">
+            <p>A parenting plan sets out where children live and when. We help you build one that fits your children's school weeks, your work and the distance between homes, and we help change one when life changes.</p>
+            <figure class="cal">
+              <div class="cal-grid" role="img" aria-label="Example two-week calendar for a 2-2-3 schedule: Parent A has Monday and Tuesday, Parent B Wednesday and Thursday, Parent A Friday to Sunday, then the pattern swaps in week two.">
+                <span class="d">M</span><span class="d">T</span><span class="d">W</span><span class="d">T</span><span class="d">F</span><span class="d">S</span><span class="d">S</span>
+                <span class="a">1</span><span class="a">2</span><span class="b">3</span><span class="b">4</span><span class="a">5</span><span class="a">6</span><span class="a">7</span>
+                <span class="b">8</span><span class="b">9</span><span class="a">10</span><span class="a">11</span><span class="b">12</span><span class="b">13</span><span class="b">14</span>
+              </div>
+              <figcaption><span class="key"><i style="background:var(--week-a)"></i>Parent A</span><span class="key"><i style="background:var(--week-b)"></i>Parent B</span><span>One common pattern, the 2-2-3 schedule. Yours may look nothing like it.</span></figcaption>
+            </figure>
+          </div>
+        </article>
+        <article class="area" id="mediation">
+          <div><h3>Mediation</h3><p>Reaching agreement outside court</p></div>
+          <div class="body">
+            <p>In mediation, both of you sit down with a neutral mediator to work out property, support or parenting arrangements yourselves. We act as mediator for couples, or advise one of you while you mediate elsewhere, never both at once.</p>
+            <p>Mediation is not right for every family. Where there has been abuse or one person feels unable to speak freely, we will say so and suggest another route.</p>
+          </div>
+        </article>
+        <article class="area" id="prenup">
+          <div><h3>Prenuptial agreements</h3><p>Before marriage, or after it</p></div>
+          <div class="body">
+            <p>A prenuptial agreement records how you will handle property, debts and support if the marriage ends. We draft agreements, review ones drafted by the other side, and explain each clause in plain English.</p>
+            <p>Give yourselves time: an agreement signed in a hurry, close to the wedding, is easier to challenge later.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="sec" id="partners" aria-labelledby="partners-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="partners-h">The two partners</h2>
+        <p>Every client works directly with one of us. We also review each other's cases, so a second partner knows your matter if one of us is away.</p>
+      </div>
+      <div class="partners">
+        <article class="partner">
+          <figure class="portrait"><figcaption>Portrait to supply: Ruth Harlow, head and shoulders, natural light, 4:5</figcaption></figure>
+          <div>
+            <h3>Ruth Harlow</h3>
+            <p class="role">Partner · divorce and property</p>
+            <p>Ruth handles divorces where there is property, a business or retirement savings to divide. She would rather spend an hour explaining a settlement than have you sign something you do not understand.</p>
+            <p>She also drafts and reviews prenuptial agreements.</p>
+            <dl><dt>Focus</dt><dd>Divorce, property division, prenuptial agreements</dd><dt>Admitted</dt><dd>Oregon State Bar <span class="slot" style="padding:0 .4em;white-space:nowrap;display:inline-block">year to supply</span></dd></dl>
+          </div>
+        </article>
+        <article class="partner">
+          <figure class="portrait"><figcaption>Portrait to supply: Daniel Reyes, head and shoulders, natural light, 4:5</figcaption></figure>
+          <div>
+            <h3>Daniel Reyes</h3>
+            <p class="role">Partner · custody and mediation</p>
+            <p>Daniel works on custody, parenting time and child support, and acts as a mediator for couples who want to settle outside court. He speaks Spanish and English, and meets clients in either.</p>
+            <p>When a case has to go before a judge, he prepares parents for what the hearing will be like, step by step.</p>
+            <dl><dt>Focus</dt><dd>Custody, parenting plans, mediation</dd><dt>Languages</dt><dd>English, Spanish</dd><dt>Admitted</dt><dd>Oregon State Bar <span class="slot" style="padding:0 .4em;white-space:nowrap;display:inline-block">year to supply</span></dd></dl>
+          </div>
+        </article>
+      </div>
+      <p class="draft-note">Bios are drafts for the partners to review. Portraits and bar admission years are still to be supplied.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="fees" style="padding-block:var(--space-8)" aria-labelledby="fees-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="fees-h">How we charge</h2>
+        <p>Family matters are stressful enough without surprise invoices. You will know how a matter is charged before any work begins.</p>
+      </div>
+      <div class="fees">
+        <div class="fee"><h3>First consultation</h3><p>Free, 30 minutes, with a partner.</p></div>
+        <div class="fee"><h3>Fixed fees</h3><p>For work with a predictable shape, such as an uncontested divorce or drafting a prenuptial agreement, we quote one fixed price in writing.</p></div>
+        <div class="fee"><h3>Hourly, with estimates</h3><p>Contested matters are billed hourly against a retainer. We give you a written estimate for each stage, and tell you before an estimate is exceeded.</p></div>
+        <div class="fee"><h3>Mediation</h3><p>Billed hourly and usually shared between both people, in whatever proportion you agree.</p></div>
+        <div class="fee"><h3>Monthly statements</h3><p>Itemised, in plain language: who did what, for how long, and why.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec request" id="request" aria-labelledby="request-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="request-h">Request your free consultation</h2>
+        <p>Tell us how to reach you and when suits you. We reply within one working day to arrange a time.</p>
+      </div>
+      <div class="form-grid">
+        <form id="form" novalidate>
+          <div class="row2">
+            <div class="field">
+              <label for="f-name">Your name</label>
+              <input type="text" id="f-name" name="name" autocomplete="name" required aria-describedby="f-name-err">
+              <p class="error" id="f-name-err"></p>
+            </div>
+            <div class="field">
+              <label for="f-matter">What is it about?</label>
+              <select id="f-matter" name="matter" required aria-describedby="f-matter-err">
+                <option value="">Choose one</option>
+                <option>Divorce</option>
+                <option>Custody or parenting time</option>
+                <option>Mediation</option>
+                <option>Prenuptial agreement</option>
+                <option>Something else or not sure</option>
+              </select>
+              <p class="error" id="f-matter-err"></p>
+            </div>
+          </div>
+          <div class="row2">
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input type="email" id="f-email" name="email" autocomplete="email" aria-describedby="f-contact-hint f-email-err">
+              <p class="error" id="f-email-err"></p>
+            </div>
+            <div class="field">
+              <label for="f-tel">Phone</label>
+              <input type="tel" id="f-tel" name="tel" autocomplete="tel" aria-describedby="f-contact-hint f-tel-err">
+              <p class="error" id="f-tel-err"></p>
+            </div>
+          </div>
+          <p class="hint" id="f-contact-hint" style="margin-top:calc(var(--space-3) * -1)">Give at least one. If it is not safe for us to leave a message, say so in the note.</p>
+          <fieldset>
+            <legend>How would you like to meet?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="format" value="Office" checked><span>At the office</span></label>
+              <label class="choice"><input type="radio" name="format" value="Phone"><span>Phone</span></label>
+              <label class="choice"><input type="radio" name="format" value="Video"><span>Video</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Best time of day</legend>
+            <div class="choices">
+              <label class="choice"><input type="checkbox" name="when" value="Morning"><span>Morning</span></label>
+              <label class="choice"><input type="checkbox" name="when" value="Midday"><span>Midday</span></label>
+              <label class="choice"><input type="checkbox" name="when" value="Afternoon"><span>Afternoon</span></label>
+            </div>
+          </fieldset>
+          <div class="field">
+            <label for="f-note">Anything we should know first <span style="font-weight:400">(optional)</span></label>
+            <textarea id="f-note" name="note" aria-describedby="f-note-hint"></textarea>
+            <p class="hint" id="f-note-hint">A sentence or two is enough. Please keep details of your case for the consultation itself.</p>
+          </div>
+          <label class="check"><input type="checkbox" id="f-ack" name="ack" required aria-describedby="f-ack-err"><span>I understand that sending this form does not make Harlow &amp; Reyes my lawyers.</span></label>
+          <p class="error" id="f-ack-err"></p>
+          <div style="display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center">
+            <button class="btn" type="submit">Request consultation</button>
+            <p class="demo">Demo form: entries are checked here but not sent anywhere.</p>
+          </div>
+          <div class="done" id="done" hidden tabindex="-1"></div>
+        </form>
+        <div class="aside">
+          <div>
+            <h3>Prefer to call?</h3>
+            <p><a href="tel:+15035550142" style="font-size:var(--step-1);font-weight:700">(503) 555-0142</a><br>Monday to Friday, 9:00–5:00</p>
+          </div>
+          <div>
+            <h3>If you are in danger</h3>
+            <p>Call 911. A consultation request is not monitored around the clock.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="contact-h">Contact and office hours</h2></div>
+      <div class="contact-grid">
+        <div>
+          <h3>Office</h3>
+          <address>
+            Harlow &amp; Reyes<br>
+            Portland, Oregon<br>
+            <span class="slot" style="display:inline-block;margin-top:var(--space-2)">Street address and suite to be supplied by the practice</span>
+          </address>
+        </div>
+        <div>
+          <h3>Hours</h3>
+          <table class="hours">
+            <caption class="visually-hidden">Office hours</caption>
+            <tr><th scope="row">Monday–Friday</th><td>9:00–5:00</td></tr>
+            <tr><th scope="row">Saturday, Sunday</th><td>Closed</td></tr>
+          </table>
+          <p class="hint" style="margin-top:var(--space-3)">Consultations by video can be arranged early morning or early evening on request.</p>
+        </div>
+        <div>
+          <h3>Phone and email</h3>
+          <p><a href="tel:+15035550142">(503) 555-0142</a></p>
+          <p class="slot">Email address to be supplied by the practice</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <p class="name">Harlow &amp; Reyes</p>
+        <p>Family law · Portland, Oregon</p>
+        <p><a href="#request">Book a free consultation</a><br><a href="#practice">Practice areas</a><br><a href="#fees">How we charge</a></p>
+      </div>
+      <div class="disclaimer">
+        <h2>Legal disclaimer</h2>
+        <p>The information on this website is general and is not legal advice for your situation. Reading it, calling us, or sending the consultation form does not create an attorney–client relationship. That relationship begins only when both you and Harlow &amp; Reyes have signed an engagement letter. Please do not send confidential information until then.</p>
+        <p>Past outcomes do not guarantee results in any future matter.</p>
+      </div>
+    </div>
+    <div class="fine">
+      <span>© <span id="year">2026</span> Harlow &amp; Reyes</span>
+      <span>Demo website: the people and practice are fictional and the form sends nothing.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const form = document.getElementById("form");
+  const set = (el, id, msg) => { document.getElementById(id).textContent = msg; if (el) el.setAttribute("aria-invalid", msg ? "true" : "false"); return !msg; };
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = form.name, matter = form.matter, email = form.email, tel = form.tel, ack = form.ack;
+    const hasEmail = email.value.trim() !== "", hasTel = tel.value.trim() !== "";
+    const emailOk = !hasEmail || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+    const telOk = !hasTel || /^[+\d(][\d\s().-]{6,}$/.test(tel.value.trim());
+    const checks = [
+      [name, set(name, "f-name-err", name.value.trim().length > 1 ? "" : "Enter your name.")],
+      [matter, set(matter, "f-matter-err", matter.value ? "" : "Choose what your matter is about. “Not sure” is fine.")],
+      [email, set(email, "f-email-err", !hasEmail && !hasTel ? "Give an email or a phone number." : emailOk ? "" : "Check the email address, for example name@example.com.")],
+      [tel, set(tel, "f-tel-err", hasTel && !telOk ? "Check the phone number, for example (503) 555-0142." : "")],
+      [ack, set(ack, "f-ack-err", ack.checked ? "" : "Please confirm you have read this before sending.")]
+    ];
+    if (!hasEmail && !hasTel) tel.setAttribute("aria-invalid", "true");
+    const bad = checks.find(([, ok]) => !ok);
+    if (bad) { bad[0].focus(); return; }
+    const done = document.getElementById("done");
+    done.hidden = false;
+    done.innerHTML = `<h3>Thank you, ${name.value.trim().split(" ")[0].replace(/[<>&"]/g, "")}</h3><p>Your request is complete on this page. Because this is a demo website, nothing was sent. On the live site, a partner would reply within one working day.</p>`;
+    done.focus();
+  });
+  document.getElementById("year").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

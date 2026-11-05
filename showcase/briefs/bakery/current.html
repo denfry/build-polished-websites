@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forno Alto · Wood-fired sourdough in Bonfim, Porto</title>
+<meta name="description" content="Forno Alto bakes sourdough in a wood-fired oven every morning on Rua do Heroísmo, Porto. See today's bake, reserve loaves for pickup. Tue–Sun 7:30–14:00.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#1f3a8a">
+<meta property="og:title" content="Forno Alto · sourdough from a wood-fired oven, Bonfim">
+<meta property="og:description" content="Today's bake, the weekly bread rhythm, and loaves reserved for pickup. Rua do Heroísmo 212, Porto.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231f3a8a'/%3E%3Cpath d='M4 28A24 24 0 0 1 28 4' stroke='%23fff' stroke-width='3' fill='none'/%3E%3Ccircle cx='28' cy='28' r='6' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Zilla+Slab:wght@600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Bakery","name":"Forno Alto","address":{"@type":"PostalAddress","streetAddress":"Rua do Heroísmo 212","addressLocality":"Porto","addressCountry":"PT"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"07:30","closes":"14:00"}],"servesCuisine":"Bakery"}
+</script>
+<style>
+:root {
+  /* type */
+  --font-display: "Zilla Slab", "Rockwell", Georgia, serif;
+  --font-text: "Alegreya Sans", "Gill Sans", "Segoe UI", system-ui, sans-serif;
+  /* colour: one cobalt ink on tin-glaze white, as on an azulejo panel */
+  --hue: 264;
+  --ground: oklch(98.4% 0.006 250);       /* flour-dusted white */
+  --glaze: oklch(95.6% 0.014 255);        /* tin glaze, slightly blue */
+  --line: oklch(83% 0.04 var(--hue));
+  --ink: oklch(30% 0.115 var(--hue));     /* cobalt ink, all text */
+  --ink-deep: oklch(23% 0.09 var(--hue));
+  --muted: oklch(44% 0.075 var(--hue));
+  --cobalt: oklch(44% 0.17 var(--hue));   /* glaze cobalt: tiles, actions */
+  --cobalt-hover: color-mix(in oklch, var(--cobalt), var(--ink-deep) 35%);
+  --on-cobalt: oklch(98.5% 0.008 250);
+  --error: oklch(48% 0.17 25);
+  --focus: oklch(62% 0.17 230);
+  /* space */
+  --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+  --space-5: 1.5rem; --space-6: 2rem; --space-7: 3rem; --space-8: 4rem;
+  --space-9: 6rem; --space-10: 8rem;
+  /* type scale 1.25 */
+  --step--1: clamp(0.88rem, 0.85rem + 0.12vw, 0.95rem);
+  --step-0: clamp(1.06rem, 1rem + 0.25vw, 1.19rem);
+  --step-1: clamp(1.27rem, 1.18rem + 0.42vw, 1.49rem);
+  --step-2: clamp(1.52rem, 1.38rem + 0.68vw, 1.86rem);
+  --step-3: clamp(1.83rem, 1.6rem + 1.1vw, 2.33rem);
+  --step-4: clamp(2.2rem, 1.8rem + 1.9vw, 3.1rem);
+  --step-5: clamp(2.6rem, 1.9rem + 3.3vw, 4.4rem);
+  /* shape: tiles and controls square-ish; one radius */
+  --radius: 3px;
+  --control-h: 3rem;
+  /* motion */
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-1: 140ms; --dur-2: 260ms;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body {
+  margin: 0; background: var(--ground); color: var(--ink);
+  font-family: var(--font-text); font-size: var(--step-0); line-height: 1.55;
+  font-kerning: normal; font-synthesis: none;
+}
+::selection { background: var(--cobalt); color: var(--on-cobalt); }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.08; margin: 0; text-wrap: balance; color: var(--ink-deep); }
+p, li { text-wrap: pretty; }
+p { margin: 0 0 var(--space-4); }
+a { color: var(--cobalt); text-underline-offset: 0.18em; text-decoration-thickness: 1.5px; }
+a:hover { color: var(--ink-deep); text-decoration-thickness: 2.5px; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+.price, time, table, .num { font-variant-numeric: tabular-nums lining-nums; }
+.wrap { width: min(100% - 2 * clamp(1rem, 4vw, 2.5rem), 76rem); margin-inline: auto; }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip { position: absolute; left: var(--space-4); top: -4rem; background: var(--cobalt); color: var(--on-cobalt); padding: var(--space-2) var(--space-4); z-index: 10; }
+.skip:focus { top: var(--space-4); }
+[id] { scroll-margin-top: var(--space-5); }
+
+/* ---------- fascia (shop sign) ---------- */
+.fascia { background: var(--cobalt); color: var(--on-cobalt); }
+.fascia-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); min-height: 4.25rem; padding-block: var(--space-2); }
+.mark { display: flex; align-items: center; gap: var(--space-3); color: inherit; text-decoration: none; }
+.mark svg { width: 2rem; height: 2rem; flex: none; }
+.mark span { font-family: var(--font-display); font-size: var(--step-2); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+.fascia nav ul { list-style: none; display: flex; gap: var(--space-1); margin: 0; padding: 0; }
+.fascia nav a { color: var(--on-cobalt); text-decoration: none; padding: var(--space-3) var(--space-3); display: block; font-weight: 500; }
+.fascia nav a:hover { text-decoration: underline; color: var(--on-cobalt); }
+.fascia nav .nav-reserve { border: 1.5px solid var(--on-cobalt); border-radius: var(--radius); padding: var(--space-2) var(--space-4); min-height: 2.75rem; display: flex; align-items: center; margin-left: var(--space-2); white-space: nowrap; }
+.mark span { white-space: nowrap; }
+@media (max-width: 420px) { .mark span { font-size: var(--step-1); } .mark svg { width: 1.6rem; height: 1.6rem; } }
+.fascia nav .nav-reserve:hover { background: var(--on-cobalt); color: var(--cobalt); text-decoration: none; }
+.fascia :focus-visible { outline-color: var(--on-cobalt); }
+.tile-band { height: 18px; background-color: var(--glaze); background-image: var(--tile-svg); background-size: 18px 18px; border-bottom: 1px solid var(--line); }
+@media (max-width: 760px) {
+  .fascia nav li:not(:last-child) { display: none; }
+}
+
+/* ---------- opening: status + today's board ---------- */
+.opening { padding-block: var(--space-6) var(--space-8); display: grid; gap: var(--space-6); }
+.status { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); font-size: var(--step--1); font-weight: 500; color: var(--muted); padding-bottom: var(--space-4); border-bottom: 1px solid var(--line); }
+.status strong { color: var(--ink-deep); font-weight: 700; }
+.status .dot { display: inline-block; width: 0.6em; height: 0.6em; border-radius: 50%; background: var(--cobalt); margin-right: 0.4em; vertical-align: 0.05em; }
+.status[data-open="false"] .dot { background: transparent; border: 1.5px solid var(--muted); }
+.intro h1 { font-size: var(--step-5); letter-spacing: -0.012em; max-width: 15ch; }
+@media (min-width: 900px) { .intro h1 { font-size: var(--step-4); max-width: 13ch; } }
+@media (max-width: 899px) { .intro { display: contents; } .intro h1 { order: 1; font-size: var(--step-4); } .intro > p { order: 2; margin-top: 0; } .board { order: 3; } .intro .facts { order: 4; margin-top: 0; } .opening { gap: var(--space-5); } .status { order: 0; } }
+.intro p { font-size: var(--step-1); max-width: 34ch; margin-top: var(--space-5); color: var(--ink); line-height: 1.45; }
+.intro .facts { list-style: none; padding: 0; margin: var(--space-6) 0 0; display: grid; gap: var(--space-2); font-size: var(--step-0); }
+.intro .facts li { display: grid; grid-template-columns: 5.5rem 1fr; gap: var(--space-3); }
+.intro .facts b { font-weight: 700; color: var(--ink-deep); }
+@media (min-width: 900px) {
+  .opening { grid-template-columns: 5fr 7fr; align-items: start; column-gap: var(--space-8); padding-top: var(--space-7); }
+  .status { grid-column: 1 / -1; }
+}
+
+/* board */
+.board { background: var(--glaze); border: 1px solid var(--line); border-radius: var(--radius); }
+.board-head { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-3); flex-wrap: wrap; padding: var(--space-5) var(--space-5) var(--space-3); }
+.board-head h2 { font-size: var(--step-3); }
+.board-head p { margin: 0; font-size: var(--step--1); color: var(--muted); }
+.days { display: grid; grid-template-columns: repeat(7, 1fr); border-block: 1px solid var(--line); }
+.days input { position: absolute; opacity: 0; pointer-events: none; }
+.days label { display: grid; place-items: center; min-height: 3rem; font-weight: 700; font-size: var(--step--1); letter-spacing: 0.04em; cursor: pointer; border-right: 1px solid var(--line); color: var(--ink); text-transform: uppercase; position: relative; }
+.days label:last-of-type { border-right: 0; }
+.days label small { display: block; font-weight: 400; font-size: 0.72rem; text-transform: none; letter-spacing: 0; color: var(--muted); line-height: 1; margin-top: 2px; }
+.days label:hover { background: var(--ground); }
+.days input:checked + label { background: var(--cobalt); color: var(--on-cobalt); }
+.days input:checked + label small { color: var(--on-cobalt); }
+.days input:focus-visible + label { outline: 3px solid var(--focus); outline-offset: -3px; }
+.days label.closed { color: var(--muted); text-decoration: line-through; text-decoration-thickness: 1px; cursor: default; }
+.daylist { display: none; padding: var(--space-2) var(--space-5) var(--space-5); }
+.days:has(#d-tue:checked) ~ .daylist[data-day="tue"],
+.days:has(#d-wed:checked) ~ .daylist[data-day="wed"],
+.days:has(#d-thu:checked) ~ .daylist[data-day="thu"],
+.days:has(#d-fri:checked) ~ .daylist[data-day="fri"],
+.days:has(#d-sat:checked) ~ .daylist[data-day="sat"],
+.days:has(#d-sun:checked) ~ .daylist[data-day="sun"],
+.days:has(#d-mon:checked) ~ .daylist[data-day="mon"] { display: block; }
+.daylist h3 { font-size: var(--step-1); font-family: var(--font-text); font-weight: 700; margin: var(--space-4) 0 var(--space-1); color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; font-size: var(--step--1); }
+.items { list-style: none; margin: 0; padding: 0; }
+.items li { display: grid; grid-template-columns: 1fr auto; gap: 0 var(--space-4); padding: var(--space-3) 0; border-bottom: 1px dotted var(--line); align-items: baseline; }
+.items li:last-child { border-bottom: 0; }
+.items .name { font-weight: 700; color: var(--ink-deep); font-size: var(--step-0); }
+.items .name i { font-weight: 400; color: var(--muted); }
+.items .desc { grid-column: 1; font-size: var(--step--1); color: var(--muted); line-height: 1.4; }
+.items .price { font-weight: 700; grid-row: 1; grid-column: 2; }
+.items .act { grid-column: 2; grid-row: 2 / 4; align-self: center; text-align: right; font-size: var(--step--1); font-weight: 700; padding: var(--space-3) 0 var(--space-3) var(--space-3); margin-block: calc(var(--space-3) * -1); }
+.closed-note { padding: var(--space-5) 0; font-size: var(--step-1); }
+.closed-note strong { font-family: var(--font-display); font-size: var(--step-3); display: block; color: var(--ink-deep); margin-bottom: var(--space-2); }
+.board-foot { padding: 0 var(--space-5) var(--space-5); display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-5); align-items: center; }
+.board-foot p { margin: 0; font-size: var(--step--1); color: var(--muted); flex: 1 1 16rem; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2); min-height: var(--control-h); padding: 0 var(--space-5); border-radius: var(--radius); background: var(--cobalt); color: var(--on-cobalt); font: 700 var(--step-0)/1 var(--font-text); text-decoration: none; border: 0; cursor: pointer; transition: background-color var(--dur-1) var(--ease-out); }
+.btn:hover { background: var(--cobalt-hover); color: var(--on-cobalt); text-decoration: none; }
+.btn:active { transform: translateY(1px); }
+.btn svg { width: 1.1em; height: 1.1em; transition: transform var(--dur-1) var(--ease-out); }
+.btn:hover svg { transform: translateX(3px); }
+
+/* ---------- the week as a tile panel ---------- */
+.week { padding-block: var(--space-8); border-top: 1px solid var(--line); }
+.section-head { display: grid; gap: var(--space-3); margin-bottom: var(--space-6); }
+.section-head h2 { font-size: var(--step-4); letter-spacing: -0.01em; }
+.section-head p { max-width: 58ch; margin: 0; color: var(--muted); }
+@media (min-width: 900px) { .section-head { grid-template-columns: 5fr 7fr; column-gap: var(--space-8); align-items: end; } }
+.panel-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--ground); }
+.panel-scroll:focus-visible { outline-offset: 2px; }
+.panel { border-collapse: collapse; width: 100%; min-width: 46rem; }
+.panel caption { text-align: left; padding: var(--space-3) var(--space-4); font-size: var(--step--1); color: var(--muted); caption-side: bottom; border-top: 1px solid var(--line); }
+.panel th, .panel td { border: 1px solid var(--line); padding: 0; }
+.panel tr > :first-child { border-left: 0; }
+.panel tr > :last-child { border-right: 0; }
+.panel thead th { border-top: 0; font-size: var(--step--1); letter-spacing: 0.04em; text-transform: uppercase; padding: var(--space-3) var(--space-2); text-align: center; color: var(--ink); font-weight: 700; }
+.panel thead th.is-today { background: var(--cobalt); color: var(--on-cobalt); }
+.panel tbody th { text-align: left; padding: var(--space-3) var(--space-4); font-weight: 400; width: 30%; }
+.panel tbody th b { display: block; font-weight: 700; color: var(--ink-deep); }
+.panel tbody th span { font-size: var(--step--1); color: var(--muted); }
+.panel td { text-align: center; width: 10%; height: 4.2rem; position: relative; }
+.panel td.on { background-color: var(--cobalt); background-image: var(--tile-svg-on); background-size: 100% 100%; }
+.panel td.on span { position: absolute; inset: auto 0 4px; font-size: 0.7rem; color: var(--on-cobalt); }
+.panel td.mon { background: repeating-linear-gradient(-45deg, transparent 0 6px, var(--glaze) 6px 8px); }
+.panel tbody tr:last-child > * { border-bottom: 0; }
+
+/* ---------- reserve ---------- */
+.reserve { background: var(--ink-deep); color: var(--on-cobalt); padding-block: var(--space-8) var(--space-9); }
+.reserve h2 { color: var(--on-cobalt); }
+.reserve .section-head p { color: oklch(86% 0.04 var(--hue)); }
+.reserve a { color: var(--on-cobalt); }
+.form { display: grid; gap: var(--space-6); }
+@media (min-width: 900px) { .form { grid-template-columns: 7fr 5fr; column-gap: var(--space-8); align-items: start; } }
+.field { display: grid; gap: var(--space-2); align-content: start; }
+.field label, .field legend, fieldset legend { font-weight: 700; font-size: var(--step-0); padding: 0; }
+.hint { font-size: var(--step--1); color: oklch(84% 0.045 var(--hue)); margin: 0; }
+input[type=text], input[type=tel], input[type=date], select, textarea {
+  font: inherit; color: var(--ink-deep); background: var(--ground); border: 1.5px solid oklch(70% 0.06 var(--hue));
+  border-radius: var(--radius); min-height: var(--control-h); padding: var(--space-2) var(--space-3); width: 100%; caret-color: var(--cobalt);
+}
+textarea { min-height: 5.5rem; resize: vertical; }
+input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+[aria-invalid="true"] { border-color: var(--error) !important; box-shadow: 0 0 0 2px oklch(75% 0.12 25); }
+.error { color: oklch(84% 0.1 30); font-weight: 700; font-size: var(--step--1); margin: 0; }
+.error:empty { display: none; }
+.row2 { display: grid; gap: var(--space-5); }
+@media (min-width: 560px) { .row2 { grid-template-columns: 1fr 1fr; } }
+fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+.loaves { display: grid; gap: 0; margin-top: var(--space-3); border-top: 1px solid oklch(45% 0.08 var(--hue)); }
+.loaf { display: grid; grid-template-columns: 1fr auto auto; gap: var(--space-3); align-items: center; padding: var(--space-3) 0; border-bottom: 1px solid oklch(45% 0.08 var(--hue)); }
+.loaf .ln { font-weight: 500; }
+.loaf .ln small { display: block; color: oklch(80% 0.05 var(--hue)); font-size: var(--step--1); }
+.loaf.unavailable .ln { opacity: 0.55; }
+.loaf.unavailable .ln small::after { content: " · not baked that day"; }
+.qty { display: inline-grid; grid-template-columns: 2.75rem 2.75rem 2.75rem; border: 1.5px solid oklch(70% 0.06 var(--hue)); border-radius: var(--radius); background: var(--ground); }
+.qty button { font: 700 1.2rem/1 var(--font-text); background: none; border: 0; color: var(--cobalt); cursor: pointer; min-height: 2.75rem; }
+.qty button:hover { background: var(--glaze); }
+.qty button:disabled { color: oklch(78% 0.03 var(--hue)); cursor: not-allowed; background: none; }
+.qty output { display: grid; place-items: center; font-weight: 700; color: var(--ink-deep); font-variant-numeric: tabular-nums; }
+.loaf .price { min-width: 3.5rem; text-align: right; }
+.side { display: grid; gap: var(--space-5); }
+@media (min-width: 900px) { .side { position: sticky; top: var(--space-5); } }
+.ticket { background: var(--glaze); color: var(--ink-deep); border-radius: var(--radius); padding: var(--space-5); }
+.ticket h3 { font-size: var(--step-2); margin-bottom: var(--space-3); }
+.ticket dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: var(--space-2) var(--space-4); font-size: var(--step--1); }
+.ticket dt { color: var(--muted); }
+.ticket dd { margin: 0; font-weight: 700; }
+.ticket .total { display: flex; justify-content: space-between; border-top: 1.5px dashed var(--line); margin-top: var(--space-4); padding-top: var(--space-3); font-weight: 700; font-size: var(--step-1); }
+.reserve .btn { background: var(--on-cobalt); color: var(--ink-deep); width: 100%; }
+.reserve .btn:hover { background: oklch(90% 0.04 var(--hue)); }
+.reserve :focus-visible { outline-color: oklch(80% 0.13 230); }
+.demo { font-size: var(--step--1); color: oklch(84% 0.045 var(--hue)); margin: 0; }
+.done { background: var(--glaze); color: var(--ink-deep); border-radius: var(--radius); padding: var(--space-5); }
+.done h3 { font-size: var(--step-2); margin-bottom: var(--space-2); }
+.done p:last-child { margin: 0; }
+
+/* ---------- story ---------- */
+.story { padding-block: var(--space-9) var(--space-8); }
+.story-grid { display: grid; gap: var(--space-6); }
+@media (min-width: 900px) { .story-grid { grid-template-columns: 4fr 5fr 3fr; column-gap: var(--space-7); align-items: start; } }
+.story h2 { font-size: var(--step-4); letter-spacing: -0.01em; }
+.story .prose { max-width: 60ch; }
+.story .prose p:first-child { font-size: var(--step-1); line-height: 1.45; }
+.photo-slot { margin: 0; display: grid; align-content: end; padding: var(--space-4); background:
+  var(--tile-svg-on) 0 0 / 48px 48px, var(--cobalt);
+  color: var(--on-cobalt); border-radius: var(--radius); font-size: var(--step--1); line-height: 1.4; }
+.photo-slot figcaption { background: var(--ink-deep); margin: calc(var(--space-4) * -1); padding: var(--space-4); }
+.photo-slot { overflow: hidden; }
+.photo-slot figcaption::before { content: "Photo to supply"; display: block; font-weight: 700; margin-bottom: var(--space-1); }
+.photos { display: grid; gap: var(--space-5); margin-top: var(--space-7); }
+.photo-slot.wide { aspect-ratio: 4 / 5; }
+@media (min-width: 760px) { .photos { grid-template-columns: 4fr 8fr; align-items: end; } .photo-slot.wide { aspect-ratio: 16 / 10; } }
+.oven-clock li:last-child { padding-bottom: 0; }
+.oven-clock { list-style: none; padding: 0; margin: 0; border-left: 3px solid var(--cobalt); }
+.oven-clock li { padding: 0 0 var(--space-4) var(--space-4); position: relative; }
+.oven-clock li::before { content: ""; position: absolute; left: -8.5px; top: 0.45em; width: 14px; height: 14px; background: var(--ground); border: 3px solid var(--cobalt); border-radius: 50%; }
+.oven-clock time { font-weight: 700; color: var(--ink-deep); display: block; font-family: var(--font-display); font-size: var(--step-1); }
+.oven-clock span { color: var(--muted); font-size: var(--step--1); }
+
+/* ---------- visit ---------- */
+.visit { padding-block: var(--space-8); border-top: 1px solid var(--line); }
+.visit-grid { display: grid; gap: var(--space-6); }
+@media (min-width: 760px) { .visit-grid { grid-template-columns: repeat(12, 1fr); column-gap: var(--space-6); } .visit-grid > :nth-child(1) { grid-column: 1 / 6; } .visit-grid > :nth-child(2) { grid-column: 6 / 9; } .visit-grid > :nth-child(3) { grid-column: 9 / 13; } }
+.visit h2 { font-size: var(--step-4); }
+.visit h3 { font-size: var(--step-1); margin-bottom: var(--space-3); }
+.hours { width: 100%; border-collapse: collapse; }
+.hours th, .hours td { text-align: left; padding: var(--space-2) 0; border-bottom: 1px dotted var(--line); font-weight: 400; }
+.hours td { text-align: right; }
+.hours tr.today th, .hours tr.today td { font-weight: 700; color: var(--ink-deep); }
+.hours tr.today th::after { content: " · today"; color: var(--cobalt); }
+.hours tr.closed td { color: var(--muted); }
+address { font-style: normal; font-size: var(--step-1); line-height: 1.4; margin-bottom: var(--space-3); color: var(--ink-deep); }
+
+/* ---------- footer ---------- */
+footer { background: var(--cobalt); color: var(--on-cobalt); padding-block: var(--space-7) var(--space-6); font-size: var(--step--1); }
+footer a { color: var(--on-cobalt); }
+footer a:hover { color: var(--on-cobalt); }
+.foot { display: grid; gap: var(--space-5); }
+@media (min-width: 760px) { .foot { grid-template-columns: 2fr 1fr 1fr; } }
+.foot .big { font-family: var(--font-display); font-size: var(--step-3); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1; margin-bottom: var(--space-2); }
+.foot ul { list-style: none; margin: 0; padding: 0; display: grid; }
+.foot ul a { display: inline-block; padding-block: var(--space-2); }
+.foot p { margin: 0 0 var(--space-2); }
+.fine { margin-top: var(--space-6); padding-top: var(--space-4); border-top: 1px solid oklch(70% 0.1 var(--hue)); display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-2); }
+footer :focus-visible { outline-color: var(--on-cobalt); }
+
+@media print {
+  .fascia nav, .tile-band, .reserve, .photo-slot, .board-foot { display: none; }
+  body { color: #000; background: #fff; }
+  .daylist { display: block !important; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to today's bake</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="ear" viewBox="0 0 32 32"><path d="M4 28A24 24 0 0 1 28 4" fill="none" stroke="currentColor" stroke-width="3"/><path d="M10 28A18 18 0 0 1 28 10" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="28" cy="28" r="6" fill="currentColor"/></symbol>
+  <symbol id="arrow" viewBox="0 0 20 20"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+</svg>
+
+<header class="fascia">
+  <div class="wrap fascia-inner">
+    <a class="mark" href="#main" aria-label="Forno Alto, back to today's bake">
+      <svg aria-hidden="true"><use href="#ear"/></svg>
+      <span>Forno Alto</span>
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#week">The week</a></li>
+        <li><a href="#story">The oven</a></li>
+        <li><a href="#visit">Hours &amp; address</a></li>
+        <li><a class="nav-reserve" href="#reserve">Reserve loaves</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="tile-band" aria-hidden="true"></div>
+
+<main id="main">
+  <section class="wrap opening" aria-labelledby="h1">
+    <p class="status" id="status" data-open="unknown">
+      <span><span class="dot" aria-hidden="true"></span><strong id="status-text">Tue–Sun 7:30–14:00</strong></span>
+      <span id="status-detail">Closed Monday · we close early when the shelves are empty</span>
+      <span>Rua do Heroísmo 212, Bonfim</span>
+    </p>
+
+    <div class="intro">
+      <h1 id="h1">Sourdough from a wood-fired oven, baked every morning in Bonfim</h1>
+      <p>Loaves, pastries and coffee on Rua do Heroísmo. When the shelves are empty, the door closes, so reserve the bread you want.</p>
+      <ul class="facts">
+        <li><b>Open</b><span>Tuesday to Sunday, 7:30–14:00</span></li>
+        <li><b>Closed</b><span>Mondays, and once we sell out</span></li>
+        <li><b>Where</b><span>Rua do Heroísmo 212, Porto · <a href="#visit">directions</a></span></li>
+      </ul>
+    </div>
+
+    <div class="board" id="today">
+      <div class="board-head">
+        <h2 id="board-title">The bake</h2>
+        <p id="board-sub">Choose a day to see what comes out of the oven</p>
+      </div>
+      <div class="days" role="radiogroup" aria-label="Day of the week">
+        <input type="radio" name="day" id="d-tue" value="tue" checked><label for="d-tue">Tue</label>
+        <input type="radio" name="day" id="d-wed" value="wed"><label for="d-wed">Wed</label>
+        <input type="radio" name="day" id="d-thu" value="thu"><label for="d-thu">Thu</label>
+        <input type="radio" name="day" id="d-fri" value="fri"><label for="d-fri">Fri</label>
+        <input type="radio" name="day" id="d-sat" value="sat"><label for="d-sat">Sat</label>
+        <input type="radio" name="day" id="d-sun" value="sun"><label for="d-sun">Sun</label>
+        <input type="radio" name="day" id="d-mon" value="mon"><label for="d-mon" class="closed">Mon</label>
+      </div>
+      <!-- day lists rendered from BAKE data below; static fallback for Tuesday -->
+      <div class="daylist" data-day="tue">
+        <h3>Loaves</h3>
+        <ul class="items">
+          <li><span class="name">Pão da casa</span><span class="price">€5.20</span><span class="desc">Country loaf, 1 kg, wheat with 15% wholemeal</span></li>
+          <li><span class="name">Broa de milho e centeio</span><span class="price">€4.60</span><span class="desc">Corn and rye broa, dark crust, dense crumb</span></li>
+          <li><span class="name">Pão de sementes</span><span class="price">€5.60</span><span class="desc">Sunflower, linseed and sesame, 800 g</span></li>
+        </ul>
+      </div>
+      <div class="board-foot">
+        <p>Reserve by 20:00 the day before. We hold reserved loaves until 12:00.</p>
+        <a class="btn" href="#reserve">Reserve for pickup <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="week" id="week" aria-labelledby="week-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="week-h">What we bake, day by day</h2>
+        <p>The oven runs one long firing a morning, so each loaf has its days. Pastries and coffee are there every day we are open.</p>
+      </div>
+      <div class="panel-scroll" tabindex="0" role="region" aria-labelledby="week-h">
+        <table class="panel" id="panel">
+          <caption>Filled tiles are baking days. Scroll sideways on a small screen.</caption>
+          <thead><tr><th scope="col"><span class="visually-hidden">Loaf</span></th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="reserve" id="reserve" aria-labelledby="reserve-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="reserve-h">Reserve loaves for pickup</h2>
+        <p>Pick a day, the loaves and a time. Pay at the counter when you collect. Reservations close at 20:00 the day before.</p>
+      </div>
+
+      <form class="form" id="form" novalidate>
+        <div style="display:grid;gap:var(--space-5)">
+          <div class="row2">
+            <div class="field">
+              <label for="f-date">Pickup day</label>
+              <input type="date" id="f-date" name="date" required aria-describedby="f-date-hint f-date-err">
+              <p class="hint" id="f-date-hint">Tuesday to Sunday, from tomorrow</p>
+              <p class="error" id="f-date-err"></p>
+            </div>
+            <div class="field">
+              <label for="f-time">Pickup time</label>
+              <select id="f-time" name="time" required aria-describedby="f-time-err">
+                <option value="">Choose a time</option>
+                <option>7:30–8:30</option><option>8:30–9:30</option><option>9:30–10:30</option><option>10:30–12:00</option>
+              </select>
+              <p class="error" id="f-time-err"></p>
+            </div>
+          </div>
+          <fieldset aria-describedby="f-loaves-hint f-loaves-err">
+            <legend>Loaves</legend>
+            <p class="hint" id="f-loaves-hint">Up to 4 of each. Loaves not baked on your day are switched off.</p>
+            <div class="loaves" id="loaves"></div>
+            <p class="error" id="f-loaves-err"></p>
+          </fieldset>
+          <div class="row2">
+            <div class="field">
+              <label for="f-name">Name</label>
+              <input type="text" id="f-name" name="name" autocomplete="name" required aria-describedby="f-name-err">
+              <p class="error" id="f-name-err"></p>
+            </div>
+            <div class="field">
+              <label for="f-tel">Phone</label>
+              <input type="tel" id="f-tel" name="tel" autocomplete="tel" inputmode="tel" required aria-describedby="f-tel-hint f-tel-err">
+              <p class="hint" id="f-tel-hint">Only used if your order changes</p>
+              <p class="error" id="f-tel-err"></p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-note">Note <span style="font-weight:400">(optional)</span></label>
+            <textarea id="f-note" name="note" placeholder="Sliced, or a loaf for someone else to collect"></textarea>
+          </div>
+        </div>
+
+        <div class="side">
+          <div class="ticket" aria-live="polite">
+            <h3>Your reservation</h3>
+            <dl>
+              <dt>Day</dt><dd id="t-day">Not chosen</dd>
+              <dt>Time</dt><dd id="t-time">Not chosen</dd>
+              <dt>Loaves</dt><dd id="t-loaves">None yet</dd>
+            </dl>
+            <div class="total"><span>Pay at pickup</span><span class="price" id="t-total">€0.00</span></div>
+          </div>
+          <button class="btn" type="submit">Reserve loaves</button>
+          <p class="demo">This page is a design demo: the form checks your entries but sends nothing, and no loaves are held.</p>
+          <div id="done" class="done" hidden tabindex="-1"></div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="story wrap" id="story" aria-labelledby="story-h">
+    <div class="story-grid">
+      <div>
+        <h2 id="story-h">The oven came first</h2>
+      </div>
+      <div class="prose">
+        <p>Forno Alto is built around one wood-fired oven at the back of a narrow shop in Bonfim. The fire is lit before dawn, and everything on the shelves is baked in it that same morning.</p>
+        <p>Our breads are leavened with a long-kept sourdough starter and given a slow, cool rise overnight. That makes a deep crust, an open crumb and bread that keeps for days.</p>
+        <p>We bake a set amount each morning. When it is gone, we close, which is why we take reservations: a loaf with your name on it is set aside before the door opens.</p>
+      </div>
+      <div>
+        <ol class="oven-clock" aria-label="A baking morning">
+          <li><time>before dawn</time><span>Fire lit, oven left to soak up the heat</span></li>
+          <li><time>early morning</time><span>Embers raked out, first loaves on the peel</span></li>
+          <li><time>7:30</time><span>Door opens; pastries and coffee</span></li>
+          <li><time>14:00</time><span>Closing time, or earlier if we sell out</span></li>
+        </ol>
+      </div>
+    </div>
+    <div class="photos">
+      <figure class="photo-slot" style="aspect-ratio: 4 / 5">
+        <figcaption>The oven mouth with the first peel of loaves, early side light from the street door. 4:5 crop.</figcaption>
+      </figure>
+      <figure class="photo-slot wide">
+        <figcaption>The counter at opening: loaves on the shelves behind, pastries in front, the street visible through the window. 4:5 crop, or 16:10 on wide screens.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="visit" id="visit" aria-labelledby="visit-h">
+    <div class="wrap visit-grid">
+      <div>
+        <h2 id="visit-h">Find the oven</h2>
+        <address>Rua do Heroísmo 212<br>Porto</address>
+        <p>In Bonfim, a short walk from the Heroísmo metro stop and Campo 24 de Agosto.</p>
+        <p><a href="https://www.openstreetmap.org/search?query=Rua%20do%20Hero%C3%ADsmo%20212%2C%20Porto" rel="noopener">Open the address in OpenStreetMap</a></p>
+      </div>
+      <div>
+        <h3>Hours</h3>
+        <table class="hours" id="hours">
+          <caption class="visually-hidden">Opening hours</caption>
+          <tbody>
+            <tr data-d="2"><th scope="row">Tuesday</th><td>7:30–14:00</td></tr>
+            <tr data-d="3"><th scope="row">Wednesday</th><td>7:30–14:00</td></tr>
+            <tr data-d="4"><th scope="row">Thursday</th><td>7:30–14:00</td></tr>
+            <tr data-d="5"><th scope="row">Friday</th><td>7:30–14:00</td></tr>
+            <tr data-d="6"><th scope="row">Saturday</th><td>7:30–14:00</td></tr>
+            <tr data-d="0"><th scope="row">Sunday</th><td>7:30–14:00</td></tr>
+            <tr data-d="1" class="closed"><th scope="row">Monday</th><td>Closed</td></tr>
+          </tbody>
+        </table>
+        <p class="hint" style="color:var(--muted);margin-top:var(--space-3)">We close earlier on days we sell out.</p>
+      </div>
+      <div>
+        <h3>Coffee at the counter</h3>
+        <ul class="items">
+          <li><span class="name">Bica</span><span class="price">€0.90</span></li>
+          <li><span class="name">Abatanado</span><span class="price">€1.20</span></li>
+          <li><span class="name">Pingo</span><span class="price">€1.00</span></li>
+          <li><span class="name">Galão</span><span class="price">€1.70</span></li>
+          <li><span class="name">Chá, loose leaf</span><span class="price">€1.50</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <p class="big">Forno Alto</p>
+        <p>Sourdough bakery and café · wood-fired oven</p>
+        <p>Rua do Heroísmo 212, Porto</p>
+      </div>
+      <div>
+        <ul>
+          <li><a href="#today">Today's bake</a></li>
+          <li><a href="#week">The week</a></li>
+          <li><a href="#reserve">Reserve loaves</a></li>
+          <li><a href="#story">The oven</a></li>
+        </ul>
+      </div>
+      <div>
+        <p>Tue–Sun 7:30–14:00<br>Closed Monday</p>
+        <p>Prices in euros, VAT included.</p>
+      </div>
+    </div>
+    <div class="fine">
+      <span>© <span id="year">2026</span> Forno Alto</span>
+      <span>Reservations on this page are a demo and are not sent.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const DAYS = ["sun","mon","tue","wed","thu","fri","sat"];
+  const NAMES = { tue: "Tuesday", wed: "Wednesday", thu: "Thursday", fri: "Friday", sat: "Saturday", sun: "Sunday", mon: "Monday" };
+  const LOAVES = [
+    { id: "casa", name: "Pão da casa", desc: "Country loaf, 1 kg, wheat with 15% wholemeal", price: 5.2, days: ["tue","wed","thu","fri","sat","sun"] },
+    { id: "broa", name: "Broa de milho e centeio", desc: "Corn and rye broa, dark crust, dense crumb", price: 4.6, days: ["tue","thu","sat"] },
+    { id: "centeio", name: "Centeio integral", desc: "Wholegrain rye with sunflower seeds, tin-baked", price: 5.8, days: ["wed","fri"] },
+    { id: "sementes", name: "Pão de sementes", desc: "Sunflower, linseed and sesame, 800 g", price: 5.6, days: ["tue","thu","sun"] },
+    { id: "espelta", name: "Espelta e mel", desc: "Spelt and honey, soft crumb, 750 g", price: 6.2, days: ["fri","sat"] },
+    { id: "focaccia", name: "Focaccia de forno", desc: "Olive oil, sea salt and rosemary, by the slab", price: 3.5, days: ["sat","sun"] }
+  ];
+  const PASTRY = [
+    { name: "Croissant de massa-mãe", desc: "Sourdough croissant, laminated with butter", price: 2.2, days: ["tue","wed","thu","fri","sat","sun"] },
+    { name: "Pastel de nata", desc: "Baked in the oven's last heat", price: 1.4, days: ["tue","wed","thu","fri","sat","sun"] },
+    { name: "Nó de canela", desc: "Cinnamon and cardamom knot", price: 2.6, days: ["wed","thu","fri","sat","sun"] },
+    { name: "Bolo de laranja", desc: "Orange and olive oil cake, by the slice", price: 2.4, days: ["sat","sun"] }
+  ];
+  const ORDER = ["tue","wed","thu","fri","sat","sun","mon"];
+  const eur = new Intl.NumberFormat("en-IE", { style: "currency", currency: "EUR" });
+
+  // Porto local time
+  const porto = () => {
+    const parts = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Lisbon", weekday: "short", hour: "2-digit", minute: "2-digit", hourCycle: "h23", year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(new Date());
+    const get = (t) => parts.find((p) => p.type === t).value;
+    return { dow: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(get("weekday")), mins: +get("hour") * 60 + +get("minute"), iso: `${get("year")}-${get("month")}-${get("day")}` };
+  };
+  const now = porto();
+  const todayKey = DAYS[now.dow];
+
+  // Build day lists
+  const board = document.querySelector(".board");
+  board.querySelectorAll(".daylist").forEach((el) => el.remove());
+  const foot = board.querySelector(".board-foot");
+  const li = (x) => `<li><span class="name">${x.name}</span><span class="price">${eur.format(x.price)}</span><span class="desc">${x.desc}</span>${x.id ? `<a class="act" href="#reserve" data-loaf="${x.id}">Reserve</a>` : ""}</li>`;
+  for (const d of ORDER) {
+    const div = document.createElement("div");
+    div.className = "daylist"; div.dataset.day = d;
+    if (d === "mon") {
+      div.innerHTML = `<p class="closed-note"><strong>Closed on Mondays</strong>The oven rests. We are back on Tuesday at 7:30.</p>`;
+    } else {
+      div.innerHTML = `<h3>Loaves</h3><ul class="items">${LOAVES.filter((l) => l.days.includes(d)).map(li).join("")}</ul>` +
+        `<h3>Pastries</h3><ul class="items">${PASTRY.filter((l) => l.days.includes(d)).map(li).join("")}</ul>`;
+    }
+    board.insertBefore(div, foot);
+  }
+  const radio = document.getElementById("d-" + todayKey);
+  if (radio) radio.checked = true;
+  const lbl = document.querySelector(`label[for="d-${todayKey}"]`);
+  if (lbl) lbl.innerHTML += "<small>today</small>";
+  const title = document.getElementById("board-title");
+  const sub = document.getElementById("board-sub");
+  const setTitle = () => {
+    const d = document.querySelector('.days input:checked').value;
+    title.textContent = d === todayKey ? "Today's bake" : `${NAMES[d]}'s bake`;
+    sub.textContent = d === todayKey ? `${NAMES[d]} · from the oven this morning` : "Baked every week on this day";
+  };
+  document.querySelectorAll(".days input").forEach((r) => r.addEventListener("change", setTitle));
+  setTitle();
+
+  // Status line
+  const open = now.dow !== 1 && now.mins >= 450 && now.mins < 840;
+  const st = document.getElementById("status");
+  st.dataset.open = String(open);
+  const nextOpen = now.dow === 1 || (now.dow === 0 && now.mins >= 840) ? "Tuesday 7:30" : now.mins < 450 ? "today 7:30" : "tomorrow 7:30";
+  document.getElementById("status-text").textContent = open ? "Open now" : "Closed now";
+  document.getElementById("status-detail").textContent = open ? "until 14:00, or until we sell out" : `Opens ${nextOpen} · Tue–Sun 7:30–14:00`;
+  const hr = document.querySelector(`#hours tr[data-d="${now.dow}"]`);
+  if (hr) hr.classList.add("today");
+
+  // Week panel
+  const panel = document.getElementById("panel");
+  const headRow = panel.querySelector("thead tr");
+  for (const d of ORDER) {
+    const th = document.createElement("th");
+    th.scope = "col"; th.textContent = d.charAt(0).toUpperCase() + d.slice(1, 3);
+    if (d === todayKey) th.classList.add("is-today");
+    headRow.appendChild(th);
+  }
+  panel.querySelector("tbody").innerHTML = LOAVES.map((l) => `<tr><th scope="row"><b>${l.name}</b><span>${eur.format(l.price)} · ${l.desc}</span></th>${ORDER.map((d) => d === "mon" ? `<td class="mon"><span class="visually-hidden">Closed</span></td>` : l.days.includes(d) ? `<td class="on"><span class="visually-hidden">Baked</span></td>` : `<td><span class="visually-hidden">Not baked</span></td>`).join("")}</tr>`).join("");
+
+  // Form
+  const loavesEl = document.getElementById("loaves");
+  loavesEl.innerHTML = LOAVES.map((l) => `<div class="loaf" data-id="${l.id}"><span class="ln" id="ln-${l.id}">${l.name}<small>${l.days.map((d) => d[0].toUpperCase() + d.slice(1)).join(" · ")}</small></span><span class="qty" role="group" aria-labelledby="ln-${l.id}"><button type="button" data-step="-1" aria-label="One fewer ${l.name}">−</button><output aria-live="polite" aria-label="${l.name} quantity">0</output><button type="button" data-step="1" aria-label="One more ${l.name}">+</button></span><span class="price">${eur.format(l.price)}</span></div>`).join("");
+  const qty = Object.fromEntries(LOAVES.map((l) => [l.id, 0]));
+  const form = document.getElementById("form");
+  const date = document.getElementById("f-date");
+  const time = document.getElementById("f-time");
+  const tomorrow = new Date(now.iso + "T12:00:00"); tomorrow.setDate(tomorrow.getDate() + 1);
+  date.min = tomorrow.toISOString().slice(0, 10);
+  const pickedDay = () => date.value ? DAYS[new Date(date.value + "T12:00:00").getDay()] : null;
+  const render = () => {
+    const d = pickedDay();
+    let total = 0; const picked = [];
+    for (const l of LOAVES) {
+      const row = loavesEl.querySelector(`[data-id="${l.id}"]`);
+      const ok = !d || l.days.includes(d);
+      row.classList.toggle("unavailable", !ok);
+      if (!ok) qty[l.id] = 0;
+      row.querySelector("output").textContent = qty[l.id];
+      row.querySelector('[data-step="-1"]').disabled = qty[l.id] === 0;
+      row.querySelector('[data-step="1"]').disabled = !ok || qty[l.id] >= 4;
+      if (qty[l.id]) { total += qty[l.id] * l.price; picked.push(`${qty[l.id]} × ${l.name}`); }
+    }
+    document.getElementById("t-day").textContent = d ? new Date(date.value + "T12:00:00").toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" }) : "Not chosen";
+    document.getElementById("t-time").textContent = time.value || "Not chosen";
+    document.getElementById("t-loaves").textContent = picked.length ? picked.join(", ") : "None yet";
+    document.getElementById("t-total").textContent = eur.format(total);
+  };
+  loavesEl.addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-step]"); if (!b) return;
+    const id = b.closest(".loaf").dataset.id;
+    qty[id] = Math.max(0, Math.min(4, qty[id] + Number(b.dataset.step)));
+    render();
+  });
+  date.addEventListener("change", render);
+  time.addEventListener("change", render);
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("a[data-loaf]"); if (!a) return;
+    const d = document.querySelector(".days input:checked").value;
+    if (d !== "mon" && !date.value) {
+      const t = new Date(now.iso + "T12:00:00");
+      for (let i = 1; i <= 7; i++) { t.setDate(t.getDate() + 1); if (DAYS[t.getDay()] === d) break; }
+      date.value = t.toISOString().slice(0, 10);
+    }
+    const l = LOAVES.find((x) => x.id === a.dataset.loaf);
+    if (qty[l.id] === 0 && (!pickedDay() || l.days.includes(pickedDay()))) qty[l.id] = 1;
+    render();
+  });
+
+  const setErr = (input, id, msg) => {
+    document.getElementById(id).textContent = msg;
+    if (input) input.setAttribute("aria-invalid", msg ? "true" : "false");
+    return !msg;
+  };
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const d = pickedDay();
+    const name = document.getElementById("f-name");
+    const tel = document.getElementById("f-tel");
+    const checks = [
+      [date, setErr(date, "f-date-err", !date.value ? "Choose a pickup day." : date.value < date.min ? "Reservations start from tomorrow." : d === "mon" ? "We are closed on Mondays. Choose Tuesday to Sunday." : "")],
+      [time, setErr(time, "f-time-err", time.value ? "" : "Choose a pickup time.")],
+      [loavesEl.querySelector("button[data-step='1']:not(:disabled)") || loavesEl, setErr(null, "f-loaves-err", Object.values(qty).some(Boolean) ? "" : "Add at least one loaf.")],
+      [name, setErr(name, "f-name-err", name.value.trim().length > 1 ? "" : "Enter the name we should write on the bag.")],
+      [tel, setErr(tel, "f-tel-err", /^[+\d][\d\s()-]{7,}$/.test(tel.value.trim()) ? "" : "Enter a phone number, for example +351 912 345 678.")]
+    ];
+    const bad = checks.find(([, ok]) => !ok);
+    if (bad) { bad[0].focus(); return; }
+    const done = document.getElementById("done");
+    done.hidden = false;
+    done.innerHTML = `<h3>Checked, not sent</h3><p>Your reservation for ${document.getElementById("t-day").textContent}, ${time.value}, is complete on this page. Because this is a demo, nothing was sent to Forno Alto and no loaves are held.</p>`;
+    done.focus();
+  });
+  render();
+  document.getElementById("year").textContent = now.iso.slice(0, 4);
+})();
+</script>
+<style>
+:root {
+  --tile-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M0 32A32 32 0 0 1 32 0' fill='none' stroke='%232a49a8' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='7' fill='%232a49a8'/%3E%3Ccircle cx='0' cy='0' r='7' fill='%232a49a8'/%3E%3C/svg%3E");
+  --tile-svg-on: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' preserveAspectRatio='none'%3E%3Cpath d='M0 32A32 32 0 0 1 32 0' fill='none' stroke='%23f5f7ff' stroke-opacity='.55' stroke-width='1.6'/%3E%3Cpath d='M8 32A24 24 0 0 1 32 8' fill='none' stroke='%23f5f7ff' stroke-opacity='.3' stroke-width='1'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23f5f7ff' fill-opacity='.55'/%3E%3C/svg%3E");
+}
+</style>
+</body>
+</html>

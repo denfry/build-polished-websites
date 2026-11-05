@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Low Tide 2027 · Electronic music in Gdańsk shipyard, 14–15 August</title>
+<meta name="description" content="Low Tide: two days of electronic music in a decommissioned Gdańsk shipyard, 14–15 August 2027. Two stages, 6,000 capacity. Day pass €69, weekend pass €119.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#0d1724">
+<meta property="og:title" content="Low Tide 2027 · Gdańsk shipyard, 14–15 August">
+<meta property="og:description" content="Two stages on a slipway and in a plate hall. Day pass €69, weekend pass €119.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230d1724'/%3E%3Cpath d='M6 8h10M6 16h14M6 24h10' stroke='%23f1ece0' stroke-width='3'/%3E%3Crect x='22' y='20' width='6' height='8' fill='%23f3d33b'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Red+Hat+Text:wght@400;500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MusicEvent","name":"Low Tide 2027","startDate":"2027-08-14T14:00+02:00","endDate":"2027-08-16T02:00+02:00","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Former shipyard, Gdańsk","address":{"@type":"PostalAddress","addressLocality":"Gdańsk","addressCountry":"PL"}},"offers":[{"@type":"Offer","name":"Day pass","price":"69","priceCurrency":"EUR"},{"@type":"Offer","name":"Weekend pass","price":"119","priceCurrency":"EUR"}]}
+</script>
+<style>
+:root {
+  --font-display: "Big Shoulders Display", "Arial Narrow", "Helvetica Neue Condensed", Impact, sans-serif;
+  --font-text: "Red Hat Text", "Segoe UI", system-ui, sans-serif;
+  /* palette: hull at night */
+  --hue: 245;
+  --ground: oklch(17% 0.028 var(--hue));      /* Baltic at night */
+  --surface: oklch(22% 0.032 var(--hue));
+  --line: oklch(36% 0.03 var(--hue));
+  --ink: oklch(94% 0.012 85);                 /* draft-mark white paint */
+  --muted: oklch(76% 0.02 var(--hue));
+  --oxide: oklch(43% 0.125 33);               /* red-oxide hull primer: big fields */
+  --oxide-deep: oklch(33% 0.1 30);
+  --signal: oklch(88% 0.17 98);               /* sodium/safety yellow: tickets + now */
+  --on-signal: oklch(18% 0.03 var(--hue));
+  --signal-hover: oklch(93% 0.13 98);
+  --focus: oklch(88% 0.17 98);
+  --error: oklch(78% 0.14 30);
+  --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+  --space-5: 1.5rem; --space-6: 2rem; --space-7: 3rem; --space-8: 4rem; --space-9: 6rem; --space-10: 8rem;
+  --step--1: clamp(0.86rem, 0.83rem + 0.12vw, 0.93rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.1rem);
+  --step-1: clamp(1.25rem, 1.15rem + 0.5vw, 1.55rem);
+  --step-2: clamp(1.6rem, 1.4rem + 1vw, 2.3rem);
+  --step-3: clamp(2.1rem, 1.7rem + 2vw, 3.4rem);
+  --step-4: clamp(2.8rem, 2rem + 4vw, 5.6rem);
+  --step-5: clamp(4.6rem, 2rem + 11vw, 15rem);
+  --radius: 0px;
+  --control-h: 3rem;
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-1: 140ms; --dur-2: 280ms;
+  --row: 2.1rem;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body { margin: 0; background: var(--ground); color: var(--ink); font-family: var(--font-text); font-size: var(--step-0); line-height: 1.55; font-synthesis: none; }
+::selection { background: var(--signal); color: var(--on-signal); }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 800; line-height: 0.95; margin: 0; text-transform: uppercase; text-wrap: balance; }
+p { margin: 0 0 var(--space-4); text-wrap: pretty; }
+a { color: var(--ink); text-underline-offset: 0.2em; text-decoration-thickness: 1.5px; }
+a:hover { text-decoration-color: var(--signal); }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+time, .num, table { font-variant-numeric: tabular-nums; }
+.wrap { width: min(100% - 2 * clamp(1rem, 4vw, 3rem), 84rem); margin-inline: auto; }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip { position: absolute; left: 1rem; top: -4rem; background: var(--signal); color: var(--on-signal); padding: .5rem 1rem; z-index: 20; }
+.skip:focus { top: 1rem; }
+[id] { scroll-margin-top: 4.5rem; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .6em; min-height: var(--control-h); padding: 0 var(--space-5); background: var(--signal); color: var(--on-signal); font: 700 var(--step-0)/1 var(--font-text); text-decoration: none; border: 0; cursor: pointer; border-radius: var(--radius); transition: background-color var(--dur-1) var(--ease-out); }
+.btn:hover { background: var(--signal-hover); }
+.btn:active { transform: translateY(1px); }
+.btn:focus-visible { outline-color: var(--ink); }
+.btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
+.btn.ghost:hover { background: var(--ink); color: var(--ground); }
+
+/* top bar */
+.bar { position: sticky; top: 0; z-index: 10; background: color-mix(in oklch, var(--ground), transparent 6%); border-bottom: 1px solid var(--line); }
+.bar-in { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); min-height: 3.5rem; }
+.logo { font-family: var(--font-display); font-weight: 900; font-size: var(--step-1); text-transform: uppercase; letter-spacing: .04em; text-decoration: none; display: flex; align-items: center; gap: .5rem; }
+.logo svg { width: 1.3rem; height: 1.3rem; }
+.bar nav ul { list-style: none; display: flex; gap: var(--space-1); margin: 0; padding: 0; align-items: center; }
+.bar nav a:not(.btn) { display: block; padding: var(--space-3); text-decoration: none; font-weight: 500; font-size: var(--step--1); }
+.bar nav a:not(.btn):hover { color: var(--signal); }
+.bar .btn { min-height: 2.6rem; padding-inline: var(--space-4); font-size: var(--step--1); }
+@media (max-width: 860px) { .bar nav li:not(:last-child) { display: none; } }
+
+/* poster */
+.poster { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
+.poster-grid { display: grid; grid-template-columns: auto 1fr; gap: 0 clamp(1rem, 3vw, 3rem); padding-block: var(--space-6) var(--space-7); }
+.draft { grid-row: 1 / 3; display: flex; flex-direction: column; justify-content: space-between; padding-block: var(--space-2); font-family: var(--font-display); font-weight: 800; font-size: var(--step-1); line-height: 1; color: var(--ink); min-height: 100%; }
+.draft span { display: flex; align-items: center; gap: .35em; }
+.draft span::after { content: ""; width: 1.2em; height: .16em; background: var(--ink); }
+.draft span:nth-child(even) { color: var(--muted); font-size: .7em; }
+.draft span:nth-child(even)::after { width: .7em; background: var(--muted); }
+.poster h1 { font-size: var(--step-5); font-weight: 900; line-height: .82; letter-spacing: -0.01em; }
+.poster h1 .wl { display: block; color: var(--ground); -webkit-text-stroke: 2px var(--ink); paint-order: stroke; }
+.poster h1 .wl { color: transparent; }
+.poster h1 .waterline { display: block; height: .06em; background: var(--signal); margin: .06em 0 .08em; width: 100%; }
+.poster-facts { display: grid; gap: var(--space-5); margin-top: var(--space-6); align-items: end; }
+.poster-facts dl { margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); gap: var(--space-4) var(--space-5); }
+.poster-facts dt { font-size: var(--step--1); color: var(--muted); }
+.poster-facts dd { margin: 0; font-family: var(--font-display); font-weight: 800; font-size: var(--step-2); text-transform: uppercase; line-height: 1; }
+.cta { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+.cta .btn { min-height: 3.5rem; font-size: var(--step-1); padding-inline: var(--space-6); }
+.cta p { margin: 0; font-size: var(--step--1); color: var(--muted); }
+@media (min-width: 980px) { .poster-facts { grid-template-columns: 1.4fr 1fr; } .cta { justify-content: flex-end; } }
+.poster h1 .waterline { position: relative; }
+.hull { position: absolute; right: 0; bottom: 100%; height: .62em; width: auto; max-width: 62%; }
+@media (max-width: 600px) { .hull { height: .4em; } }
+.poster-grid { position: relative; z-index: 1; }
+
+/* section heads */
+.sec { padding-block: var(--space-9); }
+.sec-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-6); }
+.sec-head h2 { font-size: var(--step-4); }
+.sec-head p { max-width: 46ch; margin: 0; color: var(--muted); }
+
+/* lineup on oxide */
+.lineup { background: var(--oxide); color: var(--ink); }
+.lineup .sec-head p { color: oklch(90% 0.03 40); }
+.days2 { display: grid; gap: var(--space-7); }
+@media (min-width: 900px) { .days2 { grid-template-columns: 1fr 1fr; gap: var(--space-8); } }
+.lineup h3 { font-size: var(--step-2); border-bottom: 3px solid var(--ink); padding-bottom: var(--space-2); margin-bottom: var(--space-4); display: flex; justify-content: space-between; }
+.lineup h3 small { font-family: var(--font-text); font-size: var(--step--1); text-transform: none; font-weight: 500; align-self: end; }
+.bill { list-style: none; margin: 0; padding: 0; font-family: var(--font-display); text-transform: uppercase; line-height: 1; }
+.bill li { display: inline; font-weight: 800; }
+.bill li:not(:last-child)::after { content: " / "; color: oklch(72% 0.08 35); font-weight: 600; }
+.bill .t1 { display: block; font-size: var(--step-4); font-weight: 900; margin-bottom: var(--space-3); }
+.bill .t1::after, .bill-rows > li::after { content: none !important; }
+.bill .t2 { font-size: var(--step-2); }
+.bill .t3 { font-size: var(--step-1); font-weight: 600; }
+.bill-rows { display: grid; gap: var(--space-3); }
+.fictional { margin-top: var(--space-7); font-size: var(--step--1); color: oklch(90% 0.03 40); border-top: 1px solid oklch(60% 0.1 35); padding-top: var(--space-3); }
+
+/* timetable */
+.tt-controls { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; justify-content: space-between; margin-bottom: var(--space-5); }
+.daytabs { display: inline-flex; border: 2px solid var(--ink); }
+.daytabs button { font: 700 var(--step-0)/1 var(--font-text); background: none; color: var(--ink); border: 0; padding: 0 var(--space-5); min-height: 2.9rem; cursor: pointer; }
+.daytabs button[aria-pressed="true"] { background: var(--ink); color: var(--ground); }
+.daytabs button:focus-visible { outline-offset: 2px; }
+.now-note { font-size: var(--step--1); color: var(--muted); margin: 0; }
+.now-note strong { color: var(--signal); }
+.tt { display: grid; grid-template-columns: 3.4rem 1fr 1fr; grid-template-rows: auto repeat(26, var(--row)); column-gap: 3px; position: relative; }
+.tt .stage-h { grid-row: 1; padding: 0 var(--space-3) var(--space-3); font-family: var(--font-display); font-weight: 800; font-size: var(--step-2); text-transform: uppercase; line-height: 1; position: sticky; top: 3.5rem; background: var(--ground); z-index: 2; padding-top: var(--space-3); }
+.tt .stage-h small { display: block; font-family: var(--font-text); text-transform: none; font-weight: 400; font-size: var(--step--1); color: var(--muted); margin-top: var(--space-1); }
+.tt .mark { grid-column: 1; font-family: var(--font-display); font-weight: 800; font-size: 1.3rem; line-height: 1; display: flex; align-items: flex-start; gap: .3rem; border-top: 3px solid var(--ink); padding-top: 3px; }
+.tt .mark.half { border-top: 2px solid var(--line); width: 55%; }
+.tt .rule { grid-column: 2 / 4; border-top: 1px solid var(--line); pointer-events: none; }
+.set { margin: 0 0 3px; padding: var(--space-2) var(--space-3); background: var(--surface); border-left: 4px solid var(--oxide); display: flex; flex-direction: column; gap: 2px; overflow: hidden; position: relative; z-index: 1; }
+.set b { font-family: var(--font-display); font-weight: 800; font-size: var(--step-1); text-transform: uppercase; line-height: 1; }
+.set time { font-size: var(--step--1); color: var(--muted); }
+.set.head { background: var(--oxide-deep); border-left-color: var(--ink); }
+.set.now { background: var(--signal); color: var(--on-signal); border-left-color: var(--on-signal); }
+.set.now time { color: var(--on-signal); }
+.set.now::after { content: "Playing now"; font-size: var(--step--1); font-weight: 700; }
+.ttday[hidden] { display: none; }
+.ttday h3.dayname { font-size: var(--step-2); margin-bottom: var(--space-4); }
+.js .ttday h3.dayname { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.ttday + .ttday { margin-top: var(--space-8); }
+.js .ttday + .ttday { margin-top: 0; }
+@media (max-width: 560px) { .tt { grid-template-columns: 2.6rem 1fr 1fr; --row: 2.4rem; } .set { padding: var(--space-1) var(--space-2); } .set b { font-size: 1.05rem; } .tt .stage-h { font-size: var(--step-1); padding-inline: var(--space-2); } }
+
+/* tickets */
+.tickets { background: var(--surface); }
+.tiers { display: grid; gap: var(--space-5); }
+@media (min-width: 820px) { .tiers { grid-template-columns: 1fr 1fr; } }
+.tier { border: 2px solid var(--line); padding: var(--space-6); display: grid; gap: var(--space-4); align-content: start; background: var(--ground); position: relative; }
+.tier:has(input:checked) { border-color: var(--signal); }
+.tier:has(input:checked) .pick { color: var(--signal); }
+.tier:has(input:checked) .pick::before { content: ""; }
+.tier h3 { font-size: var(--step-3); }
+.tier .price { font-family: var(--font-display); font-weight: 900; font-size: var(--step-4); line-height: 1; }
+.tier .price small { font-family: var(--font-text); font-weight: 500; font-size: var(--step-0); color: var(--muted); margin-left: .4em; }
+.tier ul { margin: 0; padding-left: 1.1em; color: var(--muted); }
+.tier ul li { margin-bottom: var(--space-1); }
+.pick { display: flex; align-items: center; gap: var(--space-3); font-weight: 700; cursor: pointer; }
+.pick input { width: 1.4rem; height: 1.4rem; accent-color: var(--signal); margin: 0; }
+.tier label.pick::after { content: ""; position: absolute; inset: 0; }
+.tier select, .order select { position: relative; z-index: 1; }
+select { font: inherit; background: var(--ground); color: var(--ink); border: 2px solid var(--line); min-height: var(--control-h); padding: 0 var(--space-3); border-radius: 0; }
+select:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.field { display: grid; gap: var(--space-2); align-content: start; }
+.field label { font-weight: 700; font-size: var(--step--1); }
+.order { margin-top: var(--space-6); display: grid; gap: var(--space-5); align-items: end; border-top: 2px solid var(--line); padding-top: var(--space-6); }
+@media (min-width: 820px) { .order { grid-template-columns: auto 1fr auto; } }
+.total { font-family: var(--font-display); font-weight: 800; font-size: var(--step-3); text-transform: uppercase; line-height: 1; }
+.total small { display: block; font-family: var(--font-text); text-transform: none; font-weight: 400; font-size: var(--step--1); color: var(--muted); margin-top: var(--space-2); }
+.error { color: var(--error); font-weight: 700; font-size: var(--step--1); margin: 0; }
+.error:empty { display: none; }
+.demo { font-size: var(--step--1); color: var(--muted); margin: var(--space-4) 0 0; }
+.done { margin-top: var(--space-5); border: 2px solid var(--signal); padding: var(--space-5); }
+.done h3 { font-size: var(--step-2); margin-bottom: var(--space-2); }
+.done p { margin: 0; }
+
+/* venue */
+.venue-grid { display: grid; gap: var(--space-7); }
+@media (min-width: 980px) { .venue-grid { grid-template-columns: 7fr 5fr; align-items: start; } }
+.map { border: 1px solid var(--line); background: oklch(20% 0.035 var(--hue)); }
+.map svg { display: block; width: 100%; height: auto; }
+.map figcaption { padding: var(--space-3) var(--space-4); font-size: var(--step--1); color: var(--muted); border-top: 1px solid var(--line); }
+.routes { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.routes li { display: grid; grid-template-columns: 6.5rem 1fr; gap: var(--space-4); padding: var(--space-4) 0; border-top: 1px solid var(--line); }
+.routes li:last-child { border-bottom: 1px solid var(--line); }
+.routes b { font-family: var(--font-display); font-weight: 800; text-transform: uppercase; font-size: var(--step-1); line-height: 1.05; }
+.routes p { margin: 0; }
+.venue h3 { font-size: var(--step-2); margin-bottom: var(--space-4); }
+.venue .lede { font-size: var(--step-1); max-width: 40ch; line-height: 1.4; }
+
+/* faq */
+.faq-list { border-top: 2px solid var(--ink); max-width: 56rem; }
+details { border-bottom: 1px solid var(--line); }
+summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: var(--space-4); padding: var(--space-4) 0; font-weight: 700; font-size: var(--step-1); }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; font-family: var(--font-display); font-size: 1.6em; line-height: .8; flex: none; transition: transform var(--dur-1) var(--ease-out); }
+details[open] summary::after { transform: rotate(45deg); }
+summary:hover { color: var(--signal); }
+details > div { padding: 0 0 var(--space-5); max-width: 62ch; color: var(--muted); }
+details > div p:last-child { margin: 0; }
+.faq-note { margin-top: var(--space-4); font-size: var(--step--1); color: var(--muted); }
+
+/* footer */
+footer { border-top: 1px solid var(--line); padding-block: var(--space-7) var(--space-6); font-size: var(--step--1); color: var(--muted); }
+.foot { display: grid; gap: var(--space-6); }
+@media (min-width: 820px) { .foot { grid-template-columns: 2fr 1fr 1fr; } }
+.foot .big { font-family: var(--font-display); font-weight: 900; font-size: var(--step-3); text-transform: uppercase; color: var(--ink); line-height: .9; margin-bottom: var(--space-3); }
+.foot ul { list-style: none; margin: 0; padding: 0; }
+.foot ul a { display: inline-block; padding-block: var(--space-2); }
+.fine { margin-top: var(--space-6); padding-top: var(--space-4); border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-2); }
+
+@media (prefers-reduced-motion: no-preference) {
+}
+@media print { .bar, .hull, .tickets, .daytabs { display: none; } .ttday[hidden] { display: block; } body { background: #fff; color: #000; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="logo" href="#main" aria-label="Low Tide, top of page">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 4h8M2 10h11M2 16h8" stroke="currentColor" stroke-width="2.4"/><rect x="15" y="12" width="4" height="6" fill="#f3d33b"/></svg>
+      Low Tide
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#lineup">Lineup</a></li>
+        <li><a href="#timetable">Timetable</a></li>
+        <li><a href="#venue">Getting there</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a class="btn" href="#tickets">Tickets from €69</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="poster" aria-labelledby="h1">
+    <div class="wrap poster-grid">
+      <div class="draft" aria-hidden="true"><span>16</span><span>·</span><span>15</span><span>·</span><span>14</span><span>·</span><span>13</span></div>
+      <div>
+        <h1 id="h1"><span>Low</span><span class="waterline" aria-hidden="true"><svg class="hull" viewBox="0 0 600 110" focusable="false"><path d="M40 0 H600 V110 H95 Q60 110 48 70 Z" fill="oklch(43% 0.125 33)"/><path d="M40 0 H600 V24 H44 Z" fill="oklch(33% 0.1 30)"/><g fill="oklch(94% 0.012 85)"><rect x="496" y="40" width="44" height="6"/><rect x="496" y="78" width="44" height="6"/><text x="550" y="52" font-family="Big Shoulders Display, Impact, sans-serif" font-weight="800" font-size="24">15</text><text x="550" y="92" font-family="Big Shoulders Display, Impact, sans-serif" font-weight="800" font-size="24">14</text></g></svg></span><span class="wl">Tide</span><span class="visually-hidden"> 2027, electronic music festival</span></h1>
+      </div>
+      <div class="poster-facts">
+        <dl>
+          <div><dt>When</dt><dd><time datetime="2027-08-14">14</time>–<time datetime="2027-08-15">15 Aug</time> 2027</dd></div>
+          <div><dt>Where</dt><dd>Gdańsk shipyard</dd></div>
+          <div><dt>Stages</dt><dd>Slipway + Plate Hall</dd></div>
+          <div><dt>Capacity</dt><dd>6,000</dd></div>
+        </dl>
+        <div class="cta">
+          <a class="btn" href="#tickets">Buy tickets</a>
+          <p>Day pass €69 · Weekend pass €119</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec lineup" id="lineup" aria-labelledby="lineup-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="lineup-h">Lineup</h2>
+        <p>Two days, twenty-two acts. The Slipway runs in daylight and into the evening; the Plate Hall runs into the night.</p>
+      </div>
+      <div class="days2">
+        <div>
+          <h3>Saturday <small>14 August</small></h3>
+          <ul class="bill bill-rows">
+            <li class="t1">Rust Cathedral</li>
+            <li><ul class="bill"><li class="t2">Pilot Whale Sound System</li><li class="t2">Dry Dock Ensemble</li><li class="t2">Kelp Static</li></ul></li>
+            <li><ul class="bill"><li class="t3">Sodium Lamp Trio</li><li class="t3">Ferrous Tide b2b Mira Okoń</li><li class="t3">Bosun &amp; Grey</li><li class="t3">Ola Szkwał</li><li class="t3">Halina Wrack</li><li class="t3">Saltmarsh Radio</li><li class="t3">Neap Choir</li></ul></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Sunday <small>15 August</small></h3>
+          <ul class="bill bill-rows">
+            <li class="t1">Twelve Gantries</li>
+            <li><ul class="bill"><li class="t2">Hull 1102</li><li class="t2">Undertow Unit</li><li class="t2">Mira Okoń</li></ul></li>
+            <li><ul class="bill"><li class="t3">The Rivet Counters</li><li class="t3">Lanternfish</li><li class="t3">Kaja Ballast</li><li class="t3">Ebb Signal</li><li class="t3">Wavecut Bench</li><li class="t3">Saltmarsh Radio (closing)</li></ul></li>
+          </ul>
+        </div>
+      </div>
+      <p class="fictional">Every artist name on this page is fictional and used for design purposes only.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="timetable" aria-labelledby="tt-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="tt-h">Timetable</h2>
+        <p>Read it like the draft marks on a hull: each big mark is an hour. All times are local (CEST). Set times can still move by a few minutes.</p>
+      </div>
+      <div class="tt-controls">
+        <div class="daytabs" role="group" aria-label="Choose a day" hidden>
+          <button type="button" data-day="sat" aria-pressed="true">Sat 14</button>
+          <button type="button" data-day="sun" aria-pressed="false">Sun 15</button>
+        </div>
+        <p class="now-note" id="now-note" aria-live="polite">Gates open 14:00 both days.</p>
+      </div>
+
+      <div class="ttday" id="tt-sat" data-date="2027-08-14">
+        <h3 class="dayname">Saturday 14 August</h3>
+        <div class="tt">
+          <div class="stage-h" style="grid-column:2">Slipway<small>Open air · 15:00–23:00</small></div>
+          <div class="stage-h" style="grid-column:3">Plate Hall<small>Indoors · 16:00–04:00</small></div>
+          <!--TT-MARKS-->
+          <div class="set" style="grid-column:2;grid-row:2/5" data-s="15:00" data-e="16:30"><b>Neap Choir</b><time>15:00–16:30</time></div>
+          <div class="set" style="grid-column:2;grid-row:5/8" data-s="16:30" data-e="18:00"><b>Halina Wrack</b><time>16:30–18:00</time></div>
+          <div class="set" style="grid-column:2;grid-row:8/11" data-s="18:00" data-e="19:30"><b>Bosun &amp; Grey</b><time>18:00–19:30</time></div>
+          <div class="set" style="grid-column:2;grid-row:11/14" data-s="19:30" data-e="21:00"><b>Kelp Static</b><time>19:30–21:00</time></div>
+          <div class="set head" style="grid-column:2;grid-row:14/18" data-s="21:00" data-e="23:00"><b>Rust Cathedral</b><time>21:00–23:00</time></div>
+          <div class="set" style="grid-column:3;grid-row:4/8" data-s="16:00" data-e="18:00"><b>Saltmarsh Radio</b><time>16:00–18:00</time></div>
+          <div class="set" style="grid-column:3;grid-row:8/12" data-s="18:00" data-e="20:00"><b>Ola Szkwał</b><time>18:00–20:00</time></div>
+          <div class="set" style="grid-column:3;grid-row:12/16" data-s="20:00" data-e="22:00"><b>Sodium Lamp Trio</b><time>20:00–22:00</time></div>
+          <div class="set" style="grid-column:3;grid-row:16/20" data-s="22:00" data-e="24:00"><b>Pilot Whale Sound System</b><time>22:00–00:00</time></div>
+          <div class="set" style="grid-column:3;grid-row:20/24" data-s="24:00" data-e="26:00"><b>Dry Dock Ensemble</b><time>00:00–02:00</time></div>
+          <div class="set" style="grid-column:3;grid-row:24/28" data-s="26:00" data-e="28:00"><b>Ferrous Tide b2b Mira Okoń</b><time>02:00–04:00</time></div>
+        </div>
+      </div>
+
+      <div class="ttday" id="tt-sun" data-date="2027-08-15">
+        <h3 class="dayname">Sunday 15 August</h3>
+        <div class="tt">
+          <div class="stage-h" style="grid-column:2">Slipway<small>Open air · 15:00–23:00</small></div>
+          <div class="stage-h" style="grid-column:3">Plate Hall<small>Indoors · 16:00–02:00</small></div>
+          <!--TT-MARKS-->
+          <div class="set" style="grid-column:2;grid-row:2/5" data-s="15:00" data-e="16:30"><b>Wavecut Bench</b><time>15:00–16:30</time></div>
+          <div class="set" style="grid-column:2;grid-row:5/8" data-s="16:30" data-e="18:00"><b>Kaja Ballast</b><time>16:30–18:00</time></div>
+          <div class="set" style="grid-column:2;grid-row:8/11" data-s="18:00" data-e="19:30"><b>The Rivet Counters</b><time>18:00–19:30</time></div>
+          <div class="set" style="grid-column:2;grid-row:11/14" data-s="19:30" data-e="21:00"><b>Undertow Unit</b><time>19:30–21:00</time></div>
+          <div class="set head" style="grid-column:2;grid-row:14/18" data-s="21:00" data-e="23:00"><b>Twelve Gantries</b><time>21:00–23:00</time></div>
+          <div class="set" style="grid-column:3;grid-row:4/8" data-s="16:00" data-e="18:00"><b>Ebb Signal</b><time>16:00–18:00</time></div>
+          <div class="set" style="grid-column:3;grid-row:8/12" data-s="18:00" data-e="20:00"><b>Lanternfish</b><time>18:00–20:00</time></div>
+          <div class="set" style="grid-column:3;grid-row:12/16" data-s="20:00" data-e="22:00"><b>Mira Okoń</b><time>20:00–22:00</time></div>
+          <div class="set" style="grid-column:3;grid-row:16/20" data-s="22:00" data-e="24:00"><b>Hull 1102</b><time>22:00–00:00</time></div>
+          <div class="set" style="grid-column:3;grid-row:20/24" data-s="24:00" data-e="26:00"><b>Saltmarsh Radio</b><time>00:00–02:00 · closing</time></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec tickets" id="tickets" aria-labelledby="tickets-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="tickets-h">Tickets</h2>
+        <p>Two kinds of ticket, sold until the shipyard reaches its 6,000 capacity. Prices include VAT and booking fees.</p>
+      </div>
+      <form id="buy" novalidate>
+        <fieldset style="border:0;margin:0;padding:0;min-width:0">
+          <legend class="visually-hidden">Ticket type</legend>
+          <div class="tiers">
+            <div class="tier">
+              <label class="pick"><input type="radio" name="tier" value="day" checked> Select<span class="visually-hidden"> day pass</span></label>
+              <h3>Day pass</h3>
+              <p class="price">€69<small>one day</small></p>
+              <ul><li>Entry on Saturday or Sunday, gates 14:00</li><li>Both stages until close</li><li>Re-entry on the same day</li></ul>
+              <div class="field">
+                <label for="dayof">Which day</label>
+                <select id="dayof" name="dayof" aria-describedby="dayof-err">
+                  <option value="">Choose a day</option>
+                  <option value="sat">Saturday 14 August</option>
+                  <option value="sun">Sunday 15 August</option>
+                </select>
+                <p class="error" id="dayof-err"></p>
+              </div>
+            </div>
+            <div class="tier">
+              <label class="pick"><input type="radio" name="tier" value="weekend"> Select<span class="visually-hidden"> weekend pass</span></label>
+              <h3>Weekend pass</h3>
+              <p class="price">€119<small>both days</small></p>
+              <ul><li>Entry on Saturday and Sunday</li><li>Both stages until close, both nights</li><li>One wristband, kept on for the weekend</li></ul>
+            </div>
+          </div>
+        </fieldset>
+        <div class="order">
+          <div class="field">
+            <label for="qty">Tickets</label>
+            <select id="qty" name="qty"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+          </div>
+          <p class="total" id="total" aria-live="polite">€69<small>1 × day pass</small></p>
+          <button class="btn" type="submit" style="min-height:3.5rem;font-size:var(--step-1);padding-inline:var(--space-7)">Continue to checkout</button>
+        </div>
+        <p class="demo">Demo page: checkout is not connected. Nothing is charged or reserved.</p>
+        <div class="done" id="done" hidden tabindex="-1"></div>
+      </form>
+    </div>
+  </section>
+
+  <section class="sec venue" id="venue" aria-labelledby="venue-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="venue-h">The shipyard</h2>
+        <p class="lede" style="color:var(--ink)">A decommissioned shipyard on the water in Gdańsk. The Slipway stage stands where hulls were launched; the Plate Hall is the old steel-cutting shed.</p>
+      </div>
+      <div class="venue-grid">
+        <figure class="map" style="margin:0">
+          <svg viewBox="0 0 640 420" role="img" aria-labelledby="map-t map-d">
+            <title id="map-t">Schematic site map</title>
+            <desc id="map-d">The walking route runs from Gdańsk Główny station in the south-west to the festival gate, then on to the Plate Hall and the Slipway stage at the water's edge in the east.</desc>
+            <rect x="470" y="0" width="170" height="420" fill="oklch(26% 0.05 240)"/>
+            <path d="M470 0 V420" stroke="oklch(45% 0.05 240)" stroke-width="2"/>
+            <g fill="none" stroke="oklch(45% 0.05 240)" stroke-width="1">
+              <path d="M500 60 q20 -8 40 0 t40 0 t40 0"/><path d="M500 300 q20 -8 40 0 t40 0 t40 0"/>
+            </g>
+            <text x="560" y="210" fill="oklch(76% 0.02 245)" font-size="15" font-family="Red Hat Text, sans-serif" text-anchor="middle" transform="rotate(90 560 210)">WATER</text>
+            <g fill="oklch(30% 0.03 245)" stroke="oklch(45% 0.03 245)">
+              <rect x="210" y="40" width="70" height="40"/><rect x="300" y="300" width="60" height="70"/><rect x="120" y="190" width="50" height="60"/>
+            </g>
+            <rect x="250" y="130" width="150" height="90" fill="oklch(43% 0.125 33)"/>
+            <text x="325" y="181" fill="oklch(94% 0.012 85)" font-size="20" font-weight="800" font-family="Big Shoulders Display, Impact, sans-serif" text-anchor="middle">PLATE HALL</text>
+            <path d="M410 250 L520 210 L530 238 L420 278 Z" fill="oklch(43% 0.125 33)"/>
+            <text x="425" y="310" fill="oklch(94% 0.012 85)" font-size="20" font-weight="800" font-family="Big Shoulders Display, Impact, sans-serif">SLIPWAY</text>
+            <g stroke="oklch(76% 0.02 245)" stroke-width="3"><path d="M330 60 V20 H430 V120"/><path d="M430 20 L455 60"/></g>
+            <text x="352" y="14" fill="oklch(76% 0.02 245)" font-size="12" font-family="Red Hat Text, sans-serif">crane</text>
+            <path d="M40 390 L40 330 L150 330 L190 290 L190 250 L250 220 M400 220 L430 255" fill="none" stroke="oklch(88% 0.17 98)" stroke-width="5" stroke-dasharray="2 10" stroke-linecap="round"/>
+            <rect x="178" y="270" width="24" height="24" fill="oklch(88% 0.17 98)"/>
+            <text x="210" y="288" fill="oklch(88% 0.17 98)" font-size="15" font-weight="700" font-family="Red Hat Text, sans-serif">Festival gate</text>
+            <circle cx="40" cy="395" r="9" fill="oklch(94% 0.012 85)"/>
+            <text x="56" y="400" fill="oklch(94% 0.012 85)" font-size="15" font-weight="700" font-family="Red Hat Text, sans-serif">Gdańsk Główny</text>
+          </svg>
+          <figcaption>Schematic, not to scale. The exact gate location is published with the final site map.</figcaption>
+        </figure>
+        <div>
+          <h3>Getting there</h3>
+          <ul class="routes">
+            <li><b>On foot</b><p>The shipyard sits on the edge of the city centre. From Gdańsk Główny station, follow the yellow signs to the festival gate.</p></li>
+            <li><b>Train</b><p>Gdańsk Główny is served by intercity trains and the SKM city rail. Trains from Gdańsk airport reach the city with one change.</p></li>
+            <li><b>Tram &amp; bus</b><p>Several tram lines stop near the main station. Check ZTM Gdańsk for night services after the Plate Hall closes.</p></li>
+            <li><b>Bike</b><p>Bike parking inside the gate. There is no car park for the festival.</p></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="faq" aria-labelledby="faq-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="faq-h">FAQ</h2></div>
+      <div class="faq-list">
+        <details><summary>What age do I need to be?</summary><div><p>Low Tide is 18+. Bring photo ID; it is checked at the gate together with your ticket.</p></div></details>
+        <details><summary>Can I leave and come back?</summary><div><p>Yes, on the same day. Your wristband is scanned on the way out and back in.</p></div></details>
+        <details><summary>What happens if it rains?</summary><div><p>The Slipway is open air and plays in light rain. If the weather makes the stage unsafe, sets move into the Plate Hall where possible. Bring a waterproof layer: it is the Baltic coast.</p></div></details>
+        <details><summary>Is the site accessible?</summary><div><p>The ground is old concrete and steel plate, mostly level. There is a step-free route from the gate to both stages, a viewing platform at the Slipway and accessible toilets. Write to the access team before the festival if you need a companion ticket.</p></div></details>
+        <details><summary>Can I bring food and drink?</summary><div><p>Sealed water bottles up to 0.5 l are fine. Free water refill points are next to both stages. Other food and drink is sold on site.</p></div></details>
+        <details><summary>Can I get a refund?</summary><div><p>Tickets are not refundable, but you can transfer a ticket to someone else's name until 7 August 2027.</p></div></details>
+      </div>
+      <p class="faq-note">Policies above are drafts for the organisers to confirm before tickets go on sale.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <p class="big">Low Tide 2027</p>
+        <p>14–15 August · former shipyard, Gdańsk, Poland</p>
+      </div>
+      <ul>
+        <li><a href="#lineup">Lineup</a></li>
+        <li><a href="#timetable">Timetable</a></li>
+        <li><a href="#tickets">Tickets</a></li>
+      </ul>
+      <ul>
+        <li><a href="#venue">Getting there</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="fine">
+      <span>Low Tide · electronic music festival</span>
+      <span>Design demo: artist names are fictional and checkout is not connected.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  document.documentElement.classList.add("js");
+  // Build draft-mark time axis into each timetable (static content stays visible without JS)
+  for (const tt of document.querySelectorAll(".tt")) {
+    let html = "";
+    for (let i = 0; i < 26; i++) {
+      const row = i + 2;
+      const h = (15 + Math.floor(i / 2)) % 24;
+      if (i % 2 === 0) html += `<div class="mark" style="grid-row:${row}" aria-hidden="true">${String(h).padStart(2, "0")}</div><div class="rule" style="grid-row:${row}" aria-hidden="true"></div>`;
+      else html += `<div class="mark half" style="grid-row:${row}" aria-hidden="true"></div>`;
+    }
+    tt.insertAdjacentHTML("afterbegin", html);
+  }
+
+  // Day tabs
+  const tabs = document.querySelector(".daytabs");
+  tabs.hidden = false;
+  const show = (d) => {
+    tabs.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.day === d)));
+    document.getElementById("tt-sat").hidden = d !== "sat";
+    document.getElementById("tt-sun").hidden = d !== "sun";
+  };
+  tabs.addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) show(b.dataset.day); });
+
+  // Now playing (Europe/Warsaw); before the festival show a countdown
+  const note = document.getElementById("now-note");
+  const fmt = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Warsaw", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23" });
+  const p = Object.fromEntries(fmt.formatToParts(new Date()).map((x) => [x.type, x.value]));
+  const today = `${p.year}-${p.month}-${p.day}`;
+  let mins = +p.hour * 60 + +p.minute;
+  let festDay = null;
+  if (today === "2027-08-14" || (today === "2027-08-15" && mins < 240)) festDay = "sat";
+  if ((today === "2027-08-15" && mins >= 240) || (today === "2027-08-16" && mins < 240)) festDay = "sun";
+  if (festDay) {
+    if (mins < 240) mins += 1440;
+    show(festDay);
+    const toM = (t) => { const [h, m] = t.split(":").map(Number); return h * 60 + m; };
+    const playing = [...document.querySelectorAll(`#tt-${festDay} .set`)].filter((s) => toM(s.dataset.s) <= mins && mins < toM(s.dataset.e));
+    playing.forEach((s) => s.classList.add("now"));
+    note.innerHTML = playing.length ? `<strong>Playing now:</strong> ${playing.map((s) => s.querySelector("b").textContent).join(" and ")}` : "Between sets. Gates open 14:00.";
+  } else {
+    show("sat");
+    const days = Math.ceil((Date.UTC(2027, 7, 14) - Date.UTC(+p.year, +p.month - 1, +p.day)) / 864e5);
+    note.innerHTML = days > 0 ? `<strong>${days.toLocaleString("en-GB")} days</strong> to the first set. Gates open 14:00 both days.` : "Low Tide 2027 has finished. Thank you for coming.";
+  }
+
+  // Tickets
+  const form = document.getElementById("buy");
+  const total = document.getElementById("total");
+  const dayof = document.getElementById("dayof");
+  const eur = new Intl.NumberFormat("en-IE", { style: "currency", currency: "EUR", maximumFractionDigits: 0 });
+  const update = () => {
+    const tier = form.tier.value, q = +form.qty.value;
+    const price = tier === "day" ? 69 : 119;
+    dayof.disabled = tier !== "day";
+    total.innerHTML = `${eur.format(price * q)}<small>${q} × ${tier === "day" ? "day pass" : "weekend pass"}</small>`;
+  };
+  form.addEventListener("change", update);
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const err = document.getElementById("dayof-err");
+    if (form.tier.value === "day" && !dayof.value) {
+      err.textContent = "Choose Saturday or Sunday for a day pass.";
+      dayof.setAttribute("aria-invalid", "true");
+      dayof.focus();
+      return;
+    }
+    err.textContent = ""; dayof.removeAttribute("aria-invalid");
+    const done = document.getElementById("done");
+    done.hidden = false;
+    done.innerHTML = `<h3>Checkout would open here</h3><p>${total.querySelector("small").textContent}${form.tier.value === "day" ? ", " + dayof.selectedOptions[0].text : ""}: ${total.firstChild.textContent}. This demo has no payment provider, so nothing was charged or reserved.</p>`;
+    done.focus();
+  });
+  update();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Build Polished Websites · Showcase</title>
+<meta name="description" content="Three briefs built twice by the same agent: with the previous and the current version of the build-polished-websites skill. Screenshots, live pages, palettes, and slop-scan scores.">
+<meta name="theme-color" content="#f3f5f8">
+<meta property="og:title" content="Build Polished Websites · Showcase">
+<meta property="og:description" content="Same briefs, same agent, two versions of a website skill. See how the pages stop resembling each other.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/festival-current-desktop.webp">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='3' fill='%23141619'/%3E%3Crect x='7' y='9' width='18' height='14' fill='%23f3f5f8'/%3E%3Cellipse cx='16' cy='16' rx='12.5' ry='9' fill='none' stroke='%23d22d2d' stroke-width='2.4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<style>
+/*
+  Direction card
+  Source world: a photographer's contact sheet on a light table: film strips,
+                sprocket holes, edge-printed frame numbers, a red china marker
+                circling the selects.
+  Palette: cool light-table white, film-base black, china-marker red for the
+           selected frame only.
+  Type: Archivo variable; expanded widths for headlines, condensed for edge print.
+*/
+:root {
+  --hue: 250;
+  --ground: oklch(97.4% 0.006 var(--hue));
+  --glow: oklch(99.4% 0.003 var(--hue));
+  --line: oklch(87% 0.01 var(--hue));
+  --muted: oklch(44% 0.016 var(--hue));
+  --ink: oklch(19% 0.012 var(--hue));
+  --film: oklch(17% 0.006 var(--hue));
+  --edge: oklch(80% 0.03 95);
+  --marker: oklch(55% 0.2 25);
+  --font: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --step--1: clamp(0.82rem, 0.8rem + 0.1vw, 0.88rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.1rem);
+  --step-1: clamp(1.2rem, 1.1rem + 0.45vw, 1.45rem);
+  --step-2: clamp(1.5rem, 1.3rem + 1vw, 2.1rem);
+  --step-4: clamp(2.5rem, 1.6rem + 4.6vw, 5.6rem);
+  --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem; --space-5: 1.5rem;
+  --space-6: 2rem; --space-7: 3rem; --space-8: 4.5rem; --space-9: 7rem;
+  --gutter: clamp(1rem, 4vw, 3rem);
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--ground); color: var(--ink);
+  font: 400 var(--step-0)/1.55 var(--font); font-synthesis: none;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--marker); outline-offset: 3px; }
+::selection { background: var(--ink); color: var(--glow); }
+h1, h2, h3 { margin: 0; font-weight: 750; font-stretch: 112%; line-height: 1.05; text-wrap: balance; letter-spacing: -0.01em; }
+p { margin: 0; text-wrap: pretty; }
+.wrap { width: min(100% - 2 * var(--gutter), 78rem); margin-inline: auto; }
+.skip { position: absolute; left: var(--space-4); top: -4rem; padding: var(--space-2) var(--space-4); background: var(--ink); color: var(--glow); z-index: 10; }
+.skip:focus { top: var(--space-4); }
+
+/* header */
+.bar { border-bottom: 1px solid var(--line); background: var(--glow); }
+.bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--space-5); min-height: 3.75rem; }
+.brand { font-weight: 750; font-stretch: 112%; text-decoration: none; display: flex; align-items: center; gap: var(--space-3); }
+.brand svg { flex: none; }
+.bar nav ul { display: flex; gap: var(--space-5); margin: 0; padding: 0; list-style: none; font-size: var(--step--1); }
+.bar nav a { text-decoration: none; padding-block: var(--space-2); }
+.bar nav a:hover { text-decoration: underline; }
+
+/* opening */
+.opening { padding-block: var(--space-8) var(--space-7); display: grid; gap: var(--space-7); grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); align-items: end; }
+.opening h1 { font-size: var(--step-4); font-stretch: 118%; font-weight: 800; letter-spacing: -0.02em; }
+.lead { margin-top: var(--space-5); font-size: var(--step-1); max-width: 36ch; }
+.finding { margin-top: var(--space-5); max-width: 58ch; color: var(--muted); }
+
+/* signature graphic: palettes side by side */
+.palettes { background: var(--glow); border: 1px solid var(--line); padding: var(--space-5); }
+.palettes h2 { font-size: var(--step-1); font-stretch: 100%; }
+.palettes > p { color: var(--muted); font-size: var(--step--1); margin-top: var(--space-2); }
+.pal-row { display: grid; grid-template-columns: 7.5rem 1fr; gap: var(--space-4); align-items: center; margin-top: var(--space-5); }
+.pal-row > span { font-size: var(--step--1); font-weight: 600; }
+.pal-sets { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+.pal { display: flex; height: 3.25rem; border: 1px solid var(--line); }
+.pal i { flex: var(--w, 1); }
+.pal-sets small { display: block; font-size: 0.75rem; color: var(--muted); margin-top: 0.3rem; font-stretch: 90%; }
+.scores { margin-top: var(--space-5); width: 100%; border-collapse: collapse; font-size: var(--step--1); font-variant-numeric: tabular-nums; }
+.scores th, .scores td { text-align: left; padding: 0.45rem 0; border-top: 1px solid var(--line); }
+.scores td:not(:first-child), .scores th:not(:first-child) { text-align: right; }
+.scores caption { text-align: left; font-weight: 600; padding-bottom: var(--space-2); }
+
+/* brief strips */
+.brief { padding-block: var(--space-8); border-top: 1px solid var(--line); }
+.brief-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: var(--space-6); align-items: start; }
+.brief-head h2 { font-size: var(--step-2); }
+.brief-head .meta { margin-top: var(--space-3); color: var(--muted); font-size: var(--step--1); }
+.brief-head blockquote { margin: 0; padding-left: var(--space-5); border-left: 3px solid var(--ink); max-width: 62ch; }
+.brief-head blockquote p + p { margin-top: var(--space-3); color: var(--muted); font-size: var(--step--1); }
+
+.pair { margin-top: var(--space-7); display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); }
+.shot { margin: 0; }
+.film {
+  position: relative; background: var(--film); padding: 1.6rem 0.9rem;
+  background-image:
+    repeating-linear-gradient(90deg, transparent 0 9px, var(--ground) 9px 19px, transparent 19px 28px),
+    repeating-linear-gradient(90deg, transparent 0 9px, var(--ground) 9px 19px, transparent 19px 28px);
+  background-size: 100% 9px, 100% 9px;
+  background-position: 0 0.5rem, 0 calc(100% - 0.5rem);
+  background-repeat: no-repeat;
+}
+.edge { position: absolute; top: 0.32rem; right: 1rem; font-size: 0.68rem; font-stretch: 70%; font-weight: 600; letter-spacing: 0.06em; color: var(--edge); }
+.edge.bottom { top: auto; bottom: 0.32rem; left: 1rem; right: auto; }
+.film a { display: block; outline-offset: 5px; }
+.film img { width: 100%; background: var(--glow); }
+.shot figcaption { margin-top: var(--space-4); display: grid; gap: var(--space-2); }
+.label { display: flex; align-items: center; gap: var(--space-3); font-weight: 700; font-stretch: 100%; }
+.label .score { margin-left: auto; font-weight: 500; font-size: var(--step--1); font-variant-numeric: tabular-nums; color: var(--muted); }
+.thesis { font-size: var(--step--1); color: var(--muted); max-width: 52ch; }
+.swatches { display: flex; gap: 3px; }
+.swatches i { width: 1.6rem; height: 1rem; border: 1px solid var(--line); }
+.open { font-size: var(--step--1); font-weight: 600; justify-self: start; padding-block: 0.6rem; margin-block: -0.35rem; }
+
+/* china-marker circle on the selected frame */
+.select { position: relative; }
+.marker { position: absolute; inset: -0.9rem -1.1rem; width: calc(100% + 2.2rem); height: calc(100% + 1.8rem); pointer-events: none; overflow: visible; }
+.marker path { fill: none; stroke: var(--marker); stroke-width: 4; stroke-linecap: round; vector-effect: non-scaling-stroke; opacity: 0.92; }
+.select .label::after { content: "select"; font-size: var(--step--1); font-weight: 700; color: var(--marker); transform: rotate(-4deg); }
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .marker path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw linear both; animation-timeline: view(); animation-range: entry 20% cover 45%; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+  }
+}
+
+/* method & install */
+.method { padding-block: var(--space-8); border-top: 1px solid var(--line); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: var(--space-6); }
+.method h2 { font-size: var(--step-2); }
+.steps { margin: 0; padding: 0; list-style: none; display: grid; gap: 0; }
+.steps li { display: grid; grid-template-columns: 11rem 1fr; gap: var(--space-4); padding-block: var(--space-4); border-top: 1px solid var(--line); }
+.steps strong { font-stretch: 100%; }
+.steps span { color: var(--muted); }
+pre { margin: var(--space-4) 0 0; padding: var(--space-5); background: var(--film); color: var(--glow); overflow-x: auto; font: 500 0.9rem/1.6 ui-monospace, "Cascadia Mono", Consolas, monospace; }
+.install p + p { margin-top: var(--space-4); }
+.notes { padding-block: var(--space-7); border-top: 1px solid var(--line); color: var(--muted); font-size: var(--step--1); }
+.notes ul { margin: var(--space-3) 0 0; padding-left: 1.1rem; max-width: 80ch; display: grid; gap: var(--space-2); }
+footer { padding-block: var(--space-6); background: var(--film); color: var(--edge); font-size: var(--step--1); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-4); }
+footer a { color: var(--glow); }
+
+@media (max-width: 960px) {
+  .opening, .brief-head, .method { grid-template-columns: minmax(0, 1fr); }
+  .opening { padding-block: var(--space-7) var(--space-6); }
+}
+@media (max-width: 680px) {
+  .bar nav { display: none; }
+  .pair { grid-template-columns: minmax(0, 1fr); gap: var(--space-8); }
+  .film { padding-inline: 0.6rem; }
+  .pal-row { grid-template-columns: 1fr; gap: var(--space-2); }
+  .steps li { grid-template-columns: 1fr; gap: var(--space-2); }
+  .marker { inset: -0.7rem -0.5rem; width: calc(100% + 1rem); height: calc(100% + 1.4rem); }
+}
+@media print { .bar, .marker, footer { display: none; } body { background: #fff; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="./">
+      <svg width="28" height="20" viewBox="0 0 28 20" aria-hidden="true"><rect x="0" y="0" width="28" height="20" fill="#141619"/><rect x="5" y="4" width="18" height="12" fill="#f3f5f8"/><ellipse cx="14" cy="10" rx="12.5" ry="8.4" fill="none" stroke="#d22d2d" stroke-width="2"/></svg>
+      Build Polished Websites
+    </a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#briefs">Briefs</a></li>
+        <li><a href="#benchmark">SaaS benchmark</a></li>
+        <li><a href="#method">Method</a></li>
+        <li><a href="#install">Install</a></li>
+        <li><a href="https://github.com/denfry/build-polished-websites">GitHub</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="wrap opening" aria-labelledby="title">
+    <div>
+      <h1 id="title">Three briefs, built twice.</h1>
+      <p class="lead">A sourdough bakery, a shipyard music festival, and a family-law practice. Same agent, same prompts, same constraints. Once with the previous version of the skill, once with the current one.</p>
+      <p class="finding">The previous version already produced careful, accessible pages, but they converged: two of three on warm paper grounds, two of three with a rust-orange accent, tracked capital labels everywhere. The current version starts from each subject's own world, and the pages stop resembling each other.</p>
+    </div>
+    <div class="palettes">
+      <h2>Where the palettes went</h2>
+      <p>Main colours of each page, taken from its own stylesheet.</p>
+      <div class="pal-row">
+        <span>Previous version</span>
+        <div class="pal-sets">
+          <div><div class="pal" aria-hidden="true"><i style="background:#f5eee1;--w:3"></i><i style="background:#2a1c13"></i><i style="background:#b0431a"></i></div><small>Bakery</small></div>
+          <div><div class="pal" aria-hidden="true"><i style="background:#0d1214;--w:3"></i><i style="background:#ece7dc"></i><i style="background:#f0652a"></i><i style="background:#6f97a0"></i></div><small>Festival</small></div>
+          <div><div class="pal" aria-hidden="true"><i style="background:#f4f1ea;--w:3"></i><i style="background:#1e2328"></i><i style="background:#2c5a4b"></i></div><small>Law</small></div>
+        </div>
+      </div>
+      <div class="pal-row">
+        <span>Current version</span>
+        <div class="pal-sets">
+          <div><div class="pal" aria-hidden="true"><i style="background:oklch(98.4% .006 250);--w:3"></i><i style="background:oklch(30% .115 264)"></i><i style="background:oklch(44% .17 264)"></i></div><small>Bakery</small></div>
+          <div><div class="pal" aria-hidden="true"><i style="background:oklch(17% .028 245);--w:3"></i><i style="background:oklch(94% .012 85)"></i><i style="background:oklch(43% .125 33)"></i><i style="background:oklch(88% .17 98)"></i></div><small>Festival</small></div>
+          <div><div class="pal" aria-hidden="true"><i style="background:oklch(97.6% .006 228);--w:3"></i><i style="background:oklch(26% .03 240)"></i><i style="background:oklch(41% .065 168)"></i><i style="background:oklch(84% .05 168)"></i></div><small>Law</small></div>
+        </div>
+      </div>
+      <table class="scores">
+        <caption>slop-scan score (lower is less templated)</caption>
+        <thead><tr><th scope="col">Brief</th><th scope="col">Previous</th><th scope="col">Current</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Bakery</th><td>7</td><td>0</td></tr>
+          <tr><th scope="row">Festival</th><td>9</td><td>1</td></tr>
+          <tr><th scope="row">Family law</th><td>4</td><td>0</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div id="briefs">
+    <section class="wrap brief" aria-labelledby="bakery">
+      <div class="brief-head">
+        <div>
+          <h2 id="bakery">Forno Alto, sourdough bakery in Porto</h2>
+          <p class="meta">Restaurant and café archetype · primary action: reserve loaves for pickup</p>
+        </div>
+        <blockquote>
+          <p>“A small sourdough bakery and café in Porto's Bonfim neighbourhood. Wood-fired oven every morning; closes when sold out. See today's bake and reserve loaves for pickup.”</p>
+          <p>Both versions built a working today's-bake board and a validated reservation form. The current one borrows the shopfront's azulejo tiles: one cobalt ink on glaze white.</p>
+        </blockquote>
+      </div>
+      <div class="pair">
+        <figure class="shot">
+          <div class="film">
+            <span class="edge" aria-hidden="true">PREV ▸ 14</span>
+            <a href="briefs/bakery/previous.html"><picture>
+              <source media="(max-width: 680px)" srcset="img/bakery-previous-mobile.webp" width="390" height="844">
+              <img src="img/bakery-previous-desktop.webp" width="1120" height="700" loading="lazy" decoding="async" alt="Previous version: cream background, large brown serif name, dark oven-arch panel listing today's loaves.">
+            </picture></a>
+            <span class="edge bottom" aria-hidden="true">14</span>
+          </div>
+          <figcaption>
+            <span class="label">Previous version <span class="score">slop-scan 7</span></span>
+            <span class="swatches" aria-hidden="true"><i style="background:#f5eee1"></i><i style="background:#2a1c13"></i><i style="background:#b0431a"></i></span>
+            <span class="thesis">“A baker's morning sheet on warm flour-paper, where the wood-fired oven frames today's bake.”</span>
+            <a class="open" href="briefs/bakery/previous.html">Open the page</a>
+          </figcaption>
+        </figure>
+        <figure class="shot select">
+          <div class="film">
+            <span class="edge" aria-hidden="true">CURR ▸ 15</span>
+            <a href="briefs/bakery/current.html"><picture>
+              <source media="(max-width: 680px)" srcset="img/bakery-current-mobile.webp" width="390" height="844">
+              <img src="img/bakery-current-desktop.webp" width="1120" height="700" loading="lazy" decoding="async" alt="Current version: cobalt header with a tile border, white page, a tabbed board of today's loaves with prices and reserve links.">
+            </picture></a>
+            <span class="edge bottom" aria-hidden="true">15</span>
+            <svg class="marker" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M8 9 C 30 1, 74 2, 94 8 C 101 26, 99 70, 93 92 C 70 99, 26 99, 6 93 C 0 70, 0 30, 9 6 C 12 3, 16 3, 19 4"/></svg>
+          </div>
+          <figcaption>
+            <span class="label">Current version <span class="score">slop-scan 0</span></span>
+            <span class="swatches" aria-hidden="true"><i style="background:oklch(98.4% .006 250)"></i><i style="background:oklch(30% .115 264)"></i><i style="background:oklch(44% .17 264)"></i></span>
+            <span class="thesis">“One cobalt ink on flour-white glaze, like a tiled shopfront panel; the week's bake becomes a tile panel.”</span>
+            <a class="open" href="briefs/bakery/current.html">Open the page</a>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="wrap brief" aria-labelledby="festival">
+      <div class="brief-head">
+        <div>
+          <h2 id="festival">Low Tide, festival in a Gdańsk shipyard</h2>
+          <p class="meta">Culture and event archetype · primary action: buy tickets</p>
+        </div>
+        <blockquote>
+          <p>“A two-day electronic music festival in a decommissioned shipyard in Gdańsk, 14–15 August 2027, capacity 6,000. Day pass €69, weekend €119.”</p>
+          <p>The current version reads the festival off the side of a hull at night: draft marks become the timetable axis, red-oxide primer the colour field, signal yellow means buy or now.</p>
+        </blockquote>
+      </div>
+      <div class="pair">
+        <figure class="shot">
+          <div class="film">
+            <span class="edge" aria-hidden="true">PREV ▸ 22</span>
+            <a href="briefs/festival/previous.html"><picture>
+              <source media="(max-width: 680px)" srcset="img/festival-previous-mobile.webp" width="390" height="844">
+              <img src="img/festival-previous-desktop.webp" width="1120" height="700" loading="lazy" decoding="async" alt="Previous version: black page, stencil LOW TIDE wordmark half cream half blue, orange dates and orange ticket button.">
+            </picture></a>
+            <span class="edge bottom" aria-hidden="true">22</span>
+          </div>
+          <figcaption>
+            <span class="label">Previous version <span class="score">slop-scan 9</span></span>
+            <span class="swatches" aria-hidden="true"><i style="background:#0d1214"></i><i style="background:#ece7dc"></i><i style="background:#f0652a"></i><i style="background:#6f97a0"></i></span>
+            <span class="thesis">“A shipyard work-order poster: stencil type on tar-black steel, a waterline cutting through the letters.”</span>
+            <a class="open" href="briefs/festival/previous.html">Open the page</a>
+          </figcaption>
+        </figure>
+        <figure class="shot select">
+          <div class="film">
+            <span class="edge" aria-hidden="true">CURR ▸ 23</span>
+            <a href="briefs/festival/current.html"><picture>
+              <source media="(max-width: 680px)" srcset="img/festival-current-mobile.webp" width="390" height="844">
+              <img src="img/festival-current-desktop.webp" width="1120" height="700" loading="lazy" decoding="async" alt="Current version: night-navy page with draft-mark numerals down the left edge, LOW TIDE above a yellow waterline, a red-oxide hull, yellow buy-tickets button.">
+            </picture></a>
+            <span class="edge bottom" aria-hidden="true">23</span>
+            <svg class="marker" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M10 7 C 34 0, 76 3, 95 10 C 100 32, 100 72, 92 93 C 66 100, 28 98, 5 91 C 0 66, 1 28, 7 8 C 10 5, 14 4, 18 5"/></svg>
+          </div>
+          <figcaption>
+            <span class="label">Current version <span class="score">slop-scan 1</span></span>
+            <span class="swatches" aria-hidden="true"><i style="background:oklch(17% .028 245)"></i><i style="background:oklch(94% .012 85)"></i><i style="background:oklch(43% .125 33)"></i><i style="background:oklch(88% .17 98)"></i></span>
+            <span class="thesis">“Draft marks become the time axis, red oxide the colour field, yellow means buy or now.”</span>
+            <a class="open" href="briefs/festival/current.html">Open the page</a>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="wrap brief" aria-labelledby="law">
+      <div class="brief-head">
+        <div>
+          <h2 id="law">Harlow &amp; Reyes, family law in Portland</h2>
+          <p class="meta">Professional practice archetype · primary action: book a free 30-minute consultation</p>
+        </div>
+        <blockquote>
+          <p>“A two-partner family law practice: divorce, custody, mediation, prenuptial agreements. Book a free 30-minute consultation.”</p>
+          <p>The previous version set a stressed reader's first page as linen paper with an italic accent phrase. The current one is calm rain-grey and puts the free 30 minutes, drawn to scale, right after the opening.</p>
+        </blockquote>
+      </div>
+      <div class="pair">
+        <figure class="shot">
+          <div class="film">
+            <span class="edge" aria-hidden="true">PREV ▸ 30</span>
+            <a href="briefs/law/previous.html"><picture>
+              <source media="(max-width: 680px)" srcset="img/law-previous-mobile.webp" width="390" height="844">
+              <img src="img/law-previous-desktop.webp" width="1120" height="700" loading="lazy" decoding="async" alt="Previous version: linen-cream page, margin labels in tracked capitals, a serif headline with two words in green italic, consultation details box.">
+            </picture></a>
+            <span class="edge bottom" aria-hidden="true">30</span>
+          </div>
+          <figcaption>
+            <span class="label">Previous version <span class="score">slop-scan 4</span></span>
+            <span class="swatches" aria-hidden="true"><i style="background:#f4f1ea"></i><i style="background:#1e2328"></i><i style="background:#2c5a4b"></i></span>
+            <span class="thesis">“A calm, plain-spoken practice memo: linen paper, a sturdy book serif, section labels in a left margin.”</span>
+            <a class="open" href="briefs/law/previous.html">Open the page</a>
+          </figcaption>
+        </figure>
+        <figure class="shot select">
+          <div class="film">
+            <span class="edge" aria-hidden="true">CURR ▸ 31</span>
+            <a href="briefs/law/current.html"><picture>
+              <source media="(max-width: 680px)" srcset="img/law-current-mobile.webp" width="390" height="844">
+              <img src="img/law-current-desktop.webp" width="1120" height="700" loading="lazy" decoding="async" alt="Current version: pale blue-grey page, plain serif headline, a fir-green booking button, and a 'Before you book' reassurance panel.">
+            </picture></a>
+            <span class="edge bottom" aria-hidden="true">31</span>
+            <svg class="marker" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M7 8 C 32 2, 72 1, 93 7 C 100 30, 99 74, 94 92 C 68 99, 30 100, 6 92 C 1 68, 0 30, 8 7 C 11 4, 15 3, 19 5"/></svg>
+          </div>
+          <figcaption>
+            <span class="label">Current version <span class="score">slop-scan 0</span></span>
+            <span class="swatches" aria-hidden="true"><i style="background:oklch(97.6% .006 228)"></i><i style="background:oklch(26% .03 240)"></i><i style="background:oklch(41% .065 168)"></i><i style="background:oklch(84% .05 168)"></i></span>
+            <span class="thesis">“A calm, rain-grey page that removes uncertainty: the free 30 minutes shown to scale, each matter explained plainly.”</span>
+            <a class="open" href="briefs/law/current.html">Open the page</a>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+  </div>
+
+  <section class="wrap brief" id="benchmark" aria-labelledby="saas">
+    <div class="brief-head">
+      <div>
+        <h2 id="saas">Earlier benchmark: Relay, an incident-response SaaS</h2>
+        <p class="meta">No skill versus the first version of the skill</p>
+      </div>
+      <blockquote>
+        <p>The first version beat the classic purple template on every Lighthouse category. Scanned today, its output scores 14: cream paper, a vermilion and acid-lime accent, mono eyebrow labels, hard offset shadows. That result is how the second generation of defaults was found, and why the current version works from the subject's world instead of a list of bans.</p>
+      </blockquote>
+    </div>
+    <div class="pair">
+      <figure class="shot">
+        <div class="film">
+          <span class="edge" aria-hidden="true">BASE ▸ 01</span>
+          <a href="benchmark/saas-single-html/without-skill.html"><picture>
+            <source media="(max-width: 680px)" srcset="img/saas-none-mobile.webp" width="390" height="844">
+            <img src="img/saas-none-desktop.webp" width="1120" height="700" loading="lazy" decoding="async" alt="Without the skill: centered hero with a purple gradient headline, two buttons, and a dashboard mockup.">
+          </picture></a>
+          <span class="edge bottom" aria-hidden="true">01</span>
+        </div>
+        <figcaption>
+          <span class="label">No skill <span class="score">slop-scan 9</span></span>
+          <a class="open" href="benchmark/saas-single-html/without-skill.html">Open the page</a>
+        </figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="film">
+          <span class="edge" aria-hidden="true">V1 ▸ 02</span>
+          <a href="benchmark/saas-single-html/with-skill.html"><picture>
+            <source media="(max-width: 680px)" srcset="img/saas-first-mobile.webp" width="390" height="844">
+            <img src="img/saas-first-desktop.webp" width="1120" height="700" loading="lazy" decoding="async" alt="First skill version: cream page, huge black headline with one orange word, dark incident timeline panel.">
+          </picture></a>
+          <span class="edge bottom" aria-hidden="true">02</span>
+        </div>
+        <figcaption>
+          <span class="label">First skill version <span class="score">slop-scan 14</span></span>
+          <a class="open" href="benchmark/saas-single-html/with-skill.html">Open the page</a>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="wrap method" id="method" aria-labelledby="method-title">
+    <div>
+      <h2 id="method-title">What changed in the method</h2>
+      <p class="finding">A ban list only moves an agent to the next default. The current version asks for decisions, then makes the agent look at what it built.</p>
+    </div>
+    <ol class="steps">
+      <li><strong>Source world</strong><span>List eight concrete things from the subject's world and borrow the visual language from one of them.</span></li>
+      <li><strong>Three candidates</strong><span>Directions that differ on at least three axes, widened by a library of twenty direction families and six genre worlds.</span></li>
+      <li><strong>Direction card</strong><span>Typefaces, colour values with roles, layout, shape, imagery plan, motion, and one signature moment, all concrete.</span></li>
+      <li><strong>Craft</strong><span>Fluid type, OKLCH palettes, breakout grids, licensed stock and video, non-rectangular shapes, finishing details.</span></li>
+      <li><strong>Screenshot critique</strong><span><code>snap.mjs</code> contact sheets at four widths, a ten-dimension rubric, at least two passes.</span></li>
+      <li><strong>Mechanical scan</strong><span><code>slop-scan.mjs</code> flags first- and second-generation fingerprints, stock phrases, and unverified proof.</span></li>
+    </ol>
+  </section>
+
+  <section class="wrap method install" id="install" aria-labelledby="install-title">
+    <div>
+      <h2 id="install-title">Install</h2>
+      <p class="finding">Works with Claude Code, Codex, and OpenCode. Installers never overwrite an existing skill.</p>
+    </div>
+    <div>
+      <p>macOS, Linux, WSL, or Git Bash:</p>
+      <pre><code>git clone https://github.com/denfry/build-polished-websites.git
+cd build-polished-websites
+bash ./install.sh --agent all --scope user</code></pre>
+      <p>Windows PowerShell:</p>
+      <pre><code>.\install.ps1 -Agent all -Scope user</code></pre>
+    </div>
+  </section>
+
+  <section class="wrap notes" aria-labelledby="notes-title">
+    <h2 id="notes-title" style="font-size:var(--step-0);font-stretch:100%">How these examples were made</h2>
+    <ul>
+      <li>Each page was built in one autonomous run from the brief shown, as a single HTML file with Google Fonts and no other external assets or image tools.</li>
+      <li>Businesses, people, artists, prices, and schedules are fictional or drafted. Forms are front-end demos.</li>
+      <li>Screenshots are first screens at 1440 and 390 px captured with <code>snap.mjs</code>. Scores come from <code>slop-scan.mjs</code> at the time of publishing; Lighthouse was not run on these six pages.</li>
+      <li>Three briefs are a small sample. Treat this as a demonstration, not a statistical result.</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>build-polished-websites · Apache-2.0</span>
+    <a href="https://github.com/denfry/build-polished-websites">Source on GitHub</a>
+  </div>
+</footer>
+</body>
+</html>

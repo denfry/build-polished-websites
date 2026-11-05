@@ -32,10 +32,16 @@ AI can generate a page quickly. It often generates the same page: purple
 gradients, floating glass cards, pill-shaped everything, vague copy, invented
 metrics, and no evidence that the result works outside a screenshot.
 
+Telling an agent to "avoid AI slop" mostly moves it to the next default: cream
+"paper", a terracotta or acid-lime accent, a giant headline with one italic
+word, mono uppercase labels, 01/02/03 numbering, and hard offset shadows. It
+looks tasteful once and identical across a bakery, a law firm, and a dev tool.
+
 `build-polished-websites` gives Claude Code, Codex, and OpenCode a disciplined
 workflow for shipping websites that are:
 
-- art-directed instead of template-shaped;
+- art-directed from the subject's own world instead of template-shaped;
+- reviewed as screenshots, not only as code;
 - native to their CMS or framework;
 - maintainable by real content editors;
 - responsive and keyboard-accessible;
@@ -48,13 +54,25 @@ workflow for shipping websites that are:
 The skill guides an agent through the whole delivery loop:
 
 ```text
-brief → platform contract → visual thesis → implementation
-      → browser verification → Lighthouse gate → evidence report
+brief → platform contract → archetype → source world → 3 candidate directions
+      → direction card → craft → screenshot critique loop (≥ 2 passes)
+      → slop scan → browser verification → Lighthouse gate → evidence report
 ```
 
 It includes:
 
-- an explicit anti-slop visual review;
+- an art-direction method: mine the subject's world, compare three candidate
+  directions, and commit to a direction card with concrete values;
+- a library of twenty direction families (Swiss, editorial, luxury, calm care,
+  colour-field, kinetic poster, two-ink print, wayfinding, night hospitality,
+  and more) with type, palette, layout, and signature starting points;
+- a craft reference: fluid type scales, OKLCH palettes, breakout grids,
+  imagery without a photographer, motion, and finishing details;
+- a screenshot critique loop with a ten-dimension rubric and blocking defects;
+- `snap.mjs`: dependency-free screenshots and contact sheets at four widths,
+  plus overflow, console, request, and font checks;
+- `slop-scan.mjs`: a detector for first- and second-generation AI design
+  fingerprints, stock phrases (English and Russian), and unverified proof;
 - platform-aware architecture and editor safeguards;
 - WordPress, 1C-Bitrix, Tilda, Shopify, Drupal, Webflow, headless,
   static, and legacy playbooks;
@@ -162,15 +180,30 @@ The skill does not blindly ban gradients, cards, animation, or fashionable
 styles. It requires every visual decision to serve product identity, hierarchy,
 content, or interaction.
 
-It challenges defaults such as:
+Avoiding a list of bad patterns produces the next default, so the skill works
+from a positive chain instead: a source world, three candidates, a direction
+card, and a screenshot review. The fingerprint lists are used to review, not to
+generate.
 
-- generic purple-blue gradient heroes;
-- centered badge + headline + two-button layouts;
-- arbitrary bento grids and glassmorphism;
-- emoji feature cards and decorative icon squares;
-- fake testimonials, metrics, logos, and security claims;
-- vague “revolutionize your workflow” copy;
-- mobile layouts that are merely collapsed desktop layouts.
+First-generation defaults it catches:
+
+- purple-blue gradient heroes, gradient text, glow blobs, glassmorphism;
+- centered badge + headline + two-button layouts and three equal icon cards;
+- emoji icons, pills everywhere, fake testimonials, metrics, and logos.
+
+Second-generation defaults it catches:
+
+- cream "paper" grounds with a terracotta or acid-lime accent;
+- giant tightly tracked headlines with one coloured or italic word;
+- mono uppercase eyebrow labels, 01/02/03 numbering, hard offset shadows,
+  page-wide grain, keyword marquees.
+
+Each is allowed when the subject's world actually produces it.
+
+```bash
+node build-polished-websites/scripts/snap.mjs ./index.html --gray
+node build-polished-websites/scripts/slop-scan.mjs ./src
+```
 
 See the complete [visual direction and anti-slop review](build-polished-websites/references/visual-direction.md).
 
@@ -213,6 +246,14 @@ The script fails closed on malformed reports or reports from mixed final URLs.
 Lighthouse remains a lab guardrail; field Core Web Vitals are authoritative for
 real users.
 
+## Showcase
+
+Live examples: **[denfry.github.io/build-polished-websites](https://denfry.github.io/build-polished-websites/)**.
+Three briefs (a Porto bakery, a Gdańsk shipyard festival, a Portland family-law
+practice) built twice by the same agent, with the previous and the current
+version of the skill, with screenshots, palettes, and `slop-scan` scores. The
+pages live in [showcase/](showcase/).
+
 ## See the skill difference
 
 The repository includes a controlled
@@ -234,8 +275,9 @@ differences and three-run Lighthouse medians.
 ├── build-polished-websites/
 │   ├── SKILL.md
 │   ├── agents/openai.yaml
-│   ├── references/
-│   └── scripts/
+│   ├── references/      # archetypes, art direction, directions, craft,
+│   │                    # design review, platforms, quality, security
+│   └── scripts/         # snap, slop-scan, lighthouse-gate, verify-package
 ├── benchmark/saas-single-html/
 │   ├── screenshots/
 │   ├── prompt.txt
@@ -259,6 +301,7 @@ Run all dependency-free checks:
 ```bash
 node build-polished-websites/scripts/verify-package.mjs
 node build-polished-websites/scripts/lighthouse-gate.test.mjs
+node build-polished-websites/scripts/slop-scan.test.mjs
 bash -n install.sh
 ```
 
@@ -275,8 +318,8 @@ $errors = $null
 $errors
 ```
 
-CI performs package, Lighthouse-gate, and installation checks on both Windows
-and Linux.
+CI performs package, Lighthouse-gate, slop-scan, and installation checks on
+both Windows and Linux.
 
 ## Contributing
 
