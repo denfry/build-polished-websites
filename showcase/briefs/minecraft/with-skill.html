@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Хостинг серверов Minecraft с модпаками и бэкапами — Лодстоун</title>
+<meta name="description" content="Сервер Minecraft для друзей и сообществ: Java и Bedrock, Paper, Fabric, Forge и модпаки в один клик, защита от DDoS, ночные бэкапы. От 249 ₽ в месяц.">
+<link rel="canonical" href="https://denfry.github.io/build-polished-websites/briefs/minecraft/with-skill.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#1b1e23">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Лодстоун">
+<meta property="og:title" content="Сервер Minecraft для своих — Лодстоун">
+<meta property="og:description" content="Моды в один клик, бэкап каждую ночь, защита от DDoS. Москва и Франкфурт, от 249 ₽ в месяц.">
+<meta property="og:url" content="https://denfry.github.io/build-polished-websites/briefs/minecraft/with-skill.html">
+<meta property="og:image" content="https://denfry.github.io/build-polished-websites/img/og-minecraft.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%231b1e23'/%3E%3Crect x='5' y='9' width='22' height='6' rx='1' fill='%23353a43'/%3E%3Crect x='5' y='17' width='22' height='6' rx='1' fill='%23353a43'/%3E%3Ccircle cx='9' cy='12' r='1.6' fill='%2336d17a'/%3E%3Crect x='13' y='18.5' width='11' height='3' fill='%23f2cf3a'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400..700&family=Ubuntu+Mono:wght@400;700&family=Unbounded:wght@500..800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Хостинг серверов Minecraft",
+  "serviceType": "Game server hosting",
+  "provider": { "@type": "Organization", "name": "Лодстоун" },
+  "areaServed": ["RU", "EU"],
+  "offers": [
+    { "@type": "Offer", "name": "2 ГБ", "price": "249", "priceCurrency": "RUB" },
+    { "@type": "Offer", "name": "4 ГБ", "price": "449", "priceCurrency": "RUB" },
+    { "@type": "Offer", "name": "8 ГБ", "price": "849", "priceCurrency": "RUB" },
+    { "@type": "Offer", "name": "16 ГБ", "price": "1590", "priceCurrency": "RUB" }
+  ]
+}
+</script>
+<style>
+/*
+  Direction card
+  Source world: a 19-inch server rack in a cold aisle: 1U-4U units, rack rails
+                with square holes, perforated doors, status LEDs, yellow
+                label-maker tape on every box, the server console boot log.
+  Type: Unbounded (display), Onest (text), Ubuntu Mono (tape and console only).
+  Palette: rack graphite; label-tape yellow only for actions and plan names;
+           LED green only for live status.
+  Signature: pick edition, core and plan, and the console boots that server.
+*/
+:root {
+  --hue: 255;
+  --ground: oklch(18.5% 0.012 var(--hue));
+  --rail: oklch(27% 0.012 var(--hue));
+  --hole: oklch(13% 0.01 var(--hue));
+  --unit: oklch(23.5% 0.013 var(--hue));
+  --unit-hi: oklch(27.5% 0.014 var(--hue));
+  --bezel: oklch(35% 0.014 var(--hue));
+  --ink: oklch(95.5% 0.005 var(--hue));
+  --muted: oklch(74% 0.014 var(--hue));
+  --tape: oklch(87% 0.165 96);
+  --tape-hi: oklch(92% 0.15 96);
+  --tape-ink: oklch(19% 0.012 var(--hue));
+  --led: oklch(78% 0.19 150);
+  --amber: oklch(81% 0.15 70);
+  --error: oklch(74% 0.16 28);
+  --screw: oklch(46% 0.01 var(--hue));
+  --display: "Unbounded", "Arial Black", sans-serif;
+  --text: "Onest", system-ui, sans-serif;
+  --mono: "Ubuntu Mono", ui-monospace, Consolas, monospace;
+  --step--1: clamp(0.84rem, 0.82rem + 0.1vw, 0.9rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.1rem);
+  --step-1: clamp(1.2rem, 1.1rem + 0.45vw, 1.45rem);
+  --step-2: clamp(1.45rem, 1.25rem + 1vw, 2.05rem);
+  --step-3: clamp(1.9rem, 1.45rem + 2.2vw, 3.1rem);
+  --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem; --space-5: 1.5rem;
+  --space-6: 2rem; --space-7: 3rem; --space-8: 4.5rem;
+  --u: 3.4rem;
+  --rail-w: clamp(1.1rem, 3vw, 2.1rem);
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { margin: 0; background: var(--ground); color: var(--ink); font: 400 var(--step-0)/1.6 var(--text); font-synthesis: none; }
+a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--tape); outline-offset: 3px; }
+::selection { background: var(--tape); color: var(--tape-ink); }
+h1, h2, h3 { margin: 0; font-family: var(--display); font-weight: 650; line-height: 1.12; letter-spacing: -0.01em; text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
+.skip { position: absolute; left: 1rem; top: -4rem; background: var(--tape); color: var(--tape-ink); padding: 0.5rem 1rem; z-index: 20; }
+.skip:focus { top: 1rem; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* rack frame with rails */
+.rack { position: relative; width: min(100%, 82rem); margin-inline: auto; padding-inline: calc(var(--rail-w) + clamp(0.6rem, 2vw, 1.5rem)); }
+.rack::before, .rack::after {
+  content: ""; position: absolute; top: 0; bottom: 0; width: var(--rail-w);
+  background: linear-gradient(var(--hole) 0 9px, transparent 9px) center 14px / 9px 22.25px repeat-y, var(--rail);
+  border-inline: 1px solid var(--bezel);
+}
+.rack::before { left: 0; }
+.rack::after { right: 0; }
+
+/* a rack unit with four screws */
+.unit {
+  position: relative; background-color: var(--unit); border: 1px solid var(--bezel); border-radius: 3px;
+  background-image:
+    radial-gradient(circle at 12px 12px, var(--screw) 0 3px, transparent 3.5px),
+    radial-gradient(circle at calc(100% - 12px) 12px, var(--screw) 0 3px, transparent 3.5px),
+    radial-gradient(circle at 12px calc(100% - 12px), var(--screw) 0 3px, transparent 3.5px),
+    radial-gradient(circle at calc(100% - 12px) calc(100% - 12px), var(--screw) 0 3px, transparent 3.5px);
+  box-shadow: inset 0 1px 0 oklch(100% 0 0 / 0.05);
+}
+.mesh { background-image: radial-gradient(oklch(12% 0.01 var(--hue)) 1.3px, transparent 1.6px); background-size: 7px 7px; }
+
+.tape {
+  display: inline-block; background: var(--tape); color: var(--tape-ink);
+  font: 700 0.86rem/1 var(--mono); letter-spacing: 0.05em; text-transform: uppercase;
+  padding: 0.38em 0.7em 0.34em; transform: rotate(-1deg);
+  clip-path: polygon(0 4%, 100% 0, 99.4% 100%, 0.4% 96%);
+}
+.led { display: inline-block; width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--led); box-shadow: 0 0 0 3px oklch(78% 0.19 150 / 0.18), 0 0 10px oklch(78% 0.19 150 / 0.55); flex: none; }
+.led.amber { background: var(--amber); box-shadow: 0 0 0 3px oklch(81% 0.15 70 / 0.18), 0 0 10px oklch(81% 0.15 70 / 0.5); }
+@media (prefers-reduced-motion: no-preference) {
+  .led.blink { animation: blink 2.8s steps(1) infinite; }
+  @keyframes blink { 0%, 86% { opacity: 1; } 88% { opacity: 0.25; } 92% { opacity: 1; } 94% { opacity: 0.3; } }
+}
+
+.button {
+  display: inline-flex; align-items: center; gap: 0.6rem; min-height: 3rem; padding: 0.7rem 1.25rem;
+  background: var(--tape); color: var(--tape-ink); border: 0; border-radius: 3px; cursor: pointer;
+  font: 700 var(--step-0)/1.1 var(--text); text-decoration: none;
+  transition: background-color 140ms var(--ease), transform 140ms var(--ease);
+}
+.button:hover { background: var(--tape-hi); }
+.button:active { transform: translateY(1px); }
+.button.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px var(--bezel); }
+.button.ghost:hover { box-shadow: inset 0 0 0 1px var(--muted); }
+
+/* header */
+.top { border-bottom: 1px solid var(--bezel); }
+.top .rack { display: flex; align-items: center; justify-content: space-between; gap: var(--space-5); min-height: 4.25rem; }
+.top .rack::before, .top .rack::after { display: none; }
+.brand { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; }
+.brand small { color: var(--muted); font-size: var(--step--1); }
+.top nav ul { display: flex; gap: var(--space-5); list-style: none; margin: 0; padding: 0; font-size: var(--step--1); }
+.top nav a { text-decoration: none; padding-block: 0.6rem; display: inline-block; }
+.top nav a:hover { text-decoration: underline; }
+.top .button { min-height: 2.6rem; padding: 0.5rem 1rem; font-size: var(--step--1); }
+
+main.rack { display: grid; gap: 1.1rem; padding-block: 1.1rem 4rem; }
+
+/* hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: var(--space-6); padding: clamp(1.75rem, 4vw, 3.5rem); }
+.hero h1 { font-size: var(--step-3); font-weight: 700; max-width: 17ch; }
+.hero .lead { margin-top: var(--space-5); font-size: var(--step-1); color: var(--muted); max-width: 34ch; }
+.facts { margin: var(--space-6) 0 0; padding: 0; list-style: none; display: grid; gap: 0.55rem; font-size: var(--step--1); }
+.facts li { display: flex; align-items: center; gap: 0.7rem; }
+.facts strong { font-weight: 600; color: var(--ink); }
+.actions { margin-top: var(--space-6); display: flex; flex-wrap: wrap; gap: var(--space-3); }
+
+/* console (signature) */
+.console { align-self: start; display: grid; grid-template-rows: auto auto 1fr; border: 1px solid var(--bezel); border-radius: 3px; background: var(--hole); overflow: hidden; min-width: 0; }
+.console-bar { display: flex; align-items: center; gap: 0.7rem; padding: 0.7rem 0.9rem; background: var(--unit-hi); border-bottom: 1px solid var(--bezel); font: 400 0.92rem/1.2 var(--mono); color: var(--muted); }
+.console-bar b { color: var(--ink); font-weight: 700; }
+.config { display: grid; gap: 0.6rem; padding: 0.85rem 0.9rem; border-bottom: 1px solid var(--bezel); }
+.config fieldset { border: 0; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem; min-width: 0; }
+.config legend { float: left; width: 4.6rem; font: 400 0.84rem/2.2 var(--mono); color: var(--muted); }
+.config label { position: relative; }
+.config input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+.config span { display: inline-flex; align-items: center; min-height: 2.25rem; padding: 0 0.7rem; border: 1px solid var(--bezel); border-radius: 3px; font: 400 0.92rem/1 var(--mono); color: var(--muted); transition: background-color 140ms var(--ease), color 140ms var(--ease); }
+.config input:checked + span { background: var(--tape); border-color: var(--tape); color: var(--tape-ink); font-weight: 700; }
+.config input:focus-visible + span { outline: 3px solid var(--tape); outline-offset: 2px; }
+.config label:hover span { color: var(--ink); }
+.log { margin: 0; padding: 0.9rem 1rem 1.1rem; font: 400 0.95rem/1.55 var(--mono); color: oklch(86% 0.01 var(--hue)); white-space: pre-wrap; overflow-wrap: anywhere; min-height: 15.5rem; }
+.log .t { color: oklch(58% 0.012 var(--hue)); }
+.log .ok { color: var(--led); }
+.log .warn { color: var(--amber); }
+
+/* section heads */
+.head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: var(--space-4); padding: clamp(1.5rem, 3vw, 2.25rem) clamp(1.5rem, 3vw, 2.5rem); }
+.head h2 { font-size: var(--step-2); }
+.head p { color: var(--muted); max-width: 46ch; font-size: var(--step--1); }
+
+/* plans as rack units of growing height */
+.plans { display: grid; gap: 0.55rem; }
+.plan {
+  --size: 1; min-height: calc(var(--u) * var(--size) + 2.5rem);
+  display: grid; grid-template-columns: 2.25rem minmax(11rem, 1.1fr) minmax(0, 1.6fr) auto; align-items: center; gap: var(--space-5);
+  padding: 1.1rem 1.6rem 1.1rem 1.25rem;
+}
+.plan .bay { align-self: stretch; display: grid; place-items: center; border-right: 1px solid var(--bezel); padding-right: 0.9rem; }
+.plan h3 { font-size: var(--step-1); display: grid; gap: 0.55rem; justify-items: start; }
+.plan h3 .ram { font-size: var(--step-3); font-weight: 750; line-height: 1; }
+.plan .fit { color: var(--muted); font-size: var(--step--1); max-width: 44ch; }
+.plan .fit strong { color: var(--ink); font-weight: 600; }
+.plan .buy { display: grid; justify-items: end; gap: 0.5rem; text-align: right; }
+.plan .price { font: 700 var(--step-2)/1 var(--display); font-variant-numeric: tabular-nums; }
+.plan .price small { font: 400 var(--step--1)/1 var(--text); color: var(--muted); }
+.plan.recommended { border-color: oklch(81% 0.15 70 / 0.6); }
+.plan .note { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.8rem; color: var(--amber); }
+.included { padding: 1.1rem 1.6rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1.6rem; font-size: var(--step--1); color: var(--muted); }
+.included b { color: var(--ink); font-weight: 600; }
+
+/* cores */
+.cores { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.55rem; }
+.core { padding: 1.5rem 1.6rem 1.6rem; display: grid; gap: 0.8rem; align-content: start; justify-items: start; }
+.core p { color: var(--muted); font-size: var(--step--1); }
+.core .for { color: var(--ink); font-weight: 600; }
+
+/* features */
+.features { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.55rem; }
+.feature { padding: 1.75rem 1.75rem 1.9rem; display: grid; gap: 0.7rem; align-content: start; }
+.feature h3 { font-size: var(--step-1); }
+.feature p { color: var(--muted); max-width: 46ch; }
+.week { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-top: 0.4rem; max-width: 22rem; }
+.week span { display: grid; gap: 4px; justify-items: center; font: 400 0.78rem/1 var(--mono); color: var(--muted); }
+.week span::before { content: ""; width: 100%; height: 1.6rem; border-radius: 2px; background: oklch(78% 0.19 150 / calc(0.25 + var(--d) * 0.1)); border: 1px solid oklch(78% 0.19 150 / 0.5); }
+
+/* locations */
+.locations { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.55rem; }
+.location { padding: 1.6rem 1.75rem; display: grid; grid-template-columns: auto 1fr; gap: 0.3rem 1rem; align-items: center; }
+.location h3 { font-size: var(--step-2); }
+.location p { grid-column: 2; color: var(--muted); font-size: var(--step--1); }
+.location .addr { font-family: var(--mono); color: var(--ink); font-size: 0.95rem; }
+
+/* steps */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.55rem; counter-reset: s; }
+.steps li { padding: 1.6rem 1.75rem 1.8rem; display: grid; gap: 0.7rem; align-content: start; }
+.steps code { font-family: var(--mono); color: var(--led); font-size: 0.95rem; }
+.steps h3 { font-size: var(--step-1); }
+.steps p { color: var(--muted); font-size: var(--step--1); }
+
+/* order form */
+.order { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: var(--space-7); padding: clamp(1.75rem, 4vw, 3rem); }
+.order .aside { display: grid; gap: var(--space-4); align-content: start; }
+.order .aside p { color: var(--muted); }
+.form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4) var(--space-5); }
+.field { display: grid; gap: 0.4rem; align-content: start; }
+.field.wide { grid-column: 1 / -1; }
+.field label, .field legend { font-size: var(--step--1); font-weight: 600; }
+.field .hint { font-size: 0.82rem; color: var(--muted); }
+input[type=text], input[type=email], select {
+  width: 100%; min-height: 3rem; padding: 0.6rem 0.8rem; border-radius: 3px; border: 1px solid var(--bezel);
+  background: var(--hole); color: var(--ink); font: 400 var(--step-0)/1.3 var(--text);
+}
+input[type=text]:focus, input[type=email]:focus, select:focus { outline: 3px solid var(--tape); outline-offset: 1px; border-color: var(--tape); }
+[aria-invalid=true] { border-color: var(--error) !important; }
+.error { color: var(--error); font-size: 0.85rem; min-height: 1.1em; }
+.consent { grid-column: 1 / -1; display: flex; gap: 0.75rem; align-items: start; font-size: var(--step--1); color: var(--muted); }
+.consent input { width: 1.25rem; height: 1.25rem; margin-top: 0.2rem; accent-color: var(--tape); flex: none; }
+.submit { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4); }
+.submit p { font-size: 0.85rem; color: var(--muted); }
+.result { grid-column: 1 / -1; padding: 1rem 1.2rem; border: 1px solid oklch(78% 0.19 150 / 0.6); border-radius: 3px; background: oklch(78% 0.19 150 / 0.08); display: none; gap: 0.4rem; }
+.result.show { display: grid; }
+.result pre { margin: 0; font: 400 0.92rem/1.5 var(--mono); color: var(--led); white-space: pre-wrap; }
+
+/* faq */
+.faq { padding: clamp(1.5rem, 3vw, 2.5rem); display: grid; gap: var(--space-5); }
+.faq h2 { font-size: var(--step-2); }
+details { border-top: 1px solid var(--bezel); }
+details:last-of-type { border-bottom: 1px solid var(--bezel); }
+summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 1rem; padding: 1.05rem 0; font-weight: 600; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; font: 700 1.2rem/1 var(--mono); color: var(--tape); }
+details[open] summary::after { content: "−"; }
+details p { padding: 0 0 1.2rem; color: var(--muted); max-width: 70ch; }
+details code { font-family: var(--mono); color: var(--ink); }
+
+footer { border-top: 1px solid var(--bezel); padding-block: var(--space-7); font-size: var(--step--1); color: var(--muted); }
+footer .rack::before, footer .rack::after { display: none; }
+footer .cols { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: var(--space-6); }
+footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.4rem; }
+footer .legal { margin-top: var(--space-6); padding-top: var(--space-5); border-top: 1px solid var(--bezel); display: grid; gap: 0.5rem; }
+footer details { border: 0; }
+footer details summary { padding: 0.4rem 0; font-weight: 600; color: var(--ink); }
+footer details p { padding-bottom: 0.6rem; }
+
+@media (max-width: 1020px) {
+  .hero, .order { grid-template-columns: minmax(0, 1fr); }
+  .plan { grid-template-columns: 1.75rem minmax(0, 1fr) auto; }
+  .plan .fit { grid-column: 2 / -1; grid-row: 2; }
+  .steps { grid-template-columns: minmax(0, 1fr); }
+  .cores { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .top nav { display: none; }
+  .features, .locations, .cores { grid-template-columns: minmax(0, 1fr); }
+  .hero h1 { font-size: clamp(1.6rem, 1.1rem + 2.6vw, 2.2rem); }
+  .form { grid-template-columns: minmax(0, 1fr); }
+  footer .cols { grid-template-columns: 1fr; }
+  .plan { grid-template-columns: minmax(0, 1fr) auto; padding: 1.25rem 1.25rem 1.25rem; min-height: 0; gap: var(--space-4); }
+  .plan .bay { display: none; }
+  .plan .fit { grid-column: 1 / -1; }
+  .plan .buy { grid-column: 1 / -1; grid-template-columns: 1fr auto; align-items: center; justify-items: start; text-align: left; }
+  .plan .buy .button { justify-self: end; }
+  .config legend { width: 100%; line-height: 1.6; }
+}
+@media (max-width: 420px) {
+  .top .brand small { display: none; }
+}
+@media print { .top, .console, .order, footer details { display: none; } body { background: #fff; color: #000; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">К содержанию</a>
+<header class="top mesh">
+  <div class="rack">
+    <a class="brand" href="#main" aria-label="Лодстоун — на главную">
+      <span class="tape">Лодстоун</span>
+      <small>хостинг Minecraft</small>
+    </a>
+    <nav aria-label="Разделы">
+      <ul>
+        <li><a href="#plans">Тарифы</a></li>
+        <li><a href="#cores">Ядра и модпаки</a></li>
+        <li><a href="#locations">Локации</a></li>
+        <li><a href="#faq">Вопросы</a></li>
+      </ul>
+    </nav>
+    <a class="button" href="#order">Создать сервер</a>
+  </div>
+</header>
+
+<main id="main" class="rack">
+  <section class="unit hero" aria-labelledby="title">
+    <div>
+      <h1 id="title">Сервер Minecraft для своих: моды в&nbsp;один клик, бэкап каждую ночь</h1>
+      <p class="lead">Java и Bedrock, Paper, Fabric, Forge и модпаки с&nbsp;Modrinth. Стоит в&nbsp;Москве или Франкфурте, защищён от&nbsp;DDoS и&nbsp;сам сохраняет копию мира.</p>
+      <ul class="facts">
+        <li><span class="led" aria-hidden="true"></span><span><strong>от 249 ₽ в&nbsp;месяц</strong> за&nbsp;2&nbsp;ГБ памяти</span></li>
+        <li><span class="led" aria-hidden="true"></span><span><strong>Москва и&nbsp;Франкфурт</strong> на&nbsp;выбор при создании</span></li>
+        <li><span class="led" aria-hidden="true"></span><span><strong>Поддержка в&nbsp;Telegram</strong> ежедневно 10:00–22:00&nbsp;МСК</span></li>
+      </ul>
+      <div class="actions">
+        <a class="button" href="#plans">Выбрать тариф</a>
+        <a class="button ghost" href="#how">Как это работает</a>
+      </div>
+    </div>
+
+    <div class="console" aria-label="Пример запуска сервера">
+      <div class="console-bar"><span class="led blink" aria-hidden="true"></span><b id="host">lodestone-msk-04</b><span id="summary">Java · Paper · 4 ГБ</span></div>
+      <form class="config" id="config" aria-label="Соберите сервер">
+        <fieldset>
+          <legend>издание</legend>
+          <label><input type="radio" name="edition" value="Java" checked><span>Java</span></label>
+          <label><input type="radio" name="edition" value="Bedrock"><span>Bedrock</span></label>
+        </fieldset>
+        <fieldset id="core-set">
+          <legend>ядро</legend>
+          <label><input type="radio" name="core" value="Paper" checked><span>Paper</span></label>
+          <label><input type="radio" name="core" value="Fabric"><span>Fabric</span></label>
+          <label><input type="radio" name="core" value="NeoForge"><span>NeoForge</span></label>
+          <label><input type="radio" name="core" value="Purpur"><span>Purpur</span></label>
+        </fieldset>
+        <fieldset>
+          <legend>память</legend>
+          <label><input type="radio" name="ram" value="2"><span>2 ГБ</span></label>
+          <label><input type="radio" name="ram" value="4" checked><span>4 ГБ</span></label>
+          <label><input type="radio" name="ram" value="8"><span>8 ГБ</span></label>
+          <label><input type="radio" name="ram" value="16"><span>16 ГБ</span></label>
+        </fieldset>
+      </form>
+<pre class="log" id="log" aria-live="polite"><span class="t">[10:02:11]</span> Выделено 4 ГБ памяти, Москва
+<span class="t">[10:02:11]</span> Ядро Paper, Java Edition
+<span class="t">[10:02:13]</span> Загрузка мира «world»…
+<span class="t">[10:02:16]</span> Подготовка зоны спавна: 100%
+<span class="t">[10:02:16]</span> <span class="ok">Готово. Сервер запущен</span>
+<span class="t">[10:02:16]</span> Адрес для друзей: <span class="ok">play.lodestone.example</span>
+<span class="t">[03:00:00]</span> Ночной бэкап мира сохранён</pre>
+    </div>
+  </section>
+
+  <section id="plans" aria-labelledby="plans-title" class="plans">
+    <div class="unit head">
+      <h2 id="plans-title">Тарифы — по&nbsp;памяти</h2>
+      <p>Чем больше игроков и&nbsp;модов, тем больше памяти. Подсказки по&nbsp;числу игроков — ориентир: тяжёлые модпаки съедают больше.</p>
+    </div>
+
+    <article class="unit plan" style="--size:1" aria-labelledby="p2">
+      <div class="bay" aria-hidden="true"><span class="led"></span></div>
+      <h3 id="p2"><span class="tape">Вдвоём</span><span class="ram">2&nbsp;ГБ</span></h3>
+      <p class="fit"><strong>Ванилла или Paper</strong> для 2–5 друзей, небольшие плагины.</p>
+      <div class="buy"><p class="price">249&nbsp;₽ <small>/ мес</small></p><a class="button" href="#order" data-plan="2">Выбрать</a></div>
+    </article>
+
+    <article class="unit plan recommended" style="--size:2" aria-labelledby="p4">
+      <div class="bay" aria-hidden="true"><span class="led amber"></span></div>
+      <h3 id="p4"><span class="tape">Компания</span><span class="ram">4&nbsp;ГБ</span></h3>
+      <div class="fit">
+        <p><strong>Сервер для класса или гильдии</strong>: до&nbsp;10–15 игроков на&nbsp;Paper, лёгкие моды на&nbsp;Fabric.</p>
+        <p class="note"><span class="led amber" aria-hidden="true"></span>С этого обычно начинают</p>
+      </div>
+      <div class="buy"><p class="price">449&nbsp;₽ <small>/ мес</small></p><a class="button" href="#order" data-plan="4">Выбрать</a></div>
+    </article>
+
+    <article class="unit plan" style="--size:3" aria-labelledby="p8">
+      <div class="bay" aria-hidden="true"><span class="led"></span></div>
+      <h3 id="p8"><span class="tape">Модпаки</span><span class="ram">8&nbsp;ГБ</span></h3>
+      <p class="fit"><strong>Сборки на&nbsp;Forge и&nbsp;NeoForge</strong> средних размеров или большой мир на&nbsp;Paper с&nbsp;десятками плагинов.</p>
+      <div class="buy"><p class="price">849&nbsp;₽ <small>/ мес</small></p><a class="button" href="#order" data-plan="8">Выбрать</a></div>
+    </article>
+
+    <article class="unit plan" style="--size:4" aria-labelledby="p16">
+      <div class="bay" aria-hidden="true"><span class="led"></span></div>
+      <h3 id="p16"><span class="tape">Сообщество</span><span class="ram">16&nbsp;ГБ</span></h3>
+      <p class="fit"><strong>Тяжёлые модпаки, стримы и&nbsp;сети серверов</strong> через Velocity: лобби, мини-игры и&nbsp;выживание на&nbsp;одном тарифе.</p>
+      <div class="buy"><p class="price">1590&nbsp;₽ <small>/ мес</small></p><a class="button" href="#order" data-plan="16">Выбрать</a></div>
+    </article>
+
+    <p class="unit included"><b>В каждом тарифе:</b> <span>защита от&nbsp;DDoS</span> <span>ежедневный бэкап, хранение 7&nbsp;дней</span> <span>SFTP-доступ</span> <span>веб-панель с&nbsp;консолью</span> <span>любое ядро и&nbsp;модпак</span></p>
+  </section>
+
+  <section id="cores" aria-labelledby="cores-title" class="plans">
+    <div class="unit head">
+      <h2 id="cores-title">Ядра и модпаки в&nbsp;один клик</h2>
+      <p>Выберите ядро при создании или поменяйте его в&nbsp;панели. Модпаки с&nbsp;Modrinth и&nbsp;CurseForge ставятся по&nbsp;ссылке — со&nbsp;всеми зависимостями.</p>
+    </div>
+    <div class="cores">
+      <article class="unit core"><span class="tape">Paper</span><p><span class="for">Плагины и&nbsp;производительность.</span> Выбор по&nbsp;умолчанию для выживания с&nbsp;друзьями.</p></article>
+      <article class="unit core"><span class="tape">Purpur</span><p><span class="for">Тонкая настройка поверх Paper.</span> Сотни параметров геймплея без&nbsp;модов.</p></article>
+      <article class="unit core"><span class="tape">Fabric</span><p><span class="for">Лёгкие и&nbsp;быстрые моды.</span> Оптимизация, мини-карты, техничные сборки.</p></article>
+      <article class="unit core"><span class="tape">Forge · NeoForge</span><p><span class="for">Большие модпаки.</span> Индустриальные, магические и&nbsp;приключенческие сборки.</p></article>
+      <article class="unit core"><span class="tape">Velocity</span><p><span class="for">Прокси для сети серверов.</span> Лобби и&nbsp;несколько миров под&nbsp;одним адресом.</p></article>
+      <article class="unit core"><span class="tape">Bedrock</span><p><span class="for">Для телефонов, консолей и&nbsp;Windows.</span> Отдельный сервер Bedrock Edition.</p></article>
+    </div>
+  </section>
+
+  <section aria-labelledby="features-title" class="plans">
+    <h2 id="features-title" class="visually-hidden">Что входит</h2>
+    <div class="features">
+      <article class="unit feature">
+        <h3>Защита от DDoS</h3>
+        <p>Трафик фильтруется до&nbsp;сервера, поэтому обиженный игрок с&nbsp;«бустером» не&nbsp;положит ваш мир посреди рейда.</p>
+      </article>
+      <article class="unit feature">
+        <h3>Бэкап каждую ночь</h3>
+        <p>Копия мира сохраняется ежедневно и&nbsp;хранится 7&nbsp;дней. Откат — одной кнопкой в&nbsp;панели.</p>
+        <div class="week" aria-hidden="true"><span style="--d:1">пн</span><span style="--d:2">вт</span><span style="--d:3">ср</span><span style="--d:4">чт</span><span style="--d:5">пт</span><span style="--d:6">сб</span><span style="--d:7">вс</span></div>
+      </article>
+      <article class="unit feature">
+        <h3>Панель, консоль и SFTP</h3>
+        <p>Перезапуск, логи и&nbsp;команды из&nbsp;браузера; файлы мира и&nbsp;конфиги — через любой SFTP-клиент.</p>
+      </article>
+      <article class="unit feature">
+        <h3>Люди в Telegram</h3>
+        <p>Отвечаем ежедневно с&nbsp;10:00 до&nbsp;22:00 по&nbsp;Москве: про&nbsp;моды, плагины и&nbsp;перенос мира.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="locations" aria-labelledby="loc-title" class="plans">
+    <div class="unit head">
+      <h2 id="loc-title">Где стоит сервер</h2>
+      <p>Выберите площадку ближе к&nbsp;большинству игроков — от&nbsp;этого зависит пинг.</p>
+    </div>
+    <div class="locations">
+      <article class="unit location"><span class="led" aria-hidden="true"></span><h3>Москва</h3><p>Для игроков из&nbsp;России и&nbsp;соседних стран.</p><p class="addr">msk.lodestone.example</p></article>
+      <article class="unit location"><span class="led" aria-hidden="true"></span><h3>Франкфурт</h3><p>Для компаний, где&nbsp;часть друзей в&nbsp;Европе.</p><p class="addr">fra.lodestone.example</p></article>
+    </div>
+  </section>
+
+  <section id="how" aria-labelledby="how-title" class="plans">
+    <div class="unit head"><h2 id="how-title">Как это работает</h2></div>
+    <ol class="steps">
+      <li class="unit"><code>$ tariff --ram 4G</code><h3>Выберите тариф</h3><p>По&nbsp;числу игроков и&nbsp;модов. Тариф можно увеличить позже, мир останется на&nbsp;месте.</p></li>
+      <li class="unit"><code>$ core --install neoforge</code><h3>Поставьте ядро или модпак</h3><p>Из&nbsp;списка или по&nbsp;ссылке на&nbsp;Modrinth и&nbsp;CurseForge. Свой мир загрузите через&nbsp;SFTP.</p></li>
+      <li class="unit"><code>$ whitelist add friend</code><h3>Позовите друзей</h3><p>Отправьте адрес сервера, добавьте ники в&nbsp;вайтлист — и&nbsp;играйте.</p></li>
+    </ol>
+  </section>
+
+  <section id="order" aria-labelledby="order-title" class="unit order">
+    <div class="aside">
+      <span class="tape">Новый сервер</span>
+      <h2 id="order-title" style="font-size:var(--step-2)">Создать сервер</h2>
+      <p>Оставьте контакты и&nbsp;настройки — пришлём доступ к&nbsp;панели и&nbsp;адрес сервера.</p>
+      <p><strong>Это демо:</strong> форма ничего не&nbsp;отправляет, заявка остаётся в&nbsp;браузере.</p>
+    </div>
+    <form class="form" id="order-form" novalidate>
+      <div class="field">
+        <label for="nick">Ник или имя</label>
+        <input id="nick" name="nick" type="text" autocomplete="nickname" required aria-describedby="nick-error">
+        <p class="error" id="nick-error"></p>
+      </div>
+      <div class="field">
+        <label for="email">Email для доступа</label>
+        <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="email-error">
+        <p class="error" id="email-error"></p>
+      </div>
+      <div class="field">
+        <label for="edition">Издание</label>
+        <select id="edition" name="edition"><option>Java</option><option>Bedrock</option></select>
+      </div>
+      <div class="field">
+        <label for="core">Ядро</label>
+        <select id="core" name="core"><option>Paper</option><option>Purpur</option><option>Fabric</option><option>Forge</option><option>NeoForge</option><option>Velocity</option><option>Vanilla</option></select>
+      </div>
+      <div class="field">
+        <label for="plan">Тариф</label>
+        <select id="plan" name="plan"><option value="2">2 ГБ — 249 ₽/мес</option><option value="4" selected>4 ГБ — 449 ₽/мес</option><option value="8">8 ГБ — 849 ₽/мес</option><option value="16">16 ГБ — 1590 ₽/мес</option></select>
+      </div>
+      <div class="field">
+        <label for="location">Локация</label>
+        <select id="location" name="location"><option>Москва</option><option>Франкфурт</option></select>
+      </div>
+      <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" title="Оставьте пустым">
+      <label class="consent" for="agree"><input id="agree" name="agree" type="checkbox" required aria-describedby="agree-error"><span>Согласен на&nbsp;обработку персональных данных по&nbsp;<a href="#privacy">политике конфиденциальности</a>.</span></label>
+      <p class="error" id="agree-error" style="grid-column:1/-1;margin-top:-0.6rem"></p>
+      <div class="submit">
+        <button class="button" type="submit">Создать сервер</button>
+        <p>Оплата — после проверки заявки, в&nbsp;панели.</p>
+      </div>
+      <div class="result" id="result" tabindex="-1" role="status"><strong>Заявка собрана (демо, не отправлена)</strong><pre id="result-log"></pre></div>
+    </form>
+  </section>
+
+  <section id="faq" aria-labelledby="faq-title" class="unit faq">
+    <h2 id="faq-title">Вопросы</h2>
+    <div>
+      <details><summary>Можно перенести свой мир с&nbsp;компьютера или другого хостинга?</summary><p>Да. Загрузите папку мира через SFTP или архивом в&nbsp;панели и&nbsp;укажите её в&nbsp;<code>server.properties</code> (параметр <code>level-name</code>).</p></details>
+      <details><summary>Java или Bedrock — что выбрать?</summary><p>Java — если все играют на&nbsp;компьютерах и&nbsp;нужны моды. Bedrock — если друзья с&nbsp;телефонов и&nbsp;консолей. На&nbsp;Java-сервер можно пустить Bedrock-игроков через плагин Geyser.</p></details>
+      <details><summary>Сколько памяти нужно для модпака?</summary><p>Смотрите рекомендацию автора сборки и&nbsp;добавьте запас на&nbsp;игроков. Средним сборкам на&nbsp;Forge обычно хватает 8&nbsp;ГБ, большим нужно 16&nbsp;ГБ.</p></details>
+      <details><summary>Как связаться с&nbsp;поддержкой?</summary><p>В&nbsp;Telegram, ежедневно с&nbsp;10:00 до&nbsp;22:00 по&nbsp;Москве. Ссылка на&nbsp;чат появится в&nbsp;панели после создания сервера.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer class="mesh">
+  <div class="rack">
+    <div class="cols">
+      <div><span class="tape">Лодстоун</span><p style="margin-top:1rem">Хостинг серверов Minecraft для друзей, стримеров и&nbsp;небольших сообществ.</p></div>
+      <ul><li><a href="#plans">Тарифы</a></li><li><a href="#cores">Ядра и модпаки</a></li><li><a href="#locations">Локации</a></li><li><a href="#faq">Вопросы</a></li></ul>
+      <ul><li>Поддержка: Telegram, 10:00–22:00 МСК</li><li>Москва · Франкфурт</li></ul>
+    </div>
+    <div class="legal">
+      <details id="privacy"><summary>Политика конфиденциальности (черновик)</summary><p>Черновик для юридической проверки. Мы обрабатываем ник, email и&nbsp;настройки заявки только для создания сервера и&nbsp;связи с&nbsp;вами, не&nbsp;передаём их&nbsp;третьим лицам и&nbsp;удаляем по&nbsp;запросу. Реквизиты оператора персональных данных будут указаны здесь до&nbsp;запуска.</p></details>
+      <p>Не является официальным продуктом Minecraft. Не связано с&nbsp;Mojang Studios или Microsoft.</p>
+      <p>Демонстрационный сайт: компания «Лодстоун» вымышленная, адреса и&nbsp;домены условные. © 2026</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const config = document.getElementById("config");
+  const log = document.getElementById("log");
+  const host = document.getElementById("host");
+  const summary = document.getElementById("summary");
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const coreSet = document.getElementById("core-set");
+  const pad = (n) => String(n).padStart(2, "0");
+  const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+  let timers = [];
+
+  function lines(edition, core, ram) {
+    const real = edition === "Bedrock" ? "Bedrock Dedicated Server" : core;
+    const out = [
+      ["", `Выделено ${ram} ГБ памяти, Москва`],
+      ["", `Ядро ${real}, ${edition} Edition`],
+    ];
+    if (edition === "Java" && (core === "NeoForge" || core === "Fabric")) out.push(["", `Загрузка модов: ${core === "NeoForge" ? "сборка с Modrinth" : "оптимизация и мини-карта"}…`]);
+    if (edition === "Java" && core === "NeoForge" && ram < 8) out.push(["warn", "Для крупных модпаков советуем 8 ГБ и больше"]);
+    out.push(["", "Загрузка мира «world»…"], ["", "Подготовка зоны спавна: 100%"], ["ok", "Готово. Сервер запущен"]);
+    out.push(["ok", edition === "Bedrock" ? "Адрес: play.lodestone.example, порт 19132" : "Адрес для друзей: play.lodestone.example"]);
+    return out;
+  }
+
+  function render() {
+    const data = new FormData(config);
+    const edition = data.get("edition");
+    const core = data.get("core");
+    const ram = Number(data.get("ram"));
+    coreSet.disabled = edition === "Bedrock";
+    coreSet.style.opacity = edition === "Bedrock" ? "0.45" : "";
+    host.textContent = `lodestone-msk-${pad(ram)}`;
+    summary.textContent = `${edition} · ${edition === "Bedrock" ? "BDS" : core} · ${ram} ГБ`;
+    timers.forEach(clearTimeout);
+    timers = [];
+    const start = new Date(2026, 10, 5, 10, 2, 11);
+    const rows = lines(edition, core, ram).map(([kind, text], i) => {
+      const t = new Date(start.getTime() + i * 1300);
+      const stamp = `<span class="t">[${pad(t.getHours())}:${pad(t.getMinutes())}:${pad(t.getSeconds())}]</span> `;
+      return stamp + (kind ? `<span class="${kind}">${esc(text)}</span>` : esc(text));
+    });
+    if (reduce) { log.innerHTML = rows.join("\n"); return; }
+    log.innerHTML = "";
+    rows.forEach((row, i) => timers.push(setTimeout(() => { log.innerHTML += (i ? "\n" : "") + row; }, i * 260)));
+  }
+  config.addEventListener("change", render);
+
+  const form = document.getElementById("order-form");
+  const planSelect = document.getElementById("plan");
+  document.querySelectorAll("[data-plan]").forEach((link) => link.addEventListener("click", () => {
+    planSelect.value = link.dataset.plan;
+  }));
+
+  const rules = {
+    nick: (v) => v.trim().length >= 2 || "Укажите ник или имя — хотя бы 2 символа",
+    email: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) || "Нужен email вида name@example.com",
+    agree: (_, el) => el.checked || "Без согласия мы не можем обработать заявку",
+  };
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (form.website.value) return;
+    let first = null;
+    for (const [name, rule] of Object.entries(rules)) {
+      const el = form.elements[name];
+      const verdict = rule(el.value, el);
+      const message = verdict === true ? "" : verdict;
+      document.getElementById(`${name}-error`).textContent = message;
+      el.setAttribute("aria-invalid", message ? "true" : "false");
+      if (message && !first) first = el;
+    }
+    const result = document.getElementById("result");
+    if (first) { result.classList.remove("show"); first.focus(); return; }
+    const plan = planSelect.options[planSelect.selectedIndex].text;
+    document.getElementById("result-log").textContent =
+      `ник:      ${form.nick.value.trim()}\nemail:    ${form.email.value.trim()}\nиздание:  ${form.edition.value}\nядро:     ${form.core.value}\nтариф:    ${plan}\nлокация:  ${form.location.value}`;
+    result.classList.add("show");
+    result.focus();
+  });
+})();
+</script>
+</body>
+</html>
