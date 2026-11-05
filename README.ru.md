@@ -1,138 +1,234 @@
 <div align="center">
-  <img src=".github/assets/banner.svg" alt="Build Polished Websites — production-grade сайты без AI slop" width="100%">
 
-  <h1>Build Polished Websites</h1>
+<a href="https://denfry.github.io/build-polished-websites/"><img src=".github/assets/banner.png" alt="Build Polished Websites: скилл для агентов, который делает сайты с арт-дирекцией из мира самого бизнеса и проверяет их глазами" width="100%"></a>
 
-  <p>
-    Кросс-агентный skill для создания выразительных, поддерживаемых и
-    проверенных production-сайтов без типичных AI-шаблонов.
-  </p>
+<p>
+  <a href="https://github.com/denfry/build-polished-websites/actions/workflows/ci.yml"><img src="https://github.com/denfry/build-polished-websites/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://denfry.github.io/build-polished-websites/"><img src="https://img.shields.io/badge/витрина-онлайн-d22d2d.svg" alt="Витрина онлайн"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-141619.svg" alt="Лицензия Apache 2.0"></a>
+  <a href="build-polished-websites/SKILL.md"><img src="https://img.shields.io/badge/Agent%20Skills-compatible-141619.svg" alt="Совместим с Agent Skills"></a>
+  <img src="https://img.shields.io/badge/Lighthouse-gated-141619.svg" alt="Lighthouse-гейт">
+</p>
 
-  <p>
-    <a href="https://denfry.github.io/build-polished-websites/"><strong>Витрина примеров</strong></a>
-    ·
-    <a href="README.md">English</a>
-  </p>
+<p>
+  <a href="https://denfry.github.io/build-polished-websites/"><strong>Витрина примеров</strong></a> ·
+  <a href="#быстрый-старт">Быстрый старт</a> ·
+  <a href="#как-это-работает">Как это работает</a> ·
+  <a href="#инструменты">Инструменты</a> ·
+  <a href="#платформы">Платформы</a> ·
+  <a href="README.md">English</a>
+</p>
+
 </div>
 
-## Возможности
+**Build Polished Websites** — скилл для Claude Code, Codex и OpenCode. Он учит
+агента проектировать и выпускать сайты, которые выглядят как *этот* бизнес, а
+не как любой другой, собирать их нативно в WordPress, 1С‑Битрикс, Tilda, Shopify
+или на чистом коде и доказывать результат скриншотами, проверками доступности и
+Lighthouse.
 
-- единый skill для Claude Code, Codex и OpenCode;
-- арт-дирекшн из мира самого предмета: источник, три кандидата и карточка
-  направления с конкретными значениями вместо «выбора по умолчанию»;
-- библиотека из 20 семейств визуальных направлений и справочник по ремеслу:
-  типографика, OKLCH-палитры, сетки, изображения без фотографа, движение;
-- цикл критики по скриншотам: рубрика из 10 измерений, минимум два прохода;
-- `snap.mjs` — скриншоты и контакт-листы на 4 ширинах без зависимостей;
-- `slop-scan.mjs` — детектор ИИ-шаблонов обоих поколений (включая «кремовую
-  бумагу + терракоту + моно-надзаголовки»), штампов на английском и русском и
-  непроверенных «соцдоказательств»;
-- WordPress, WooCommerce, 1C‑Битрикс, Tilda, Shopify, Drupal, Webflow,
-  headless CMS, static и legacy проекты;
-- сохранение CMS editor workflow и источника истины;
-- accessibility, security и техническое SEO;
-- browser-проверка на реальных viewport;
-- Lighthouse gate по медиане трёх запусков;
-- безопасная установка с backup вместо перезаписи.
+<a href="https://denfry.github.io/build-polished-websites/"><img src=".github/assets/compare.png" alt="Три сайта, собранные одним агентом предыдущей и текущей версией скилла. Раньше: два кремовых фона и ржавые акценты. Сейчас: кобальтовая пекарня в духе азулежу, фестиваль в цветах борта корабля и спокойная серо-голубая юрфирма." width="100%"></a>
+
+<sub>Один агент, одни и те же три брифа, две версии скилла. Сами страницы — на <a href="https://denfry.github.io/build-polished-websites/">витрине</a>.</sub>
+
+## Зачем
+
+Агенты делают страницы быстро — и делают одну и ту же страницу. Первое
+поколение шаблона всем знакомо: фиолетовые градиенты, стеклянные карточки,
+центрированный герой с двумя кнопками, три карточки с иконками, выдуманные
+цифры.
+
+Если сказать агенту «избегай AI slop», он переходит ко второму поколению:
+кремовая «бумага», терракотовый или кислотно-лаймовый акцент, гигантский
+заголовок с одним курсивным словом, моно-надписи капсом, нумерация 01/02/03,
+жёсткие смещённые тени. Один раз это смотрится со вкусом, но выходит одинаково
+у пекарни, юрфирмы и dev-инструмента. Мы это измерили: наша же прошлая версия
+делала именно так.
+
+Список запретов это не лечит: избегать шаблонов — ещё не направление. Скилл
+заменяет его решениями, которые агент обязан принять, и доказательствами,
+которые он обязан предъявить.
+
+## Как это работает
+
+```text
+бриф → контракт платформы → архетип → мир предмета → три кандидата
+     → карточка направления → ремесло → критика по скриншотам (2+ прохода)
+     → slop-scan → проверка в браузере → Lighthouse → отчёт с доказательствами
+```
+
+| Шаг | Что делает агент |
+|---|---|
+| **Архетип** | Выбирает структуру по намерению посетителя: ресторан «сначала меню», событие «афиша и расписание», путь записи, каталог, документация, дашборд и ещё 12. Никакого «SaaS по умолчанию». |
+| **Мир предмета** | Выписывает восемь конкретных вещей из мира бизнеса (плитка, билеты, метки на борту, бланки) и берёт визуальный язык у одной из них. |
+| **Три кандидата** | Пишет три направления, различающихся светлотой, жанром шрифта, силуэтом, плотностью или типом изображений, опираясь на 20 семейств направлений и 6 жанровых миров. |
+| **Карточка направления** | Фиксирует шрифты, цвета с ролями, сетку, формы, план изображений, движение и один фирменный момент. Значения становятся CSS-токенами. |
+| **Ремесло** | Fluid-типографика, OKLCH-палитры, breakout-сетки, лицензионные стоковые фото и видео, непрямоугольные формы, движение и финальная полировка. |
+| **Критика** | Снимает страницу на четырёх ширинах, оценивает 10 измерений, исправляет три худших дефекта и повторяет, пока всё не наберёт минимум 4. |
+| **Проверка** | Клавиатура и фокус, формы и ошибки, консоль и запросы, границы безопасности, SEO-метаданные и медиана трёх прогонов Lighthouse. |
 
 ## Быстрый старт
 
+```bash
+git clone https://github.com/denfry/build-polished-websites.git
+cd build-polished-websites
+bash ./install.sh --agent all --scope user        # macOS, Linux, WSL, Git Bash
+```
+
 ```powershell
-git clone https://github.com/denfry/build-polished-websites.git
-cd build-polished-websites
-.\install.ps1 -Agent all -Scope user
+.\install.ps1 -Agent all -Scope user              # Windows PowerShell
 ```
 
-macOS, Linux, WSL или Git Bash:
-
-```bash
-git clone https://github.com/denfry/build-polished-websites.git
-cd build-polished-websites
-bash ./install.sh --agent all --scope user
-```
-
-После первой установки перезапустите агент, если skill не появился сразу.
-
-## Использование
+Затем попросите агента:
 
 ```text
-Используй $build-polished-websites, чтобы переработать этот сайт,
-сохранить архитектуру платформы и проверить browser, accessibility,
-security, SEO и Lighthouse.
+Используй $build-polished-websites, чтобы сделать сайт семейной пекарни в Казани.
+Покажи карточку направления перед вёрсткой.
 ```
 
-В Claude Code также доступна команда:
+В Claude Code скилл также доступен как `/build-polished-websites` и
+подключается автоматически для работы с сайтами.
 
-```text
-/build-polished-websites
-```
-
-## Почему недостаточно «избегай AI slop»
-
-Запрет фиолетовых градиентов переносит агента к следующему шаблону: кремовый
-«бумажный» фон, терракотовый или кислотно-лаймовый акцент, гигантский заголовок
-с одним курсивным словом, моно-надписи капсом над каждой секцией, нумерация
-01/02/03 и жёсткие смещённые тени. Поэтому скилл строит направление
-позитивной цепочкой: источник из мира предмета → три кандидата → карточка
-направления → проверка по скриншотам. Списки шаблонов используются только для
-ревью.
-
-```bash
-node build-polished-websites/scripts/snap.mjs ./index.html --gray
-node build-polished-websites/scripts/slop-scan.mjs ./src
-```
-
-## Куда устанавливается
+<details>
+<summary><strong>Другие варианты установки</strong></summary>
 
 | Агент | Каталог |
 |---|---|
 | Claude Code | `~/.claude/skills/build-polished-websites` |
-| Codex | `~/.agents/skills/build-polished-websites` |
-| OpenCode | `~/.agents/skills/build-polished-websites` |
+| Codex, OpenCode | `~/.agents/skills/build-polished-websites` |
 
-Для установки только одного агента укажите `claude`, `codex` или `opencode`
-в параметре `-Agent` / `--agent`.
-
-Установщик не перезаписывает существующий skill. Режим `-Replace` или
-`--replace` сначала создаёт timestamp-backup.
-
-## Quality gates
-
-| Метрика | Минимум |
-|---|---:|
-| Performance | 90 |
-| Accessibility | 95 |
-| Best Practices | 95 |
-| SEO | 95 |
-| LCP | ≤ 2500 мс |
-| CLS | ≤ 0.10 |
-| TBT | ≤ 200 мс |
+Только для одного проекта:
 
 ```bash
-node build-polished-websites/scripts/lighthouse-gate.mjs \
-  lighthouse-1.json lighthouse-2.json lighthouse-3.json
+bash ./install.sh --agent all --scope project --project-path /path/to/project
 ```
 
-## Витрина примеров
+```powershell
+.\install.ps1 -Agent all -Scope project -ProjectPath C:\path\to\project
+```
 
-Живые примеры: **[denfry.github.io/build-polished-websites](https://denfry.github.io/build-polished-websites/)**.
-Три брифа (пекарня в Порту, фестиваль на верфи в Гданьске, семейная юрфирма в
-Портленде) собраны одним агентом дважды — предыдущей и текущей версией скилла,
-со скриншотами, палитрами и оценками `slop-scan`. Исходники — в
-[showcase/](showcase/).
+Только для одного агента: передайте `claude`, `codex` или `opencode` в
+`--agent` / `-Agent`. Установщик никогда не перезаписывает существующий скилл;
+`--replace` / `-Replace` сначала переносит текущую версию в backup с
+отметкой времени. Если агент не увидел скилл, перезапустите его.
 
-## Сравнение со скиллом и без него
+</details>
 
-В репозитории есть контролируемый
-[A/B-пример одностраничного SaaS](benchmark/saas-single-html/): один нейтральный
-промпт реализован как типичный AI-лендинг и как версия по методике скилла.
-[Отчёт сравнения](benchmark/saas-single-html/comparison.md) содержит различия
-в дизайне и медианные результаты трёх Lighthouse-прогонов.
+Ещё промпты для редизайна, аудита и каждой CMS: [examples/prompts.md](examples/prompts.md).
 
-| Без скилла | С `build-polished-websites` |
+## Инструменты
+
+Вместе со скиллом идут три Node-скрипта без зависимостей.
+
+**`snap.mjs` — посмотреть на то, что сделано.** Скриншоты на 375, 768, 1100 и
+1440 px через локальный Chrome или Edge, читаемый контакт-лист всей страницы
+для каждой ширины, а также горизонтальный скролл, ошибки консоли, упавшие
+запросы, загруженные шрифты и слишком мелкие кнопки.
+
+```bash
+node build-polished-websites/scripts/snap.mjs ./index.html --gray
+```
+
+**`slop-scan.mjs` — поймать шаблоны.** Находит приметы шаблонов первого и
+второго поколения, штампы на английском и русском («индивидуальный подход»,
+«команда профессионалов»), непроверенные «соцдоказательства» и заглушки — с
+файлом и строкой. Сигнал — повод обосновать решение или переделать, а не
+автоматический провал.
+
+```text
+$ node build-polished-websites/scripts/slop-scan.mjs ./src
+Score 14: likely generic (0-3 low, 4-7 review, 8+ likely generic).
+  [+2] cream-paper x1: cream/beige 'paper' page background
+  [+2] mono-eyebrows x6: uppercase tracked mono labels above sections
+  [+2] hard-offset-shadow x4: hard offset 'neo-brutalist' shadows
+  [+3] fashionable-template: paper background + signal accent + label/shadow grammar
+```
+
+**`lighthouse-gate.mjs` — держать планку.** Оценивает три JSON-отчёта
+Lighthouse на маршрут и проваливает сборку по медиане.
+
+| Метрика | Порог | Метрика | Порог |
+|---|---:|---|---:|
+| Performance | ≥ 90 | LCP | ≤ 2500 мс |
+| Accessibility | ≥ 95 | CLS | ≤ 0.10 |
+| Best Practices | ≥ 95 | TBT | ≤ 200 мс |
+| SEO | ≥ 95 | | |
+
+```bash
+node build-polished-websites/scripts/lighthouse-gate.mjs lh-1.json lh-2.json lh-3.json
+```
+
+## Платформы
+
+Агент читает только нужный ему справочник и сохраняет сайт редактируемым для
+тех, кто им управляет.
+
+| Платформа | Что покрыто |
 |---|---|
-| [![Типичный фиолетовый SaaS-лендинг без скилла](benchmark/saas-single-html/screenshots/without-skill.png)](benchmark/saas-single-html/without-skill.html) | [![Продуктовый интерфейс журнала инцидентов со скиллом](benchmark/saas-single-html/screenshots/with-skill.png)](benchmark/saas-single-html/with-skill.html) |
-| Шаблонная визуальная подача · Lighthouse gate **не пройден** | Собственная арт-дирекция · Lighthouse **100 / 100 / 100 / 100** |
+| WordPress / WooCommerce | Блочные и классические темы, дочерние темы, Gutenberg, Elementor, ACF, хуки, владение шаблонами |
+| 1С‑Битрикс | D7, `/local`, компоненты, шаблоны, модули, права, компонентный и композитный кеш |
+| Tilda | Стандартные блоки, Zero Block, свой код, формы, экспорт через API, синхронизация при публикации |
+| Shopify | Liquid, JSON-шаблоны, секции, блоки, настройки мерчанта, состояния магазина, Theme Check |
+| Drupal | Свои темы, Twig, библиотеки, preprocess, метаданные render cache, конфигурация |
+| Webflow и конструкторы | Владение в Designer, переиспользуемые классы и компоненты, привязки CMS, границы экспорта |
+| Headless CMS | Типизированный контент, изоляция превью, проверка вебхуков, инвалидация кеша |
+| Статика и legacy | Нативные паттерны генераторов, проверка вывода, постепенная интеграция |
 
-Полная документация, архитектура и правила участия находятся в
-[основном README](README.md).
+Перед правками в CMS агент фиксирует контракт платформы: где живёт свой код, что
+должны сохранить редакторы, как сбрасывается кеш и как изменения попадают в
+прод. Ядро, вендорный код и сгенерированный экспорт не трогаются.
+
+## Что внутри
+
+```text
+build-polished-websites/
+├── SKILL.md                     процесс, красные флаги, критерии готовности
+├── references/
+│   ├── site-archetypes.md       16 архетипов и измерения композиции
+│   ├── visual-direction.md      мир предмета, кандидаты, карточка, приметы шаблонов
+│   ├── aesthetic-directions.md  20 семейств направлений, 6 жанровых миров, шрифты с кириллицей
+│   ├── craft.md                 типографика, цвет, сетки, изображения, сток, формы, движение
+│   ├── design-review.md         цикл критики по скриншотам и рубрика
+│   ├── quality-gates.md         процедура Lighthouse на продакшене
+│   ├── security-seo.md          границы доверия и техническое SEO
+│   └── wordpress.md, bitrix.md, tilda.md, shopify.md, other-platforms.md, ...
+└── scripts/                     snap, slop-scan, lighthouse-gate, verify-package
+showcase/                        сайт на GitHub Pages и страницы-примеры
+benchmark/                       ранний одностраничный SaaS-бенчмарк
+```
+
+## Витрина и бенчмарки
+
+- **[Витрина онлайн](https://denfry.github.io/build-polished-websites/):**
+  пекарня в Порту, фестиваль на верфи в Гданьске и семейная юрфирма в
+  Портленде — каждая собрана дважды, со скриншотами, палитрами и оценками
+  slop-scan.
+- **[SaaS-бенчмарк](benchmark/saas-single-html/comparison.md):** один бриф
+  инцидент-сервиса без скилла и с первой версией, с медианами трёх прогонов
+  Lighthouse.
+
+Три брифа — это демонстрация, а не статистика. Новые брифы и перепрогоны
+приветствуются.
+
+## Разработка
+
+```bash
+node build-polished-websites/scripts/verify-package.mjs
+node build-polished-websites/scripts/lighthouse-gate.test.mjs
+node build-polished-websites/scripts/slop-scan.test.mjs
+bash -n install.sh
+```
+
+CI выполняет эти проверки и оба установщика на Windows и Linux. Витрина
+публикуется на GitHub Pages из `showcase/` при каждом пуше в `main`.
+
+## Участие
+
+Приветствуются исправления по платформам, новые справочники для CMS, новые
+семейства направлений, более точные приметы шаблонов и воспроизводимые брифы
+для бенчмарков. Сначала прочитайте [CONTRIBUTING.md](CONTRIBUTING.md). Об
+уязвимостях — по процессу из [SECURITY.md](SECURITY.md).
+
+## Лицензия
+
+[Apache License 2.0](LICENSE)
