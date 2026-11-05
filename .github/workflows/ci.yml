@@ -31,6 +31,12 @@ jobs:
       - name: Test slop scanner
         run: node build-polished-websites/scripts/slop-scan.test.mjs
 
+      - name: Test launch check
+        run: node build-polished-websites/scripts/launch-check.test.mjs
+
+      - name: Check showcase launch readiness
+        run: node build-polished-websites/scripts/launch-check.mjs showcase/index.html showcase/404.html --base-url https://denfry.github.io
+
       - name: Check screenshot script syntax
         run: node --check build-polished-websites/scripts/snap.mjs
 

@@ -19,6 +19,15 @@ direction card before building. Review screenshots at all widths until every
 design-review dimension scores at least 4, then run slop-scan and Lighthouse.
 ```
 
+## Make an existing site launch-ready
+
+```text
+Use $build-polished-websites to run launch-check on the production build, then
+fix every failure: metadata, share images, icons, structured data for our
+archetype, robots, sitemap, 404, consent for analytics, privacy policy link on
+forms, and host security headers. List the owner tasks you cannot complete.
+```
+
 ## Make an existing site beautiful
 
 ```text

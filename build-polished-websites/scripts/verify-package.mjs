@@ -17,6 +17,7 @@ const required = [
   "references/aesthetic-directions.md",
   "references/craft.md",
   "references/design-review.md",
+  "references/launch-essentials.md",
   "references/quality-gates.md",
   "references/security-seo.md",
   "references/wordpress.md",
@@ -28,6 +29,7 @@ const required = [
   "scripts/lighthouse-gate.mjs",
   "scripts/slop-scan.mjs",
   "scripts/snap.mjs",
+  "scripts/launch-check.mjs",
   "scripts/verify-package.mjs",
 ];
 const failures = [];

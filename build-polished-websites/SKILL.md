@@ -22,6 +22,7 @@ path unless changing them is necessary.
 | Writing markup and CSS for visible UI, stock photos and video, non-rectangular shapes | [craft.md](references/craft.md) |
 | Game-like or themed worlds: pixel, isometric, paper, sketch, 3D, Y2K | [aesthetic-directions.md](references/aesthetic-directions.md) (Genre worlds) |
 | Anything rendered, every time before reporting | [design-review.md](references/design-review.md) |
+| Every site that will be public: SEO, share previews, icons, structured data, analytics and consent, legal pages, forms, headers | [launch-essentials.md](references/launch-essentials.md) |
 | A CMS, builder, theme, exported site, or unknown legacy platform | [cms-platform-selection.md](references/cms-platform-selection.md), then exactly one playbook below |
 | WordPress, WooCommerce, Gutenberg, Elementor, ACF | [wordpress.md](references/wordpress.md) |
 | 1C-Bitrix, Bitrix Framework, D7 | [bitrix.md](references/bitrix.md) |
@@ -121,6 +122,18 @@ colour, layout, surfaces, imagery, motion, and finishing details.
   designed states.
 - Remove dead code and placeholder content.
 
+Ship the launch essentials with the first build, not as a later pass: unique
+titles and descriptions, canonical URLs, Open Graph with a designed 1200 × 630
+share image, the icon set and manifest, JSON-LD for the archetype, robots.txt,
+sitemap.xml, a designed 404, forms that deliver with spam protection, privacy
+and consent where personal data is collected, and security headers for the
+host. Follow [launch-essentials.md](references/launch-essentials.md) and check
+the build:
+
+```bash
+node <skill-dir>/scripts/launch-check.mjs <build-dir> [--base-url https://www.example.com]
+```
+
 For CMS work, expose intentional editor controls instead of arbitrary styling
 knobs. Keep presentation in themes and templates, business logic in modules or
 plugins, and content in the platform's content model.
@@ -186,6 +199,9 @@ Lead with what was built or fixed. Include:
 - the direction card, archetype, and composition model;
 - the final design-review scores and what each pass fixed;
 - the `slop-scan.mjs` score and justification for any remaining signal;
+- the `launch-check.mjs` result and the owner tasks that remain (domain,
+  search console and Яндекс.Вебмастер verification, business listings,
+  analytics IDs, form endpoint, legal review);
 - routes and viewports verified and where the screenshots are;
 - platform version, edit surface, cache actions, and deployment target;
 - commands run and their results; Lighthouse medians and failed audits;
@@ -208,6 +224,7 @@ Do not say "beautiful," "Lighthouse passed," "accessible," "secure," or
 | "A marquee, grain, or bento grid will add energy." | Energy comes from the concept. Add an effect only if the card names it. |
 | "Same layout as the last site, new colours." | Change at least three composition dimensions. |
 | "It looks right in the code." | You have not looked. Run snap.mjs and open the images. |
+| "SEO, icons, and the 404 can come later." | They ship with the first build; launch-check fails without them. |
 | "One review pass is enough." | The first pass catches breakage; the second catches rhythm, mobile, and drift. |
 
 ## Definition of done
@@ -217,6 +234,11 @@ Finish only when:
 - the direction card exists and the screenshots visibly follow it;
 - every design-review dimension scores at least 4 with no blocking defects;
 - every `slop-scan.mjs` signal is removed or justified;
+- `launch-check.mjs` reports no failures and every warning is fixed or
+  explained; share previews, icons, structured data, robots, sitemap, and 404
+  exist;
+- forms deliver to a real endpoint, or the page and report say exactly what is
+  missing;
 - the primary journey works end to end;
 - no placeholder copy, invented proof, or accidental stock UI remains, and any
   intentional placeholder is labelled with what the client must supply;

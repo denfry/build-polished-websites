@@ -65,6 +65,7 @@ Lighthouse.
 | **Карточка направления** | Фиксирует шрифты, цвета с ролями, сетку, формы, план изображений, движение и один фирменный момент. Значения становятся CSS-токенами. |
 | **Ремесло** | Fluid-типографика, OKLCH-палитры, breakout-сетки, лицензионные стоковые фото и видео, непрямоугольные формы, движение и финальная полировка. |
 | **Критика** | Снимает страницу на четырёх ширинах, оценивает 10 измерений, исправляет три худших дефекта и повторяет, пока всё не наберёт минимум 4. |
+| **Стартовый пакет** | С первой сборкой выпускает SEO, превью для соцсетей и мессенджеров, иконки, микроразметку, robots, sitemap, 404, аналитику с согласием, юридические страницы, рабочие формы и заголовки безопасности. |
 | **Проверка** | Клавиатура и фокус, формы и ошибки, консоль и запросы, границы безопасности, SEO-метаданные и медиана трёх прогонов Lighthouse. |
 
 ## Быстрый старт
@@ -118,7 +119,7 @@ bash ./install.sh --agent all --scope project --project-path /path/to/project
 
 ## Инструменты
 
-Вместе со скиллом идут три Node-скрипта без зависимостей.
+Вместе со скиллом идут четыре Node-скрипта без зависимостей.
 
 **`snap.mjs` — посмотреть на то, что сделано.** Скриншоты на 375, 768, 1100 и
 1440 px через локальный Chrome или Edge, читаемый контакт-лист всей страницы
@@ -143,6 +144,23 @@ Score 14: likely generic (0-3 low, 4-7 review, 8+ likely generic).
   [+2] hard-offset-shadow x4: hard offset 'neo-brutalist' shadows
   [+3] fashionable-template: paper background + signal accent + label/shadow grammar
 ```
+
+**`launch-check.mjs` — выпускать настроенным.** Проверяет собранный сайт на
+то, что нужно продакшену с первого дня: title и description, canonical, Open
+Graph с абсолютной картинкой превью, иконки и манифест, валидный JSON-LD,
+robots.txt, sitemap.xml, страницу 404, один `h1` и `main`, alt и размеры
+изображений, пустые и небезопасные ссылки, подписи полей форм и ссылку на
+политику рядом с формами, собирающими персональные данные.
+
+```bash
+node build-polished-websites/scripts/launch-check.mjs ./dist --base-url https://www.example.com
+```
+
+Справочник [launch-essentials.md](build-polished-websites/references/launch-essentials.md)
+даёт агенту готовые шаблоны: head, иконки, картинки превью, микроразметка по
+архетипам, аналитика и согласие (GDPR и 152-ФЗ), юридические страницы, формы,
+которые реально доходят, заголовки безопасности для хостингов, настройка
+Яндекс.Вебмастера и Google Search Console.
 
 **`lighthouse-gate.mjs` — держать планку.** Оценивает три JSON-отчёта
 Lighthouse на маршрут и проваливает сборку по медиане.
@@ -189,10 +207,11 @@ build-polished-websites/
 │   ├── aesthetic-directions.md  20 семейств направлений, 6 жанровых миров, шрифты с кириллицей
 │   ├── craft.md                 типографика, цвет, сетки, изображения, сток, формы, движение
 │   ├── design-review.md         цикл критики по скриншотам и рубрика
+│   ├── launch-essentials.md     SEO, превью, иконки, JSON-LD, согласие, юр. страницы, формы, заголовки
 │   ├── quality-gates.md         процедура Lighthouse на продакшене
 │   ├── security-seo.md          границы доверия и техническое SEO
 │   └── wordpress.md, bitrix.md, tilda.md, shopify.md, other-platforms.md, ...
-└── scripts/                     snap, slop-scan, lighthouse-gate, verify-package
+└── scripts/                     snap, slop-scan, launch-check, lighthouse-gate, verify-package
 showcase/                        сайт на GitHub Pages и страницы-примеры
 benchmark/                       ранний одностраничный SaaS-бенчмарк
 ```
@@ -216,6 +235,7 @@ benchmark/                       ранний одностраничный SaaS-
 node build-polished-websites/scripts/verify-package.mjs
 node build-polished-websites/scripts/lighthouse-gate.test.mjs
 node build-polished-websites/scripts/slop-scan.test.mjs
+node build-polished-websites/scripts/launch-check.test.mjs
 bash -n install.sh
 ```
 

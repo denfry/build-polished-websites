@@ -1,5 +1,9 @@
 # Security and technical SEO
 
+For the full launch baseline with copy-paste templates (head, icons, share
+images, JSON-LD per archetype, robots, sitemap, analytics and consent, legal
+pages, forms, host headers), see [launch-essentials.md](launch-essentials.md).
+
 ## Contents
 
 1. Trust-boundary review

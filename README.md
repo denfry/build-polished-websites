@@ -63,6 +63,7 @@ brief → platform contract → archetype → source world → three candidates
 | **Direction card** | Commits to typefaces, colour values with roles, layout, shapes, imagery plan, motion, and one signature moment. The values become CSS tokens. |
 | **Craft** | Fluid type scales, OKLCH palettes, breakout grids, licensed stock photo and video, non-rectangular shapes, motion, and finishing details. |
 | **Critique** | Captures the page at four widths, scores ten dimensions, fixes the three worst defects, and repeats until everything scores at least 4. |
+| **Launch kit** | Ships SEO, share previews, icons, structured data, robots, sitemap, 404, analytics with consent, legal pages, working forms, and security headers with the first build. |
 | **Verify** | Keyboard and focus, forms and failure paths, console and requests, security boundaries, SEO metadata, and a three-run Lighthouse median. |
 
 ## Quick start
@@ -116,7 +117,7 @@ More prompts for redesigns, audits, and each CMS: [examples/prompts.md](examples
 
 ## Tools
 
-Three dependency-free Node scripts ship with the skill.
+Four dependency-free Node scripts ship with the skill.
 
 **`snap.mjs`: look at what you built.** Screenshots at 375, 768, 1100, and
 1440 px through a local Chrome or Edge, with a legible contact sheet of the
@@ -140,6 +141,22 @@ Score 14: likely generic (0-3 low, 4-7 review, 8+ likely generic).
   [+2] hard-offset-shadow x4: hard offset 'neo-brutalist' shadows
   [+3] fashionable-template: paper background + signal accent + label/shadow grammar
 ```
+
+**`launch-check.mjs`: ship it configured.** Checks the built site for what
+production needs on day one: titles and descriptions, canonical URLs, Open
+Graph with absolute share images, icons and manifest, valid JSON-LD, robots.txt,
+sitemap.xml, a 404 page, one `h1` and `main`, image alt and sizes, dead and
+unsafe links, form labels, and a privacy link next to personal-data forms.
+
+```bash
+node build-polished-websites/scripts/launch-check.mjs ./dist --base-url https://www.example.com
+```
+
+The matching reference, [launch-essentials.md](build-polished-websites/references/launch-essentials.md),
+gives the agent copy-paste templates for the head, icons, share images,
+structured data per archetype, analytics and consent (GDPR and 152-FZ), legal
+pages, forms that deliver, host security headers, and Google and Yandex
+webmaster setup.
 
 **`lighthouse-gate.mjs`: hold the line.** Evaluates three Lighthouse JSON
 reports per route and fails on the median.
@@ -186,10 +203,11 @@ build-polished-websites/
 │   ├── aesthetic-directions.md  20 direction families, 6 genre worlds, Cyrillic-ready fonts
 │   ├── craft.md                 type, colour, layout, imagery, stock media, shapes, motion
 │   ├── design-review.md         screenshot critique loop and rubric
+│   ├── launch-essentials.md     SEO, share images, icons, JSON-LD, consent, legal, forms, headers
 │   ├── quality-gates.md         production Lighthouse procedure
 │   ├── security-seo.md          trust boundaries and technical SEO
 │   └── wordpress.md, bitrix.md, tilda.md, shopify.md, other-platforms.md, ...
-└── scripts/                     snap, slop-scan, lighthouse-gate, verify-package
+└── scripts/                     snap, slop-scan, launch-check, lighthouse-gate, verify-package
 showcase/                        the GitHub Pages site and its example pages
 benchmark/                       the earlier single-file SaaS comparison
 ```
@@ -212,6 +230,7 @@ new briefs and reruns are welcome.
 node build-polished-websites/scripts/verify-package.mjs
 node build-polished-websites/scripts/lighthouse-gate.test.mjs
 node build-polished-websites/scripts/slop-scan.test.mjs
+node build-polished-websites/scripts/launch-check.test.mjs
 bash -n install.sh
 ```
 
