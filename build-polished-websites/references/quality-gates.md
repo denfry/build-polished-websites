@@ -18,7 +18,8 @@ Run the project's existing commands first:
 3. typecheck;
 4. unit and integration tests;
 5. production build;
-6. browser smoke test;
+6. browser smoke test and the screenshot review in
+   [design-review.md](design-review.md);
 7. Lighthouse on the served production output.
 
 Do not silently install dependencies or run a downloaded package. Prefer a

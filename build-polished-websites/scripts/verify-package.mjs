@@ -14,6 +14,9 @@ const required = [
   "references/cms-platform-selection.md",
   "references/site-archetypes.md",
   "references/visual-direction.md",
+  "references/aesthetic-directions.md",
+  "references/craft.md",
+  "references/design-review.md",
   "references/quality-gates.md",
   "references/security-seo.md",
   "references/wordpress.md",
@@ -23,6 +26,8 @@ const required = [
   "references/other-platforms.md",
   "references/platform-installation.md",
   "scripts/lighthouse-gate.mjs",
+  "scripts/slop-scan.mjs",
+  "scripts/snap.mjs",
   "scripts/verify-package.mjs",
 ];
 const failures = [];

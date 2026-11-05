@@ -76,6 +76,20 @@ the actual user intent. Do not force every site into a conversion funnel.
   availability controls, sensory copy.
 - **Avoid:** hiding essential booking facts behind mood imagery.
 
+### Restaurant, café, or bar
+
+- **Job:** make people hungry or curious, then answer "can I go, when, and
+  how" in seconds.
+- **Content units:** menu, dishes, hours, address, booking, the room, the
+  people cooking.
+- **Good structures:** menu-first page, tonight/today board, reservation path,
+  seasonal menu story.
+- **Distinctive moves:** menu typography with real prices, today's
+  availability, hours and address visible without scrolling on mobile, food
+  photography with appetite.
+- **Avoid:** atmosphere that hides hours, address, or booking; menus as PDFs or
+  images of text.
+
 ### Culture, event, or entertainment
 
 - **Job:** create anticipation and communicate what, where, and when.
@@ -126,6 +140,43 @@ the actual user intent. Do not force every site into a conversion funnel.
   transparent sorting.
 - **Avoid:** oversized hero content that pushes results below the fold.
 
+### Personal site, blog, or creator
+
+- **Job:** express a specific person's voice and work, and make it easy to
+  read, follow, hire, or support them.
+- **Content units:** posts, projects, talks, newsletter, about, contact.
+- **Good structures:** writing index, single-column journal, digital garden,
+  link-rich home page, newsletter archive.
+- **Distinctive moves:** the person's own voice in microcopy, idiosyncratic
+  but readable typography, dates and tags, RSS.
+- **Avoid:** a personal brand dressed as a startup landing page.
+
+### Single product or brand launch
+
+- **Job:** make one product desirable and understandable, then sell or
+  capture interest.
+- **Content units:** the product, its materials or ingredients, variants,
+  price, how it is used, availability.
+- **Good structures:** product story in scenes, ingredient or material
+  breakdown, configurator, pre-order page.
+- **Distinctive moves:** product scale and detail, sensory specifics, honest
+  availability, purchase path always one tap away.
+- **Avoid:** generic lifestyle filler and SaaS feature grids for a physical
+  product.
+
+### Corporate, B2B services, or industrial
+
+- **Job:** show capability and reliability to buyers who compare suppliers
+  slowly and in committees.
+- **Content units:** capabilities, sectors, projects, facilities,
+  certifications, people, locations.
+- **Good structures:** capability index, project archive with specifics,
+  sector entry paths, facility tour, request-for-quote path.
+- **Distinctive moves:** named projects with numbers and constraints, real
+  facilities and equipment, downloadable specifications, direct contacts.
+- **Avoid:** stock handshake photography, "solutions" without nouns, and
+  invented client logos.
+
 ### Product or SaaS marketing
 
 - **Job:** explain a product, prove fit, and start adoption or sales.
@@ -167,6 +218,12 @@ Select deliberately; do not always choose the first option.
 
 Vary at least three of these dimensions when moving between unrelated projects.
 Color and font changes alone do not constitute a new direction.
+
+The archetype fixes structure; expression comes next, from the source world and
+the direction families in [aesthetic-directions.md](aesthetic-directions.md).
+The same archetype can and should look very different across subjects: two
+restaurants may share a menu-first structure while one reads as a candle-lit
+printed card and the other as a two-ink market flyer.
 
 ## Hybrid sites
 

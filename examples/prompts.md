@@ -9,6 +9,25 @@ then verify the production build at mobile, tablet, desktop, and one awkward
 width. Run the Lighthouse quality gate and report evidence.
 ```
 
+## Any new site from a short brief
+
+```text
+Use $build-polished-websites to build a site for <business, place, event, or
+person>. Gather the real facts first, choose the archetype, mine the subject's
+world for a source, compare three candidate directions, and show me the
+direction card before building. Review screenshots at all widths until every
+design-review dimension scores at least 4, then run slop-scan and Lighthouse.
+```
+
+## Make an existing site beautiful
+
+```text
+Use $build-polished-websites to capture this site with snap.mjs, score it with
+the design-review rubric, and run slop-scan. Propose a direction card that fixes
+the weakest dimensions without changing the framework, then implement it and
+show before and after screenshots.
+```
+
 ## Remove AI slop
 
 ```text

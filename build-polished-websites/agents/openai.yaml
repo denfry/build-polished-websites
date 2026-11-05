@@ -1,4 +1,4 @@
 interface:
   display_name: "Build Polished Websites"
-  short_description: "Build distinctive sites beyond SaaS defaults"
-  default_prompt: "Use $build-polished-websites to choose the right site archetype, build a distinctive site in its native platform, and verify accessibility, security, SEO, and Lighthouse quality."
+  short_description: "Art-directed websites without AI-default design"
+  default_prompt: "Use $build-polished-websites to choose the right site archetype, art-direct it from the subject's own world, build it in its native platform, review screenshots until it scores well, and verify accessibility, security, SEO, and Lighthouse quality."

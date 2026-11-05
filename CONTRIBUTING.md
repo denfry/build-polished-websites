@@ -21,6 +21,7 @@ Run:
 ```bash
 node build-polished-websites/scripts/verify-package.mjs
 node build-polished-websites/scripts/lighthouse-gate.test.mjs
+node build-polished-websites/scripts/slop-scan.test.mjs
 bash -n install.sh
 ```
 
