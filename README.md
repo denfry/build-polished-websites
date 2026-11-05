@@ -16,6 +16,8 @@
   </p>
 
   <p>
+    <a href="https://denfry.github.io/build-polished-websites/"><strong>Live showcase</strong></a>
+    ·
     <a href="README.ru.md">Русская версия</a>
     ·
     <a href="#quick-start">Quick start</a>

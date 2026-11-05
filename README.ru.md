@@ -8,7 +8,11 @@
     проверенных production-сайтов без типичных AI-шаблонов.
   </p>
 
-  <p><a href="README.md">English</a></p>
+  <p>
+    <a href="https://denfry.github.io/build-polished-websites/"><strong>Витрина примеров</strong></a>
+    ·
+    <a href="README.md">English</a>
+  </p>
 </div>
 
 ## Возможности
